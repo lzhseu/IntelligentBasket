@@ -9,6 +9,8 @@
 import UIKit
 import SnapKit
 
+private let kSpaceBetweenIconAndField = 15
+
 enum TextFieldType: Int {
     case NormalTextField = 0,
     PhoneField,
@@ -70,7 +72,7 @@ extension TextFieldWithIcon {
             make.width.height.equalTo(kTextFieldWithIcon_IconWH)
         }
         textField.snp.makeConstraints { (make) in
-            make.left.equalTo(textFieldIcon.snp_right).offset(15)
+            make.left.equalTo(textFieldIcon.snp_right).offset(kSpaceBetweenIconAndField)
             make.right.equalToSuperview()
             make.height.equalTo(textFieldIcon)
             make.centerY.equalTo(textFieldIcon)

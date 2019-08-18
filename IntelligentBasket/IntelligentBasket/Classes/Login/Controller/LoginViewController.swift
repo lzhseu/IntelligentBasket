@@ -62,6 +62,8 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         setUI()
         makeConstraints()
+        print(kScreenW)
+        print(kScreenH)
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,12 +115,12 @@ class LoginViewController: BaseViewController {
         loginBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(40)
             make.right.equalToSuperview().offset(-40)
-            make.height.equalTo(passwdFeild)
+            //make.height.equalTo(passwdFeild)
             make.top.equalTo(textFieldBgView.snp_bottom).offset(25)
         }
         registerBtn.snp.makeConstraints { (make) in
             make.left.right.height.equalTo(loginBtn)
-            make.top.equalTo(loginBtn.snp_bottom).offset(25)
+            make.top.equalTo(loginBtn.snp_bottom).offset(20)
         }
     }
 

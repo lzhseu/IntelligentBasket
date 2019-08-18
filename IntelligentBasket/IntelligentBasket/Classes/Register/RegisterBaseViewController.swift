@@ -9,6 +9,10 @@
 import UIKit
 import SnapKit
 
+private let kImageBgViewH = 0.22 * kScreenH
+private let kImageViewH = kImageBgViewH * 2 / 3
+private let kShortButtonW = kScreenW / 2 - 30 * 2
+
 class RegisterBaseViewController: BaseViewController {
     
     // MARK: - 自定义属性
@@ -144,15 +148,15 @@ class RegisterBaseViewController: BaseViewController {
             make.height.equalTo(kTextFieldWithIcon_IconWH)
         }
         usernameFeild.snp.makeConstraints { (make) in
-            make.top.equalTo(phoneField.snp_bottom).offset(15)
+            make.top.equalTo(phoneField.snp_bottom).offset(10)
             make.left.width.height.equalTo(phoneField)
         }
         passwdFeild.snp.makeConstraints { (make) in
-            make.top.equalTo(usernameFeild.snp_bottom).offset(15)
+            make.top.equalTo(usernameFeild.snp_bottom).offset(10)
             make.left.width.height.equalTo(phoneField)
         }
         passwdAgainFeild.snp.makeConstraints { (make) in
-            make.top.equalTo(passwdFeild.snp_bottom).offset(15)
+            make.top.equalTo(passwdFeild.snp_bottom).offset(10)
             make.left.width.height.equalTo(phoneField)
         }
     }
@@ -160,21 +164,21 @@ class RegisterBaseViewController: BaseViewController {
     func makeConstraintsForImageView(superView: UIView, referenceView: UIView) {
         imageBgView.snp.makeConstraints { (make) in
             make.left.right.equalTo(superView)
-            make.top.equalTo(referenceView.snp_bottom).offset(20)  //textFieldBgView
-            make.height.equalTo(150)
+            make.top.equalTo(referenceView.snp_bottom).offset(kSpaceBetweenModule)
+            make.height.equalTo(kImageBgViewH)
         }
         imageView.snp.makeConstraints { (make) in
             make.center.equalTo(imageBgView)
-            make.height.width.equalTo(120)
+            make.height.width.equalTo(kImageViewH)
         }
     }
     
     func makeConstraintsForButton(superView: UIView, referenceView: UIView) {
         takePhotoBtn.snp.makeConstraints { (make) in
             make.left.equalTo(superView).offset(30)
-            make.top.equalTo(referenceView.snp_bottom).offset(25)
-            make.height.equalTo(phoneField)
-            make.width.equalTo(160)
+            make.top.equalTo(referenceView.snp_bottom).offset(kSpaceBetweenModule)
+            //make.height.equalTo(phoneField)
+            make.width.equalTo(kShortButtonW)
         }
         pickPhotoBtn.snp.makeConstraints { (make) in
             make.right.equalTo(superView).offset(-30)
@@ -184,7 +188,7 @@ class RegisterBaseViewController: BaseViewController {
         confirmBtn.snp.makeConstraints { (make) in
             make.right.equalTo(pickPhotoBtn)
             make.left.equalTo(takePhotoBtn)
-            make.top.equalTo(takePhotoBtn.snp_bottom).offset(30)
+            make.top.equalTo(takePhotoBtn.snp_bottom).offset(25)
             make.height.equalTo(takePhotoBtn)
         }
     }

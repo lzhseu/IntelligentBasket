@@ -9,8 +9,9 @@
 import UIKit
 import SnapKit
 
-private let kButtonW: CGFloat = 160
+private let kButtonW: CGFloat = kScreenW * 2 / 5
 private let kButtonEdgeSpace: CGFloat = 20
+private let kLabelY: CGFloat = 0.22 * kScreenH
 
 class RegisterViewController: BaseViewController {
 
@@ -75,7 +76,7 @@ class RegisterViewController: BaseViewController {
     override func makeConstraints() {
         tipLable.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(160)
+            make.top.equalToSuperview().offset(kLabelY)
         }
         workerBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()

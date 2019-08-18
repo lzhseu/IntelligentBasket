@@ -63,8 +63,8 @@ class RegisterWorkerViewController: RegisterBaseViewController {
     func makeConstraintsForMenu(){
         menu.snp.makeConstraints { (make) in
             make.width.left.right.equalTo(view)
-            make.height.equalTo(35)
-            make.top.equalTo(getTextFieldBgView().snp_bottom).offset(30)
+            make.height.equalTo(kMenuTitleH)
+            make.top.equalTo(getTextFieldBgView().snp_bottom).offset(kSpaceBetweenModule)
         }
     }
     

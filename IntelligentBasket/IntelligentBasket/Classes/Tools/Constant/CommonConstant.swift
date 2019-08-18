@@ -14,9 +14,11 @@ let kScreenH = UIScreen.main.bounds.height
 
 
 /// 登录注册页面的控件参数
-let kButtonCornerRadius: CGFloat = 6
-let kCheckBoxWH: CGFloat = 20
-let kTextFieldWithIcon_IconWH: CGFloat = 35
-let kMenuOptionH: CGFloat = 35
+let kButtonCornerRadius: CGFloat = 6                         //按钮的圆角弧度
+let kCheckBoxWH: CGFloat = 20                                //复选框的宽高
+let kTextFieldWithIcon_IconWH: CGFloat = 0.045 * kScreenH    //输入框中icon的宽高
+let kMenuTitleH : CGFloat = 40                               //下拉菜单每个选项的高度
+let kMenuOptionH: CGFloat = 35                               //下拉菜单标题高度
+let kSpaceBetweenModule: CGFloat = 20                        //模块之间的距离
 
 let kWorkTypeArr = ["涂料", "幕墙", "内装", "土建", "车辆", "其他"]

@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import BEMCheckBox
 
+private let kSpaceBetweenBoxAndLabel = 15
+
 protocol CheckBoxDelegate: class {
     func tapCheckBox(checkBox: CheckBox)
     func tapCheckBoxLabel(checkBox: CheckBox)
@@ -71,7 +73,7 @@ extension CheckBox {
         }
         titleLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(checkBox)
-            make.left.equalTo(checkBox.snp_right).offset(15)
+            make.left.equalTo(checkBox.snp_right).offset(kSpaceBetweenBoxAndLabel)
         }
     }
 }
