@@ -16,10 +16,16 @@ class BaseViewController: UIViewController {
 
     }
     
+    // MARK: - 属性重写
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func setUI() {
         setNavigationBar(title: nil)
     }
     
+    /// 设置导航栏样式
     func setNavigationBar(title: String?) {
         navigationItem.title = title
         navigationController?.navigationBar.isTranslucent = false
@@ -28,10 +34,12 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22), NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
+    /// 设置导航栏标题
     func setNavigationBarTitle(title: String?) {
         navigationItem.title = title
     }
     
+    /// 控件约束
     func makeConstraints() {
         
     }
@@ -50,5 +58,26 @@ class BaseViewController: UIViewController {
     func disabledViewColor(view: UIView) {
         
     }
+    
+    /// 进入某一视图
+    func pushViewController(viewController: UIViewController, animated: Bool) {
+        navigationController?.pushViewController(viewController, animated: animated)
+    }
+    
+    /// 返回上一视图
+    func popViewController(animated: Bool) {
+        navigationController?.popViewController(animated: animated)
+    }
+    
+    /// 返回指定视图
+    func popViewController(viewController: UIViewController, animated: Bool) {
+        navigationController?.popToViewController(viewController, animated: animated)
+    }
+    
+    /// 返回根视图
+    func popToRootViewController(animated: Bool) {
+        navigationController?.popToRootViewController(animated: animated)
+    }
+    
     
 }

@@ -95,10 +95,18 @@ extension CheckBox: BEMCheckBoxDelegate {
 }
 
 
-// MARK: - 提供设置 checkBox 和 label
+// MARK: - 对外暴露的方法
 extension CheckBox {
     // 需要再写
     func isOn() -> Bool {
         return checkBox.on
+    }
+    
+    func getCheckBox() -> BEMCheckBox {
+        return checkBox
+    }
+    
+    func getCheckBoxLabel() -> UILabel {
+        return titleLabel
     }
 }

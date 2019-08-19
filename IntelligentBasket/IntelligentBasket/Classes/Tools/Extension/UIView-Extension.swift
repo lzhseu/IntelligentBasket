@@ -100,7 +100,7 @@ extension UIView{
     func showImageTip(tip: String?, message: String?, imageName: String?){
         let imgView = UIImageView(image: UIImage(named: imageName ?? ""))
         imgView.contentMode = UIView.ContentMode.scaleAspectFit
-        imgView.backgroundColor = UIColor.red
+        //imgView.backgroundColor = UIColor.lightGray
         let hud = protoTypeHUD()
         hud.indicatorView = JGProgressHUDIndicatorView(contentView: imgView)
         hud.textLabel.text = tip
@@ -125,7 +125,7 @@ extension UIView{
         showWarningTip(tip: tip, message: nil)
     }
     
-    /// 提示（文字+位置）
+    /// 提示（文字+位置） 会自动消失
     func showTip(tip: String, position: JGProgressHUDPosition){
         let hud = protoTypeHUD()
         hud.position = position
@@ -136,13 +136,13 @@ extension UIView{
         hud.dismiss(afterDelay: 2)
     }
     
-    /// 提示（只文字）
+    /// 显示提示文字，位置居中  会自动消失
     func showTip(tip: String){
         showTip(tip: tip, position: .center)
     }
     
     
-    
+    /// 显示 圆形loading + 自定义文字
     func showFullLoadingWithTip(tip: String){
         var loadingView = viewWithTag(fullLoadingTag)
         if loadingView != nil{
@@ -179,10 +179,12 @@ extension UIView{
         }
     }
     
+    /// 显示圆形的loading + “Loading” 字样
     func showFullLoading(){
         showFullLoadingWithTip(tip: "Loading")
     }
     
+    /// 隐藏圆形的loading + “Loading” 字样
     func hideFullLoading(){
         var loadingView = viewWithTag(fullLoadingTag)
         if loadingView != nil{

@@ -11,7 +11,8 @@ import BEMCheckBox
 import SnapKit
 
 private let kIconWH: CGFloat = 35
-
+private let kUsernameKey = "kUsernameKey"
+private let kPasswordKey = "kPasswordKey"
 
 class LoginViewController: BaseViewController {
     
@@ -32,7 +33,7 @@ class LoginViewController: BaseViewController {
         return passwdField
     }()
     
-    private lazy var rememberPasswdCheckBox: UIView = {
+    private lazy var rememberPasswdCheckBox: CheckBox = {
         let checkBox = CheckBox(frame: .zero, checkBoxTitle: "记住密码")
         checkBox.delegate = self
         return checkBox
@@ -62,18 +63,13 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         setUI()
         makeConstraints()
-        print(kScreenW)
-        print(kScreenH)
+        getUserInfo()         // 加载用户信息
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - 属性重写
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     // MARK: - 父类方法重新写
     override func setUI() {
@@ -132,11 +128,20 @@ extension LoginViewController {
     
     @objc private func loginBtnClick(){
         normalViewColor(view: loginBtn)
+        if checkLoginValid() {
+            // TODO: 登录
+            /// 记住密码
+            if rememberPasswdCheckBox.isOn() {
+                rememberUserInfo(username: phoneField.getTextField().text, passwd: passwdFeild.getTextField().text)
+            } else {
+                removeUserInfo()
+            }
+        }
     }
     
     @objc private func registerBtnClick(){
         normalViewColor(view: registerBtn)
-        navigationController?.pushViewController(RegisterViewController(), animated: true)
+        pushViewController(viewController: RegisterViewController(), animated: true)
     }
     
     /// 按下按钮时改变按钮背景颜色
@@ -155,14 +160,10 @@ extension LoginViewController {
 // MARK: - 实现 UITextFieldDelegate, CheckBoxDelegate 代理方法
 extension LoginViewController: UITextFieldDelegate, CheckBoxDelegate{
     /// 点击 checkBox
-    func tapCheckBox(checkBox: CheckBox) {
-        // TODO: 记住密码
-    }
+    func tapCheckBox(checkBox: CheckBox) {}
     
     /// 点击 checkBoxLabel
-    func tapCheckBoxLabel(checkBox: CheckBox) {
-        
-    }
+    func tapCheckBoxLabel(checkBox: CheckBox) {}
     
     /// 点击键盘的 return 时，隐藏键盘
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -172,4 +173,72 @@ extension LoginViewController: UITextFieldDelegate, CheckBoxDelegate{
     
 }
 
+// MARK: - 登录前的数据检查
+extension LoginViewController {
+    
+    /// 匹配手机的正则表达式
+    private func isPhoneFormatValid() -> Bool {
+        let matcher = RegularMatchingTool(patten: mobilePattenStrict)
+        return matcher.match(input: phoneField.getTextField().text ?? "")
+    }
+    
+    /// 手机号码是否为空
+    private func isPhoneNotEmpty() -> Bool {
+        return (phoneField.getTextField().text?.count ?? 0) > 0
+    }
+    
+    /// 密码不为空 （需要设置最少密码位数吗）
+    private func isPasswdFormatValid() -> Bool {
+        return (passwdFeild.getTextField().text?.count ?? 0) > 0
+    }
+    
+    
+    private func checkLoginValid() -> Bool {
+        if !(isPasswdFormatValid() && isPhoneNotEmpty()) {
+            view.showTip(tip: "百胜吊篮：账户或密码不能为空！", position: .bottomCenter)
+            return false
+        }
+        if !isPhoneFormatValid() {
+            view.showTip(tip: "百胜吊篮：手机号码格式不正确！", position: .bottomCenter)
+            return false
+        }
+        return true
+    }
+}
 
+// MARK: - 记住密码(使用 UserDefaults)
+extension LoginViewController {
+    
+    func storeUsername(username: String?) {
+        guard let username = username else { return }
+        UserDefaults.standard.set(username, forKey: kUsernameKey)
+    }
+    
+    func getUsername() -> String? {
+        return UserDefaults.standard.object(forKey: kUsernameKey) as? String
+    }
+    
+    func storePassword(passwd: String?) {
+        guard let passwd = passwd else { return }
+        UserDefaults.standard.set(passwd, forKey: kPasswordKey)
+    }
+    
+    func getPassword() -> String? {
+        return UserDefaults.standard.object(forKey: kPasswordKey) as? String
+    }
+    
+    func rememberUserInfo(username: String?, passwd: String?) {
+        storeUsername(username: username)
+        storePassword(passwd: passwd)
+    }
+    
+    func removeUserInfo() {
+        UserDefaults.standard.removeObject(forKey: kUsernameKey)
+        UserDefaults.standard.removeObject(forKey: kPasswordKey)
+    }
+    
+    func getUserInfo() {
+        phoneField.getTextField().text = getUsername()
+        passwdFeild.getTextField().text = getPassword()
+    }
+}

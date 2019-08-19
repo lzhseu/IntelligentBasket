@@ -57,10 +57,6 @@ class RegisterViewController: BaseViewController {
         makeConstraints()
     }
     
-    // MARK: - 属性重写
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     // MARK: - 重写父类方法
     override func setUI() {
@@ -108,22 +104,22 @@ extension RegisterViewController {
     
     @objc func workerBtnClick(){
         normalViewColor(view: workerBtn)
-        navigationController?.pushViewController(RegisterWorkerViewController(role: "注册-施工人员"), animated: true)
+        pushViewController(viewController: RegisterWorkerViewController(role: "注册-施工人员"), animated: true)
     }
     
     @objc func renterBtnClick(){
         normalViewColor(view: renterBtn)
-        navigationController?.pushViewController(RegisterBaseViewController(role: "注册-租方管理员"), animated: true)
+        pushViewController(viewController: RegisterBaseViewController(role: "注册-租方管理员"), animated: true)
     }
     
     @objc func regionBtnClick(){
         normalViewColor(view: regionBtn)
-        navigationController?.pushViewController(RegisterBaseViewController(role: "注册-区域管理员"), animated: true)
+        pushViewController(viewController: RegisterBaseViewController(role: "注册-区域管理员"), animated: true)
     }
     
     @objc func inspectorBtnClick(){
         normalViewColor(view: inspectorBtn)
-        navigationController?.pushViewController(RegisterBaseViewController(role: "注册-巡检人员"), animated: true)
+        pushViewController(viewController: RegisterBaseViewController(role: "注册-巡检人员"), animated: true)
     }
     
     /// 按下按钮时改变按钮背景颜色

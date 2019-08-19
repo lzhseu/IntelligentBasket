@@ -31,6 +31,8 @@
 		F3965E6B2308E0AF00E8E5B8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E6A2308E0AF00E8E5B8 /* BaseViewController.swift */; };
 		F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E6C2308E60E00E8E5B8 /* RegisterBaseViewController.swift */; };
 		F3965E6F2308ECEE00E8E5B8 /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E6E2308ECEE00E8E5B8 /* TextFieldWithIcon.swift */; };
+		F3965E71230A3D6C00E8E5B8 /* RegularMatchingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E70230A3D6C00E8E5B8 /* RegularMatchingTool.swift */; };
+		F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E72230A40E600E8E5B8 /* RegexPatten.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		F3965E6A2308E0AF00E8E5B8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F3965E6C2308E60E00E8E5B8 /* RegisterBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBaseViewController.swift; sourceTree = "<group>"; };
 		F3965E6E2308ECEE00E8E5B8 /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
+		F3965E70230A3D6C00E8E5B8 /* RegularMatchingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularMatchingTool.swift; sourceTree = "<group>"; };
+		F3965E72230A40E600E8E5B8 /* RegexPatten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPatten.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +141,10 @@
 		F366EB802306A2C900495496 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				F366EB812306A2C900495496 /* DictConvertToModel.swift */,
 				F366EB822306A2C900495496 /* NetworkTools.swift */,
+				F3965E70230A3D6C00E8E5B8 /* RegularMatchingTool.swift */,
 				F366EBA52306B12700495496 /* CommonViewFactory.swift */,
+				F366EB812306A2C900495496 /* DictConvertToModel.swift */,
 				F366EB832306A2C900495496 /* Extension */,
 				F366EB892306A2C900495496 /* Component */,
 				F366EB8B2306A2C900495496 /* Constant */,
@@ -174,6 +179,7 @@
 			children = (
 				F366EB8C2306A2C900495496 /* CommonConstant.swift */,
 				F366EB9E2306A69900495496 /* ColorConstant.swift */,
+				F3965E72230A40E600E8E5B8 /* RegexPatten.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
 				F3965E6B2308E0AF00E8E5B8 /* BaseViewController.swift in Sources */,
+				F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */,
 				F366EB972306A2C900495496 /* CommonConstant.swift in Sources */,
 				F366EB952306A2C900495496 /* NsDate-Extension.swift in Sources */,
 				F366EB932306A2C900495496 /* UIBarButtonItem-Extension.swift in Sources */,
@@ -349,6 +356,7 @@
 				F366EBA62306B12700495496 /* CommonViewFactory.swift in Sources */,
 				F366EB9D2306A32B00495496 /* LoginViewController.swift in Sources */,
 				F3965E6F2308ECEE00E8E5B8 /* TextFieldWithIcon.swift in Sources */,
+				F3965E71230A3D6C00E8E5B8 /* RegularMatchingTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

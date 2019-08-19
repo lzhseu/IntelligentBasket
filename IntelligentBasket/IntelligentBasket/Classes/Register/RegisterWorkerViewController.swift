@@ -16,6 +16,7 @@ class RegisterWorkerViewController: RegisterBaseViewController {
 
     // MARK: - 自定义属性
     private var menuOptions = kWorkTypeArr    /// 工种的数据是从后台获得的还是写死的？ 此处先写死
+    private var workerType = ""
     
     // MARK: - 懒加载属性
     private lazy var menu: LMJDropdownMenu = {
@@ -71,6 +72,16 @@ class RegisterWorkerViewController: RegisterBaseViewController {
 }
 
 
+// MARK: - 事件监听函数
+extension RegisterWorkerViewController {
+    override func confirmBtnClick() {
+        normalViewColor(view: getConfirmBtn())
+        if checkWorkerRegisterValid() {
+            // TODO: 注册
+        }
+    }
+}
+
 // MARK: - 实现代理方法 LMJDropdownMenuDelegate, 遵守数据源协议 LMJDropdownMenuDataSource
 extension RegisterWorkerViewController: LMJDropdownMenuDelegate, LMJDropdownMenuDataSource {
     func numberOfOptions(in menu: LMJDropdownMenu) -> UInt {
@@ -89,7 +100,26 @@ extension RegisterWorkerViewController: LMJDropdownMenuDelegate, LMJDropdownMenu
     }
     
     func dropdownMenu(_ menu: LMJDropdownMenu, didSelectOptionAt index: UInt, optionTitle title: String) {
-        // TODO: 在此方法中实现选择工种后的操作
+        workerType = title
     }
     
+}
+
+// MARK: - 注册前的数据检查
+extension RegisterWorkerViewController {
+    
+    private func isWorkerTypeValid() -> Bool {
+        return workerType != ""
+    }
+    
+    private func checkWorkerRegisterValid() -> Bool {
+        if checkRegisterValid() {
+            if !isWorkerTypeValid() {
+                view.showTip(tip: "百胜吊篮：请选择工种！", position: .bottomCenter)
+                return false
+            }
+            return true
+        }
+        return false
+    }
 }

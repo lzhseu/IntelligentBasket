@@ -8,16 +8,19 @@
 
 import UIKit
 import SnapKit
+import PromiseKit
 
 private let kImageBgViewH = 0.22 * kScreenH
 private let kImageViewH = kImageBgViewH * 2 / 3
+private let kImageViewW = kImageViewH * 1.585      //模仿身份证宽高比
 private let kShortButtonW = kScreenW / 2 - 30 * 2
 
 class RegisterBaseViewController: BaseViewController {
     
     // MARK: - 自定义属性
     var role = ""         //角色
-    var image = "ic_launcher"
+    var image = "idcard"
+    var isIdCardUpload = false
 
     // MARK: - 懒加载属性
     private lazy var titleLabel: UILabel = {
@@ -35,7 +38,7 @@ class RegisterBaseViewController: BaseViewController {
     }()
     
     private lazy var usernameFeild: TextFieldWithIcon = {
-        let usernameFeild = CommonViewFactory.createTextFieldWithIcon(textFieldType: .NormalTextField, placeholder: "密码", sender: self, image: "icon_user_info")
+        let usernameFeild = CommonViewFactory.createTextFieldWithIcon(textFieldType: .NormalTextField, placeholder: "用户名", sender: self, image: "icon_user_info")
         usernameFeild.setReturnKeyType(returnKeyType: .done)
         return usernameFeild
     }()
@@ -83,6 +86,10 @@ class RegisterBaseViewController: BaseViewController {
         return btn
     }()
     
+    private lazy var photoPicker: UIImagePickerController = {
+        return UIImagePickerController()
+    }()
+    
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,15 +107,16 @@ class RegisterBaseViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - 属性重写
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // MARK: - 重写父类函数
     override func setUI() {
         view.backgroundColor = lightGray
         setNavigationBarTitle(title: role)
+        /*//导航栏按钮直接返回登录页
+        let backBtn = UIButton()
+        backBtn.setImage(UIImage(named: "arrow-left-white"), for: .normal)
+        backBtn.addTarget(self, action: #selector(backToLogin), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
+        */
         
         view.addSubview(titleLabel)
         view.addSubview(textFieldBgView)
@@ -169,7 +177,8 @@ class RegisterBaseViewController: BaseViewController {
         }
         imageView.snp.makeConstraints { (make) in
             make.center.equalTo(imageBgView)
-            make.height.width.equalTo(kImageViewH)
+            make.height.equalTo(kImageViewH)
+            make.width.equalTo(kImageViewW)
         }
     }
     
@@ -201,19 +210,47 @@ extension RegisterBaseViewController {
     
     @objc private func takePhotoBtnClick() {
         normalViewColor(view: takePhotoBtn)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            // TODO: 拍摄照片  虚拟器中好像不能拍
+            photoPicker.sourceType = .camera
+            photoPicker.allowsEditing = false
+            
+        } else {
+            view.showTip(tip: "百胜吊篮：无法访问相机", position: .bottomCenter)
+        }
     }
     
     @objc private func pickPhotoBtnClick() {
         normalViewColor(view: pickPhotoBtn)
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            photoPicker.sourceType = .photoLibrary
+            photoPicker.allowsEditing = false
+            promise(photoPicker).done { (info) in
+                let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+                self.imageView.image = image
+                self.isIdCardUpload = true
+            }.catch { (error) in
+                self.view.showTip(tip: "读取相册出错", position: .bottomCenter)
+            }
+        } else {
+            view.showTip(tip: "百胜吊篮：无法访问相册", position: .bottomCenter)
+        }
     }
     
-    @objc private func confirmBtnClick() {
+    @objc func confirmBtnClick() {
         normalViewColor(view: confirmBtn)
+        if checkRegisterValid() {
+            // TODO: 注册
+        }
     }
     
     /// 按下按钮时改变按钮背景颜色
     @objc private func btnChangeColor(btn: UIButton) {
         clickViewColor(view: btn)
+    }
+    
+    @objc private func backToLogin() {
+        popToRootViewController(animated: true)
     }
 }
 
@@ -239,4 +276,69 @@ extension RegisterBaseViewController {
         return imageBgView
     }
     
+    func getConfirmBtn() -> UIButton {
+        return confirmBtn
+    }
+    
+}
+
+// MARK: - 注册前的数据检查
+extension RegisterBaseViewController {
+    
+    /// 匹配手机的正则表达式
+    func isPhoneFormatValid() -> Bool {
+        let matcher = RegularMatchingTool(patten: mobilePattenStrict)
+        return matcher.match(input: phoneField.getTextField().text ?? "")
+    }
+    
+    /// 用户名不为空
+    func isUsernameFormatValid() -> Bool {
+        guard let text = usernameFeild.getTextField().text else { return false }
+        return text.count > 0
+    }
+    
+    /// 密码是否为空
+    func isPasswdNotEmpty() -> Bool {
+        guard let text = passwdFeild.getTextField().text else { return false }
+        return text.count > 0
+    }
+    
+    /// 密码不为空，且两次输入密码应该一致 （需要设置最少密码位数吗）
+    func isPasswdFormatValid() -> Bool {
+        guard let passwd = passwdFeild.getTextField().text else { return false }
+        guard let passwdAgain = passwdAgainFeild.getTextField().text else { return false }
+        if passwd == passwdAgain {
+            return true
+        }
+        return false
+    }
+    
+    /// 身份证照片不为空
+    func isImageViewValid() -> Bool {
+        return isIdCardUpload
+    }
+    
+    func checkRegisterValid() -> Bool {
+        if !isPhoneFormatValid() {
+            view.showTip(tip: "百胜吊篮：手机号码格式不正确！", position: .bottomCenter)
+            return false
+        }
+        if !isUsernameFormatValid() {
+            view.showTip(tip: "百胜吊篮：用户名不能为空！", position: .bottomCenter)
+            return false
+        }
+        if !isPasswdNotEmpty() {
+            view.showTip(tip: "百胜吊篮：密码不能为空！", position: .bottomCenter)
+            return false
+        }
+        if !isPasswdFormatValid() {
+            view.showTip(tip: "百胜吊篮：两次输入密码不一致！", position: .bottomCenter)
+            return false
+        }
+        if !isImageViewValid() {
+            view.showTip(tip: "百胜吊篮：请上传身份证照片！", position: .bottomCenter)
+            return false
+        }
+        return true
+    }
 }
