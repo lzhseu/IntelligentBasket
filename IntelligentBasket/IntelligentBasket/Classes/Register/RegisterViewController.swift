@@ -13,6 +13,7 @@ private let kButtonW: CGFloat = kScreenW * 2 / 5
 private let kButtonEdgeSpace: CGFloat = 20
 private let kLabelY: CGFloat = 0.22 * kScreenH
 
+
 class RegisterViewController: BaseViewController {
 
     // MARK: - 懒加载属性
@@ -104,22 +105,22 @@ extension RegisterViewController {
     
     @objc func workerBtnClick(){
         normalViewColor(view: workerBtn)
-        pushViewController(viewController: RegisterWorkerViewController(role: "注册-施工人员"), animated: true)
+        pushViewController(viewController: RegisterWorkerViewController(role: UserRole.Worker.rawValue, navTitle: "注册-施工人员"), animated: true)
     }
     
     @objc func renterBtnClick(){
         normalViewColor(view: renterBtn)
-        pushViewController(viewController: RegisterBaseViewController(role: "注册-租方管理员"), animated: true)
+        pushViewController(viewController: RegisterBaseViewController(role: UserRole.RentAdmin.rawValue, navTitle: "注册-租方管理员"), animated: true)
     }
     
     @objc func regionBtnClick(){
         normalViewColor(view: regionBtn)
-        pushViewController(viewController: RegisterBaseViewController(role: "注册-区域管理员"), animated: true)
+        pushViewController(viewController: RegisterBaseViewController(role: UserRole.AreaAdmin.rawValue, navTitle: "注册-区域管理员"), animated: true)
     }
     
     @objc func inspectorBtnClick(){
         normalViewColor(view: inspectorBtn)
-        pushViewController(viewController: RegisterBaseViewController(role: "注册-巡检人员"), animated: true)
+        pushViewController(viewController: RegisterBaseViewController(role: UserRole.Inspector.rawValue, navTitle: "注册-巡检人员"), animated: true)
     }
     
     /// 按下按钮时改变按钮背景颜色

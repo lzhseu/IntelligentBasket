@@ -33,6 +33,8 @@
 		F3965E6F2308ECEE00E8E5B8 /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E6E2308ECEE00E8E5B8 /* TextFieldWithIcon.swift */; };
 		F3965E71230A3D6C00E8E5B8 /* RegularMatchingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E70230A3D6C00E8E5B8 /* RegularMatchingTool.swift */; };
 		F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E72230A40E600E8E5B8 /* RegexPatten.swift */; };
+		F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E74230A843C00E8E5B8 /* URLConstant.swift */; };
+		F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E76230AA45D00E8E5B8 /* AlertBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		F3965E6E2308ECEE00E8E5B8 /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		F3965E70230A3D6C00E8E5B8 /* RegularMatchingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularMatchingTool.swift; sourceTree = "<group>"; };
 		F3965E72230A40E600E8E5B8 /* RegexPatten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPatten.swift; sourceTree = "<group>"; };
+		F3965E74230A843C00E8E5B8 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
+		F3965E76230AA45D00E8E5B8 /* AlertBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 				F366EB8A2306A2C900495496 /* PhoneField.swift */,
 				F366EBAC2307E2D300495496 /* CheckBox.swift */,
 				F3965E6E2308ECEE00E8E5B8 /* TextFieldWithIcon.swift */,
+				F3965E76230AA45D00E8E5B8 /* AlertBox.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				F366EB8C2306A2C900495496 /* CommonConstant.swift */,
 				F366EB9E2306A69900495496 /* ColorConstant.swift */,
 				F3965E72230A40E600E8E5B8 /* RegexPatten.swift */,
+				F3965E74230A843C00E8E5B8 /* URLConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			files = (
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
+				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
 				F3965E6B2308E0AF00E8E5B8 /* BaseViewController.swift in Sources */,
@@ -348,6 +355,7 @@
 				F366EBA42306ABA600495496 /* PrimaryNavigationController.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
+				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
 				F366EB962306A2C900495496 /* PhoneField.swift in Sources */,
 				F366EBAF2308198400495496 /* RegisterViewController.swift in Sources */,
 				F366EBB12308200100495496 /* RegisterWorkerViewController.swift in Sources */,

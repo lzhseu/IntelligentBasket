@@ -16,50 +16,30 @@ enum MethodType{
 }
 
 class NetworkTools {
-
-    class func requestData(URLString: String, method: MethodType, parameters: [String: Any]? = nil, finishedCallBack: @escaping (_ result: Any) -> ()){
+    
+    /// 默认的请求方法(使用json发送参数)
+    class func requestData(URLString: String, method: MethodType, parameters: [String: Any]? = nil, finishedCallBack: @escaping (_ result: Any) -> (), finishWithError: @escaping (_ error: Any) -> ()){
         
-        var methodType = HTTPMethod.get
+        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json"]
         
-        switch method {
-        case .GET:
-            methodType = HTTPMethod.get
-        case .POST:
-            methodType = HTTPMethod.post
-        }
-        
-        Alamofire.request(URLString, method: methodType, parameters: parameters).responseJSON { (response) in
-            //debugPrint(response)
-            guard let result = response.result.value else {
-                print(response.result.error!)
-                return
-            }
-            //将结果回调出去
-            finishedCallBack(result)
+        Alamofire.request(URLString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON()
+            .done { (json, response) in
+                finishedCallBack(json)  //回调结果
+            }.catch { (error) in
+                finishWithError(error)  //回调错误
         }
     }
     
-    /// 使用PromiseKit
-    class func requestDataWithPromiseKit(URLString: String, method: MethodType, parameters: [String: Any]? = nil, finishedCallBack: @escaping (_ result: Any) -> ()){
+    /// 携带Token
+    class func requestData(URLString: String, method: MethodType, parameters: [String: Any]? = nil, token: String, finishedCallBack: @escaping (_ result: Any) -> (), finishWithError: @escaping (_ error: Any) -> ()){
         
-        var methodType = HTTPMethod.get
+        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json", "token": token]
         
-        switch method {
-        case .GET:
-            methodType = HTTPMethod.get
-        case .POST:
-            methodType = HTTPMethod.post
-        }
-        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        Alamofire.request(URLString, method: methodType, parameters: parameters).responseJSON()
-            .ensure {
-                //UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            }
+        Alamofire.request(URLString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON()
             .done { (json, response) in
-                finishedCallBack(json)
-            }
-            .catch { (error) in
-                print("error: \(error)")
-            }
+                finishedCallBack(json)  //回调结果
+            }.catch { (error) in
+                finishWithError(error)  //回调错误
+        }
     }
 }

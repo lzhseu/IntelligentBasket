@@ -129,13 +129,14 @@ extension LoginViewController {
     @objc private func loginBtnClick(){
         normalViewColor(view: loginBtn)
         if checkLoginValid() {
-            // TODO: 登录
             /// 记住密码
             if rememberPasswdCheckBox.isOn() {
                 rememberUserInfo(username: phoneField.getTextField().text, passwd: passwdFeild.getTextField().text)
             } else {
                 removeUserInfo()
             }
+            /// 登录
+            requestLogin()
         }
     }
     
@@ -240,5 +241,30 @@ extension LoginViewController {
     func getUserInfo() {
         phoneField.getTextField().text = getUsername()
         passwdFeild.getTextField().text = getPassword()
+    }
+}
+
+// MARK: - 网络请求
+extension LoginViewController {
+    
+    private func requestLogin() {
+        
+        let parameters = ["userPassword": passwdFeild.getTextField().text!, "userPhone": phoneField.getTextField().text!]
+        
+        NetworkTools.requestData(URLString: loginURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
+            print(result)
+            guard let resDict = result as? [String: Any] else { return }
+            
+            let registerState = resDict["registerState"] as! String
+            if registerState != "0" {
+                AlertBox.create(title: "提示", message: "账号或密码错误，请检查后登录！", viewController: self)
+            } else {
+                
+            }
+            
+        }) { (error) in
+            self.view.showTip(tip: "网络请求错误！", position: .bottomCenter)
+            // TODO: 错误处理  比如在有限次数内尝试重新连接
+        }
     }
 }

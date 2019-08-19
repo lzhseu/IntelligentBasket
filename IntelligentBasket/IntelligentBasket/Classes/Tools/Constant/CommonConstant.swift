@@ -22,3 +22,10 @@ let kMenuOptionH: CGFloat = 35                               //下拉菜单标�
 let kSpaceBetweenModule: CGFloat = 20                        //模块之间的距离
 
 let kWorkTypeArr = ["涂料", "幕墙", "内装", "土建", "车辆", "其他"]
+
+enum UserRole: String {
+    case AreaAdmin = "areaAdmin"
+    case RentAdmin = "rentAdmin"
+    case Worker = "worker"
+    case Inspector = "inspector"
+}

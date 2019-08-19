@@ -19,6 +19,7 @@ class RegisterBaseViewController: BaseViewController {
     
     // MARK: - 自定义属性
     var role = ""         //角色
+    var navTitle = ""     //导航栏显示的内容
     var image = "idcard"
     var isIdCardUpload = false
 
@@ -98,9 +99,10 @@ class RegisterBaseViewController: BaseViewController {
     }
     
     // MARK: - 构造函数
-    init(role: String){
+    init(role: String, navTitle: String){
         super.init(nibName: nil, bundle: nil)
         self.role = role
+        self.navTitle = navTitle
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -110,7 +112,7 @@ class RegisterBaseViewController: BaseViewController {
     // MARK: - 重写父类函数
     override func setUI() {
         view.backgroundColor = lightGray
-        setNavigationBarTitle(title: role)
+        setNavigationBarTitle(title: navTitle)
         /*//导航栏按钮直接返回登录页
         let backBtn = UIButton()
         backBtn.setImage(UIImage(named: "arrow-left-white"), for: .normal)
@@ -241,6 +243,7 @@ extension RegisterBaseViewController {
         normalViewColor(view: confirmBtn)
         if checkRegisterValid() {
             // TODO: 注册
+            requstRegister()
         }
     }
     
@@ -340,5 +343,30 @@ extension RegisterBaseViewController {
             return false
         }
         return true
+    }
+}
+
+
+// MARK: - 网络请求
+extension RegisterBaseViewController {
+    
+    func requstRegister() {
+        
+        let parameters = ["userName": usernameFeild.getTextField().text!, "userPassword": passwdFeild.getTextField().text!, "userPhone": phoneField.getTextField().text!, "userRole": role]
+        
+        NetworkTools.requestData(URLString: registerURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
+            
+            guard let resDict = result as? [String: Any] else { return }
+            let message = resDict["message"] as! String
+            if message == "exist" {
+                AlertBox.create(title: "提示", message: "注册失败，手机号已注册！", viewController: self)
+            } else if message == "success" {
+                AlertBox.create(title: "提示", message: "注册成功，请等待审核！", viewController: self)
+            }
+            
+        }) { (error) in
+            self.view.showTip(tip: "网络请求错误！", position: .bottomCenter)
+            // TODO: 错误处理  比如在有限次数内尝试重新连接
+        }
     }
 }

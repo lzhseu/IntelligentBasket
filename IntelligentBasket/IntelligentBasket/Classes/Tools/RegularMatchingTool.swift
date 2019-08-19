@@ -28,16 +28,4 @@ class RegularMatchingTool {
 }
 
 
-/*
- 使用方法：
- let mailPattern = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
- let matcher = MyRegex(mailPattern)
- let maybeMailAddress = "admin@hangge.com"
- if matcher.match(maybeMailAddress) {
- print("邮箱地址格式正确")
- }else{
- print("邮箱地址格式有误")
- }
- */
-
 

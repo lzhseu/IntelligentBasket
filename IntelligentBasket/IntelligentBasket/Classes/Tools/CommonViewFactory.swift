@@ -67,7 +67,6 @@ class CommonViewFactory {
         phoneField.clearButtonMode = .whileEditing   //编辑时出现清除按钮
         phoneField.delegate = sender                 //设置代理
         return phoneField
-        //return createTextField(text: text, placeholder: "手机号", sender: sender) as! PhoneField
     }
     
     class func createImageView(image: String? = nil) -> UIImageView {
