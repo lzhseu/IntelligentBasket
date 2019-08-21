@@ -16,3 +16,8 @@ let lightGray = UIColor(r: 244, g: 246, b: 246)
 let darkGray = UIColor(r: 232, g: 233, b: 237)
 let weakGreen = UIColor(r: 187, g: 229, b: 189)
 let darkGreen = UIColor(r: 0, g: 193, b: 146)
+
+
+let contentBgColor = UIColor.white  // 内容页面的背景颜色
+let pageMenuNormalColor = UIColor(r: 85, g: 85, b: 85)
+let pageMenuSelectColor = primaryColor

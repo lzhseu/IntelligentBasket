@@ -11,7 +11,10 @@ import UIKit
 
 let kScreenW = UIScreen.main.bounds.width
 let kScreenH = UIScreen.main.bounds.height
+let kStatusBarH = UIApplication.shared.statusBarFrame.height  //状态栏高度
 
+
+let kNavigationTitleSize: CGFloat = 22
 
 /// 登录注册页面的控件参数
 let kButtonCornerRadius: CGFloat = 6                         //按钮的圆角弧度

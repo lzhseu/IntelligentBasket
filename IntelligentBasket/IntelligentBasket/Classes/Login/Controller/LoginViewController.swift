@@ -252,14 +252,37 @@ extension LoginViewController {
         let parameters = ["userPassword": passwdFeild.getTextField().text!, "userPhone": phoneField.getTextField().text!]
         
         NetworkTools.requestData(URLString: loginURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
-            print(result)
+            //print(result)
             guard let resDict = result as? [String: Any] else { return }
             
             let registerState = resDict["registerState"] as! String
             if registerState != "0" {
                 AlertBox.create(title: "提示", message: "账号或密码错误，请检查后登录！", viewController: self)
             } else {
+                /// 存储Token
+                let token = resDict["token"] as! String
+                NetworkTools.storeToken(token: token)
                 
+                /// 解析 userInfo 数据(json -> model)
+                let userInfo = resDict["userInfo"] as! [String: Any]
+                guard let userInfoModel = try? DictConvertToModel.JSONModel(UserInfoModel.self, withKeyValues: userInfo) else {
+                    print("Json to Medel Failed")
+                    return
+                }
+                
+                // TODO: 根据Role进入不同页面
+                switch userInfoModel.userRole {
+                case UserRole.AreaAdmin.rawValue:
+                    self.present(AreaAdminTabBarController(), animated: false, completion: nil)
+                case UserRole.RentAdmin.rawValue:
+                    break
+                case UserRole.Inspector.rawValue:
+                    break
+                case UserRole.Worker.rawValue:
+                    break
+                default:
+                    break
+                }
             }
             
         }) { (error) in

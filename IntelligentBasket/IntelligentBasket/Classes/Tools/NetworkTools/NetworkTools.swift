@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import PromiseKit
 
+private let kTokenKey = "MyToken"
+
 enum MethodType{
     case GET
     case POST
@@ -41,5 +43,13 @@ class NetworkTools {
             }.catch { (error) in
                 finishWithError(error)  //回调错误
         }
+    }
+    
+    class func storeToken(token: String) {
+        UserDefaults.standard.set(token, forKey: kTokenKey)
+    }
+    
+    class func getToken() -> String? {
+        return UserDefaults.standard.object(forKey: kTokenKey) as? String
     }
 }

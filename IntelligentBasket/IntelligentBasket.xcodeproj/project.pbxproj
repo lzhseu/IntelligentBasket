@@ -12,7 +12,6 @@
 		F366EB752306A1D400495496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366EB742306A1D400495496 /* Assets.xcassets */; };
 		F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366EB762306A1D400495496 /* LaunchScreen.storyboard */; };
 		F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB812306A2C900495496 /* DictConvertToModel.swift */; };
-		F366EB902306A2C900495496 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB822306A2C900495496 /* NetworkTools.swift */; };
 		F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB842306A2C900495496 /* UIColor-Extension.swift */; };
 		F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB852306A2C900495496 /* UIView-Extension.swift */; };
 		F366EB932306A2C900495496 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB862306A2C900495496 /* UIBarButtonItem-Extension.swift */; };
@@ -35,6 +34,16 @@
 		F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E72230A40E600E8E5B8 /* RegexPatten.swift */; };
 		F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E74230A843C00E8E5B8 /* URLConstant.swift */; };
 		F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965E76230AA45D00E8E5B8 /* AlertBox.swift */; };
+		F3965ED8230CD95400E8E5B8 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965EC3230CD95400E8E5B8 /* Message.storyboard */; };
+		F3965ED9230CD95400E8E5B8 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EC4230CD95400E8E5B8 /* MessageViewController.swift */; };
+		F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965ECA230CD95400E8E5B8 /* Project.storyboard */; };
+		F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ECB230CD95400E8E5B8 /* ProjectViewController.swift */; };
+		F3965EDC230CD95400E8E5B8 /* AreaAdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ECF230CD95400E8E5B8 /* AreaAdminTabBarController.swift */; };
+		F3965EDD230CD95400E8E5B8 /* AreaAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965ED0230CD95400E8E5B8 /* AreaAdmin.storyboard */; };
+		F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965ED4230CD95400E8E5B8 /* Profile.storyboard */; };
+		F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */; };
+		F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */; };
+		F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +56,6 @@
 		F366EB772306A1D400495496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F366EB792306A1D400495496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F366EB812306A2C900495496 /* DictConvertToModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictConvertToModel.swift; sourceTree = "<group>"; };
-		F366EB822306A2C900495496 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		F366EB842306A2C900495496 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		F366EB852306A2C900495496 /* UIView-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-Extension.swift"; sourceTree = "<group>"; };
 		F366EB862306A2C900495496 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
@@ -70,6 +78,16 @@
 		F3965E72230A40E600E8E5B8 /* RegexPatten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPatten.swift; sourceTree = "<group>"; };
 		F3965E74230A843C00E8E5B8 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
 		F3965E76230AA45D00E8E5B8 /* AlertBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBox.swift; sourceTree = "<group>"; };
+		F3965EC3230CD95400E8E5B8 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		F3965EC4230CD95400E8E5B8 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		F3965ECA230CD95400E8E5B8 /* Project.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
+		F3965ECB230CD95400E8E5B8 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
+		F3965ECF230CD95400E8E5B8 /* AreaAdminTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaAdminTabBarController.swift; sourceTree = "<group>"; };
+		F3965ED0230CD95400E8E5B8 /* AreaAdmin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AreaAdmin.storyboard; sourceTree = "<group>"; };
+		F3965ED4230CD95400E8E5B8 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +152,7 @@
 		F366EB7F2306A2C900495496 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F3965EBF230CD95400E8E5B8 /* AreaAdmin */,
 				F366EBA22306AB8200495496 /* Main */,
 				F366EB8E2306A2C900495496 /* Login */,
 				F366EB8D2306A2C900495496 /* Register */,
@@ -145,10 +164,10 @@
 		F366EB802306A2C900495496 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				F366EB822306A2C900495496 /* NetworkTools.swift */,
 				F3965E70230A3D6C00E8E5B8 /* RegularMatchingTool.swift */,
 				F366EBA52306B12700495496 /* CommonViewFactory.swift */,
 				F366EB812306A2C900495496 /* DictConvertToModel.swift */,
+				F3965EE3230CDA3F00E8E5B8 /* NetworkTools */,
 				F366EB832306A2C900495496 /* Extension */,
 				F366EB892306A2C900495496 /* Component */,
 				F366EB8B2306A2C900495496 /* Constant */,
@@ -204,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				F366EBA723078E0700495496 /* Controller */,
+				F3965EE0230CD9FB00E8E5B8 /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -224,6 +244,165 @@
 				F366EB982306A2EE00495496 /* Login.storyboard */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3965EBF230CD95400E8E5B8 /* AreaAdmin */ = {
+			isa = PBXGroup;
+			children = (
+				F3965EC7230CD95400E8E5B8 /* Project */,
+				F3965EC0230CD95400E8E5B8 /* Message */,
+				F3965ECE230CD95400E8E5B8 /* Common */,
+				F3965ED1230CD95400E8E5B8 /* Profile */,
+			);
+			path = AreaAdmin;
+			sourceTree = "<group>";
+		};
+		F3965EC0230CD95400E8E5B8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F3965EC1230CD95400E8E5B8 /* ViewModel */,
+				F3965EC2230CD95400E8E5B8 /* Controller */,
+				F3965EC5230CD95400E8E5B8 /* Model */,
+				F3965EC6230CD95400E8E5B8 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F3965EC1230CD95400E8E5B8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3965EC2230CD95400E8E5B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3965EC3230CD95400E8E5B8 /* Message.storyboard */,
+				F3965EC4230CD95400E8E5B8 /* MessageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3965EC5230CD95400E8E5B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3965EC6230CD95400E8E5B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3965EC7230CD95400E8E5B8 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				F3965EC9230CD95400E8E5B8 /* Controller */,
+				F3965ECC230CD95400E8E5B8 /* Model */,
+				F3965ECD230CD95400E8E5B8 /* View */,
+				F3965EC8230CD95400E8E5B8 /* ViewModel */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		F3965EC8230CD95400E8E5B8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3965EC9230CD95400E8E5B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3965ECA230CD95400E8E5B8 /* Project.storyboard */,
+				F3965ECB230CD95400E8E5B8 /* ProjectViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3965ECC230CD95400E8E5B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3965ECD230CD95400E8E5B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3965ECE230CD95400E8E5B8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F3965ECF230CD95400E8E5B8 /* AreaAdminTabBarController.swift */,
+				F3965ED0230CD95400E8E5B8 /* AreaAdmin.storyboard */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F3965ED1230CD95400E8E5B8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F3965ED2230CD95400E8E5B8 /* ViewModel */,
+				F3965ED3230CD95400E8E5B8 /* Controller */,
+				F3965ED6230CD95400E8E5B8 /* Model */,
+				F3965ED7230CD95400E8E5B8 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F3965ED2230CD95400E8E5B8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3965ED3230CD95400E8E5B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3965ED4230CD95400E8E5B8 /* Profile.storyboard */,
+				F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3965ED6230CD95400E8E5B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3965ED7230CD95400E8E5B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3965EE0230CD9FB00E8E5B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3965EE3230CDA3F00E8E5B8 /* NetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+				F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */,
+			);
+			path = NetworkTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +467,11 @@
 			files = (
 				F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */,
 				F366EB752306A1D400495496 /* Assets.xcassets in Resources */,
+				F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */,
+				F3965ED8230CD95400E8E5B8 /* Message.storyboard in Resources */,
 				F366EB992306A2EE00495496 /* Login.storyboard in Resources */,
+				F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */,
+				F3965EDD230CD95400E8E5B8 /* AreaAdmin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +526,7 @@
 			files = (
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
+				F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
@@ -350,17 +534,21 @@
 				F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */,
 				F366EB972306A2C900495496 /* CommonConstant.swift in Sources */,
 				F366EB952306A2C900495496 /* NsDate-Extension.swift in Sources */,
+				F3965ED9230CD95400E8E5B8 /* MessageViewController.swift in Sources */,
 				F366EB932306A2C900495496 /* UIBarButtonItem-Extension.swift in Sources */,
 				F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */,
 				F366EBA42306ABA600495496 /* PrimaryNavigationController.swift in Sources */,
+				F3965EDC230CD95400E8E5B8 /* AreaAdminTabBarController.swift in Sources */,
+				F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
+				F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */,
+				F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */,
 				F366EB962306A2C900495496 /* PhoneField.swift in Sources */,
 				F366EBAF2308198400495496 /* RegisterViewController.swift in Sources */,
 				F366EBB12308200100495496 /* RegisterWorkerViewController.swift in Sources */,
 				F366EB942306A2C900495496 /* String-Extension.swift in Sources */,
-				F366EB902306A2C900495496 /* NetworkTools.swift in Sources */,
 				F366EBA62306B12700495496 /* CommonViewFactory.swift in Sources */,
 				F366EB9D2306A32B00495496 /* LoginViewController.swift in Sources */,
 				F3965E6F2308ECEE00E8E5B8 /* TextFieldWithIcon.swift in Sources */,
