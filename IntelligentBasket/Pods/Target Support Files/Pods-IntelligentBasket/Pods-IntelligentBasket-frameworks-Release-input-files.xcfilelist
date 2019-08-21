@@ -4,5 +4,6 @@ ${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework
 ${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/LMJDropdownMenu/LMJDropdownMenu.framework
 ${BUILT_PRODUCTS_DIR}/MMMaterialDesignSpinner/MMMaterialDesignSpinner.framework
+${BUILT_PRODUCTS_DIR}/PagingMenuController/PagingMenuController.framework
 ${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

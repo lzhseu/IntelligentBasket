@@ -17,5 +17,6 @@ pod 'JGProgressHUD'
 pod 'MMMaterialDesignSpinner'
 pod 'BEMCheckBox'
 pod 'LMJDropdownMenu'
+pod 'PagingMenuController'
 
 end

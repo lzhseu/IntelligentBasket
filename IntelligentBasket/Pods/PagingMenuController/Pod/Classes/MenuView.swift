@@ -171,7 +171,7 @@ open class MenuView: UIScrollView {
         bounces = menuViewBounces
         isScrollEnabled = menuViewScrollEnabled
         isDirectionalLockEnabled = true
-        decelerationRate = menuOptions.deceleratingRate
+        decelerationRate = UIScrollView.DecelerationRate(rawValue: menuOptions.deceleratingRate)
         scrollsToTop = false
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -325,7 +325,7 @@ open class MenuView: UIScrollView {
     }
     
     fileprivate func focusMenuItem() {
-        let isSelected: (MenuItemView) -> Bool = { self.menuItemViews.index(of: $0) == self.currentPage }
+        let isSelected: (MenuItemView) -> Bool = { self.menuItemViews.firstIndex(of: $0) == self.currentPage }
         
         // make selected item focused
         menuItemViews.forEach {

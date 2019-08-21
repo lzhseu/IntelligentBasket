@@ -40,8 +40,8 @@ open class PagingMenuController: UIViewController {
             
             pagingViewController.contentScrollView.delegate = self
             view.addSubview(pagingViewController.view)
-            addChildViewController(pagingViewController)
-            pagingViewController.didMove(toParentViewController: self)
+            addChild(pagingViewController)
+            pagingViewController.didMove(toParent: self)
         }
     }
     public var onMove: ((MenuMoveState) -> Void)? {
@@ -481,7 +481,7 @@ extension PagingMenuController {
     @objc internal func handleTapGesture(_ recognizer: UITapGestureRecognizer) {
         guard let menuItemView = recognizer.view as? MenuItemView,
             let menuView = menuView,
-            let page = menuView.menuItemViews.index(of: menuItemView),
+            let page = menuView.menuItemViews.firstIndex(of: menuItemView),
             page != menuView.currentPage,
             let menuOptions = menuOptions else { return }
         
@@ -509,13 +509,13 @@ extension PagingMenuController {
         
         let newPage: Int
         switch (recognizer.direction, menuOptions.displayMode) {
-        case (UISwipeGestureRecognizerDirection.left, .infinite):
+        case (UISwipeGestureRecognizer.Direction.left, .infinite):
             newPage = menuView.nextPage
-        case (UISwipeGestureRecognizerDirection.left, _):
+        case (UISwipeGestureRecognizer.Direction.left, _):
             newPage = min(nextPage, menuOptions.itemsOptions.count - 1)
-        case (UISwipeGestureRecognizerDirection.right, .infinite):
+        case (UISwipeGestureRecognizer.Direction.right, .infinite):
             newPage = menuView.previousPage
-        case (UISwipeGestureRecognizerDirection.right, _):
+        case (UISwipeGestureRecognizer.Direction.right, _):
             newPage = max(previousPage, 0)
         default: return
         }
@@ -533,8 +533,8 @@ extension PagingMenuController {
         if let pagingViewController = self.pagingViewController {
             pagingViewController.cleanup()
             pagingViewController.view.removeFromSuperview()
-            pagingViewController.removeFromParentViewController()
-            pagingViewController.willMove(toParentViewController: nil)
+            pagingViewController.removeFromParent()
+            pagingViewController.willMove(toParent: nil)
         }
     }
 }

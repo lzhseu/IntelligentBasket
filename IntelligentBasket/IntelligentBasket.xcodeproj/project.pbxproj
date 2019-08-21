@@ -44,6 +44,7 @@
 		F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */; };
 		F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */; };
 		F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */; };
+		F3965F05230CE03F00E8E5B8 /* PageMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F04230CE03F00E8E5B8 /* PageMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		F3965F04230CE03F00E8E5B8 /* PageMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				F366EBAC2307E2D300495496 /* CheckBox.swift */,
 				F3965E6E2308ECEE00E8E5B8 /* TextFieldWithIcon.swift */,
 				F3965E76230AA45D00E8E5B8 /* AlertBox.swift */,
+				F3965F04230CE03F00E8E5B8 /* PageMenuController.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
 				F3965E6B2308E0AF00E8E5B8 /* BaseViewController.swift in Sources */,
+				F3965F05230CE03F00E8E5B8 /* PageMenuController.swift in Sources */,
 				F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */,
 				F366EB972306A2C900495496 /* CommonConstant.swift in Sources */,
 				F366EB952306A2C900495496 /* NsDate-Extension.swift in Sources */,

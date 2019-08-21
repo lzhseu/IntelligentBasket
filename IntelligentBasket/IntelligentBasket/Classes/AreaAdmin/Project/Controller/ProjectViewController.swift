@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import PagingMenuController
 
 
 class ProjectViewController: BaseViewController {
@@ -15,38 +16,17 @@ class ProjectViewController: BaseViewController {
     // MARK: - 自定义属性
     var navTitle = "暂无项目"    // 会动态改变
     let titles = ["进度", "待安装", "安装审核", "使用中", "待报停", "报停审核"]
+    
+    private struct MenuItem: MenuItemViewCustomizable {
+        var titleText = ""
+        var displayMode: MenuItemDisplayMode {
+            return .text(title: MenuItemText(text: titleText))
+        }
+        
+    }
 
-//    // MARK: - 懒加载属性
-//    private lazy var pageTitleView: PageTitleView = { [weak self] in
-//        let titles = self!.titles
-//        let viewFrame = CGRect(x: 0, y: 0, width: kScreenW, height: kTitleViewH)
-//        let titleView = PageTitleView(frame: viewFrame, titles: titles)
-//        titleView.delegate = self
-//        return titleView
-//    }()
-//
-//    private lazy var pageContentView: PageContentView = { [weak self] in
-//        ///确定所有的子控制器
-//        var childVcs = [UIViewController]()
-//        // TODO: 先加入不同颜色，之后在此处添加具体的控制器
-//        for _ in 0..<self!.titles.count {
-//            let vc = UIViewController()
-//            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-//            childVcs.append(vc)
-//        }
-//
-//        /// 获取导航栏宽度
-//        let kNavigationBarH = self?.navigationController?.navigationBar.frame.height ?? 0
-//        let kTabBarH = self?.tabBarController?.tabBar.frame.height ?? 0
-//
-//        let viewFrame = CGRect(x: 0, y: kTitleViewH, width: kScreenW, height: kScreenH - kNavigationBarH - kStatusBarH - kTabBarH - kTitleViewH)
-//
-//        let contentView = PageContentView(frame: viewFrame, childVcs: childVcs, parentVc: self)
-//        contentView.delegate = self
-//        return contentView
-//    }()
-//
-//
+    // MARK: - 懒加载属性
+
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +38,26 @@ class ProjectViewController: BaseViewController {
     override func setUI() {
         setNavigationBar(title: navTitle)
         view.backgroundColor = contentBgColor
-        //view.addSubview(pageTitleView)
-        //view.addSubview(pageContentView)
+        
+        var childVcs = [UIViewController]()
+        var menuItems = [MenuItemViewCustomizable]()
+        for index in 0..<titles.count {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childVcs.append(vc)
+            
+            let menuItem = MenuItem(titleText: titles[index])
+            menuItems.append(menuItem)
+        }
+        
+        let pageMenuController = PageMenuController.create(childVc: childVcs, menuItems: menuItems)
+        addChild(pageMenuController)
+        view.addSubview(pageMenuController.view)
+        let kTabBarH = self.tabBarController!.tabBar.frame.height
+        pageMenuController.view.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-kTabBarH)
+        }
     }
 
     override func setNavigationBar(title: String?) {
@@ -72,13 +70,6 @@ class ProjectViewController: BaseViewController {
         navigationItem.rightBarButtonItem = moreItem
     }
 
-//    override func makeConstraints() {
-//        pageTitleView.snp.makeConstraints { (make) in
-//            make.left.right.top.equalToSuperview()
-//            make.height.equalTo(kTitleViewH)
-//        }
-//
-//    }
 
 }
 
@@ -92,18 +83,3 @@ extension ProjectViewController {
 }
 
 
-//// MARK: - 遵守pageTitleViewDelegate协议
-//extension ProjectViewController: PageTitleViewDelegate {
-//    func pageTitleView(titleView: PageTitleView, selected index: Int) {
-//        pageContentView.setControllerByCurrentIndex(currentIndex: index)
-//    }
-//
-//}
-//
-//
-//// MARK: - 遵守pageContentViewDelegate协议
-//extension ProjectViewController: PageContentViewDelegate {
-//    func pageContentView(content: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
-//        pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
-//    }
-//}
