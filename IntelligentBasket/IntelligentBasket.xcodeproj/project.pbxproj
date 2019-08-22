@@ -38,12 +38,12 @@
 		F3965ED9230CD95400E8E5B8 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EC4230CD95400E8E5B8 /* MessageViewController.swift */; };
 		F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965ECA230CD95400E8E5B8 /* Project.storyboard */; };
 		F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ECB230CD95400E8E5B8 /* ProjectViewController.swift */; };
-		F3965EDC230CD95400E8E5B8 /* AreaAdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ECF230CD95400E8E5B8 /* AreaAdminTabBarController.swift */; };
-		F3965EDD230CD95400E8E5B8 /* AreaAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965ED0230CD95400E8E5B8 /* AreaAdmin.storyboard */; };
 		F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965ED4230CD95400E8E5B8 /* Profile.storyboard */; };
 		F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */; };
 		F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */; };
 		F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */; };
+		F3965F13230E33A500E8E5B8 /* AreaAdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F11230E33A400E8E5B8 /* AreaAdminTabBarController.swift */; };
+		F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,12 +82,12 @@
 		F3965EC4230CD95400E8E5B8 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		F3965ECA230CD95400E8E5B8 /* Project.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		F3965ECB230CD95400E8E5B8 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
-		F3965ECF230CD95400E8E5B8 /* AreaAdminTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaAdminTabBarController.swift; sourceTree = "<group>"; };
-		F3965ED0230CD95400E8E5B8 /* AreaAdmin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AreaAdmin.storyboard; sourceTree = "<group>"; };
 		F3965ED4230CD95400E8E5B8 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		F3965F11230E33A400E8E5B8 /* AreaAdminTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaAdminTabBarController.swift; sourceTree = "<group>"; };
+		F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AreaAdmin.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 		F366EB7F2306A2C900495496 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F3965EBF230CD95400E8E5B8 /* AreaAdmin */,
+				F3965F0E230E332100E8E5B8 /* RoleModule */,
 				F366EBA22306AB8200495496 /* Main */,
 				F366EB8E2306A2C900495496 /* Login */,
 				F366EB8D2306A2C900495496 /* Register */,
@@ -249,9 +249,9 @@
 		F3965EBF230CD95400E8E5B8 /* AreaAdmin */ = {
 			isa = PBXGroup;
 			children = (
+				F3965F10230E33A400E8E5B8 /* Main */,
 				F3965EC7230CD95400E8E5B8 /* Project */,
 				F3965EC0230CD95400E8E5B8 /* Message */,
-				F3965ECE230CD95400E8E5B8 /* Common */,
 				F3965ED1230CD95400E8E5B8 /* Profile */,
 			);
 			path = AreaAdmin;
@@ -339,15 +339,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F3965ECE230CD95400E8E5B8 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				F3965ECF230CD95400E8E5B8 /* AreaAdminTabBarController.swift */,
-				F3965ED0230CD95400E8E5B8 /* AreaAdmin.storyboard */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		F3965ED1230CD95400E8E5B8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +394,31 @@
 				F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */,
 			);
 			path = NetworkTools;
+			sourceTree = "<group>";
+		};
+		F3965F0E230E332100E8E5B8 /* RoleModule */ = {
+			isa = PBXGroup;
+			children = (
+				F3965EBF230CD95400E8E5B8 /* AreaAdmin */,
+				F3965F0F230E332100E8E5B8 /* Common */,
+			);
+			path = RoleModule;
+			sourceTree = "<group>";
+		};
+		F3965F0F230E332100E8E5B8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F3965F10230E33A400E8E5B8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F3965F11230E33A400E8E5B8 /* AreaAdminTabBarController.swift */,
+				F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,8 +486,8 @@
 				F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */,
 				F3965ED8230CD95400E8E5B8 /* Message.storyboard in Resources */,
 				F366EB992306A2EE00495496 /* Login.storyboard in Resources */,
+				F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */,
 				F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */,
-				F3965EDD230CD95400E8E5B8 /* AreaAdmin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,11 +550,11 @@
 				F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */,
 				F366EB972306A2C900495496 /* CommonConstant.swift in Sources */,
 				F366EB952306A2C900495496 /* NsDate-Extension.swift in Sources */,
+				F3965F13230E33A500E8E5B8 /* AreaAdminTabBarController.swift in Sources */,
 				F3965ED9230CD95400E8E5B8 /* MessageViewController.swift in Sources */,
 				F366EB932306A2C900495496 /* UIBarButtonItem-Extension.swift in Sources */,
 				F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */,
 				F366EBA42306ABA600495496 /* PrimaryNavigationController.swift in Sources */,
-				F3965EDC230CD95400E8E5B8 /* AreaAdminTabBarController.swift in Sources */,
 				F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,

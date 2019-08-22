@@ -119,6 +119,5 @@ extension ProjectViewController: SPPageMenuDelegate {
                 scrollView.setContentOffset(CGPoint(x: kScreenW * CGFloat(toIndex), y: 0), animated: true)
             }
         }
-
     }
 }
