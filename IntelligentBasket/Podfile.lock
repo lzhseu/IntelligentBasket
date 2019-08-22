@@ -4,7 +4,6 @@ PODS:
   - JGProgressHUD (2.0.3)
   - LMJDropdownMenu (2.0.3)
   - MMMaterialDesignSpinner (0.2.5)
-  - PagingMenuController (2.2.0)
   - PromiseKit (6.10.0):
     - PromiseKit/CorePromise (= 6.10.0)
     - PromiseKit/Foundation (= 6.10.0)
@@ -20,6 +19,7 @@ PODS:
   - PromiseKit/UIKit (6.10.0):
     - PromiseKit/CorePromise
   - SnapKit (4.2.0)
+  - SPPageMenu (3.5.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -27,12 +27,12 @@ DEPENDENCIES:
   - JGProgressHUD
   - LMJDropdownMenu
   - MMMaterialDesignSpinner
-  - PagingMenuController
   - PromiseKit (~> 6.8)
   - PromiseKit/Alamofire (~> 6.0)
   - PromiseKit/UIImagePickerController
   - PromiseKit/UIKit (~> 6.0)
   - SnapKit
+  - SPPageMenu (~> 3.5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -41,9 +41,9 @@ SPEC REPOS:
     - JGProgressHUD
     - LMJDropdownMenu
     - MMMaterialDesignSpinner
-    - PagingMenuController
     - PromiseKit
     - SnapKit
+    - SPPageMenu
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -51,10 +51,10 @@ SPEC CHECKSUMS:
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   LMJDropdownMenu: 1766ca36c8da3567e7b8af10f8b00c23a1c694c4
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
-  PagingMenuController: 6176618987bb170096664f2da097313e45ed9c31
   PromiseKit: 1fdaeb6c0a94a5114fcb814ff3d772b86886ad4e
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SPPageMenu: da182aafcec55719d5c326103cc7716c1e48f311
 
-PODFILE CHECKSUM: 186149a010c67f8d88368e47e553d50904a2571b
+PODFILE CHECKSUM: 8492972cec6a1a6a99c950891106817e7f70eccb
 
 COCOAPODS: 1.7.5

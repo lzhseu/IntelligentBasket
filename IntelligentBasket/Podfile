@@ -17,6 +17,6 @@ pod 'JGProgressHUD'
 pod 'MMMaterialDesignSpinner'
 pod 'BEMCheckBox'
 pod 'LMJDropdownMenu'
-pod 'PagingMenuController'
+pod 'SPPageMenu', '~> 3.5.0'
 
 end

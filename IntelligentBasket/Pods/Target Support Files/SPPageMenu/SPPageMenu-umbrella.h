@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "SPPageMenu.h"
 
-FOUNDATION_EXPORT double PagingMenuControllerVersionNumber;
-FOUNDATION_EXPORT const unsigned char PagingMenuControllerVersionString[];
+FOUNDATION_EXPORT double SPPageMenuVersionNumber;
+FOUNDATION_EXPORT const unsigned char SPPageMenuVersionString[];
 

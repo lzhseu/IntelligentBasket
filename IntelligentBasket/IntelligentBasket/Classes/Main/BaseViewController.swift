@@ -79,5 +79,9 @@ class BaseViewController: UIViewController {
         navigationController?.popToRootViewController(animated: animated)
     }
     
+    /// 获取导航栏高度
+    func getNavigationBarH() -> CGFloat {
+        return navigationController?.navigationBar.frame.height ?? 0
+    }
     
 }
