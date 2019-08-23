@@ -44,6 +44,14 @@
 		F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */; };
 		F3965F13230E33A500E8E5B8 /* AreaAdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F11230E33A400E8E5B8 /* AreaAdminTabBarController.swift */; };
 		F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */; };
+		F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */; };
+		F3965F18230E600F00E8E5B8 /* InstallAndCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F17230E600F00E8E5B8 /* InstallAndCheckViewController.swift */; };
+		F3965F1A230E67C700E8E5B8 /* ProfileBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */; };
+		F3965F1C230E6F1B00E8E5B8 /* UsingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F1B230E6F1B00E8E5B8 /* UsingViewController.swift */; };
+		F3965F1F230E7B0B00E8E5B8 /* BasketCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F1D230E7B0B00E8E5B8 /* BasketCollectionCell.swift */; };
+		F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3965F1E230E7B0B00E8E5B8 /* BasketCollectionCell.xib */; };
+		F3965F22230E918F00E8E5B8 /* BasketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */; };
+		F3965F28230E981000E8E5B8 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F27230E981000E8E5B8 /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +96,14 @@
 		F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		F3965F11230E33A400E8E5B8 /* AreaAdminTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaAdminTabBarController.swift; sourceTree = "<group>"; };
 		F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AreaAdmin.storyboard; sourceTree = "<group>"; };
+		F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleBaseViewController.swift; sourceTree = "<group>"; };
+		F3965F17230E600F00E8E5B8 /* InstallAndCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallAndCheckViewController.swift; sourceTree = "<group>"; };
+		F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBaseViewController.swift; sourceTree = "<group>"; };
+		F3965F1B230E6F1B00E8E5B8 /* UsingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingViewController.swift; sourceTree = "<group>"; };
+		F3965F1D230E7B0B00E8E5B8 /* BasketCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCollectionCell.swift; sourceTree = "<group>"; };
+		F3965F1E230E7B0B00E8E5B8 /* BasketCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCollectionCell.xib; sourceTree = "<group>"; };
+		F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDetailViewController.swift; sourceTree = "<group>"; };
+		F3965F27230E981000E8E5B8 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +168,8 @@
 		F366EB7F2306A2C900495496 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F3965F0E230E332100E8E5B8 /* RoleModule */,
 				F366EBA22306AB8200495496 /* Main */,
+				F3965F0E230E332100E8E5B8 /* RoleModule */,
 				F366EB8E2306A2C900495496 /* Login */,
 				F366EB8D2306A2C900495496 /* Register */,
 				F366EB802306A2C900495496 /* Tools */,
@@ -194,6 +210,7 @@
 				F366EBAC2307E2D300495496 /* CheckBox.swift */,
 				F3965E6E2308ECEE00E8E5B8 /* TextFieldWithIcon.swift */,
 				F3965E76230AA45D00E8E5B8 /* AlertBox.swift */,
+				F3965F27230E981000E8E5B8 /* CircleButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -321,6 +338,9 @@
 			children = (
 				F3965ECA230CD95400E8E5B8 /* Project.storyboard */,
 				F3965ECB230CD95400E8E5B8 /* ProjectViewController.swift */,
+				F3965F1B230E6F1B00E8E5B8 /* UsingViewController.swift */,
+				F3965F17230E600F00E8E5B8 /* InstallAndCheckViewController.swift */,
+				F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -335,6 +355,8 @@
 		F3965ECD230CD95400E8E5B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3965F1D230E7B0B00E8E5B8 /* BasketCollectionCell.swift */,
+				F3965F1E230E7B0B00E8E5B8 /* BasketCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -408,6 +430,8 @@
 		F3965F0F230E332100E8E5B8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */,
+				F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -488,6 +512,7 @@
 				F366EB992306A2EE00495496 /* Login.storyboard in Resources */,
 				F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */,
 				F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */,
+				F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +570,10 @@
 				F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
+				F3965F1A230E67C700E8E5B8 /* ProfileBaseViewController.swift in Sources */,
+				F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
+				F3965F22230E918F00E8E5B8 /* BasketDetailViewController.swift in Sources */,
 				F3965E6B2308E0AF00E8E5B8 /* BaseViewController.swift in Sources */,
 				F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */,
 				F366EB972306A2C900495496 /* CommonConstant.swift in Sources */,
@@ -555,12 +583,15 @@
 				F366EB932306A2C900495496 /* UIBarButtonItem-Extension.swift in Sources */,
 				F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */,
 				F366EBA42306ABA600495496 /* PrimaryNavigationController.swift in Sources */,
+				F3965F1F230E7B0B00E8E5B8 /* BasketCollectionCell.swift in Sources */,
 				F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */,
+				F3965F1C230E6F1B00E8E5B8 /* UsingViewController.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
 				F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */,
 				F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */,
+				F3965F28230E981000E8E5B8 /* CircleButton.swift in Sources */,
 				F366EB962306A2C900495496 /* PhoneField.swift in Sources */,
 				F366EBAF2308198400495496 /* RegisterViewController.swift in Sources */,
 				F366EBB12308200100495496 /* RegisterWorkerViewController.swift in Sources */,
@@ -568,6 +599,7 @@
 				F366EBA62306B12700495496 /* CommonViewFactory.swift in Sources */,
 				F366EB9D2306A32B00495496 /* LoginViewController.swift in Sources */,
 				F3965E6F2308ECEE00E8E5B8 /* TextFieldWithIcon.swift in Sources */,
+				F3965F18230E600F00E8E5B8 /* InstallAndCheckViewController.swift in Sources */,
 				F3965E71230A3D6C00E8E5B8 /* RegularMatchingTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,7 @@ class TextFieldWithIcon: UIView {
     var image: String?
 
     // MARK: - 懒加载属性
-    private lazy var textField: UITextField = {
+    private lazy var textField: UITextField = { [weak self] in
         var textField = UITextField()
         switch textFieldType {
             case .NormalTextField:
@@ -41,7 +41,7 @@ class TextFieldWithIcon: UIView {
         return textField
     }()
     
-    private lazy var textFieldIcon: UIImageView = {
+    private lazy var textFieldIcon: UIImageView = { [weak self] in
         return CommonViewFactory.createImageView(image: image)
     }()
     

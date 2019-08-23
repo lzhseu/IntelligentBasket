@@ -52,6 +52,10 @@ class ProjectViewController: BaseViewController {
         setUI()
         makeConstraints()
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
     // MARK: - 重新父类方法
     override func setUI() {
@@ -61,7 +65,20 @@ class ProjectViewController: BaseViewController {
         view.addSubview(scrollView)
         
         // TODO: 把子控制器加在此处
-        for index in 0..<titles.count {
+        var vc = RoleBaseViewController()
+        vc = UsingViewController()
+        addChild(vc)
+        childVcs.append(vc)
+        scrollView.addSubview(vc.view)
+        vc.view.frame = CGRect(x: 0, y: 0, width: kScreenW, height: scrollView.frame.height)
+        
+        vc = BasketDetailViewController()
+        addChild(vc)
+        childVcs.append(vc)
+        scrollView.addSubview(vc.view)
+        vc.view.frame = CGRect(x: kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
+        
+        for index in 2..<titles.count {
             let vc = BaseViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             
@@ -103,16 +120,11 @@ extension ProjectViewController {
 
 // MARK: - 实现 SPPageMenuDelegate 代理方法
 extension ProjectViewController: SPPageMenuDelegate {
-    
-    func pageMenu(_ pageMenu: SPPageMenu, itemSelectedAt index: Int) {
-        scrollView.contentOffset = CGPoint(x: CGFloat(index) * kScreenW, y: 0)
-    }
 
     func pageMenu(_ pageMenu: SPPageMenu, itemSelectedFrom fromIndex: Int, to toIndex: Int) {
 
         if !scrollView.isDragging { // 判断用户是否在拖拽scrollView
             // 如果fromIndex与toIndex之差大于等于2,说明跨界面移动了,此时不动画.
-            print(toIndex -  fromIndex)
             if(labs(toIndex - fromIndex) >= 2) {
                 scrollView.setContentOffset(CGPoint(x: kScreenW * CGFloat(toIndex), y: 0), animated: false)
             } else {

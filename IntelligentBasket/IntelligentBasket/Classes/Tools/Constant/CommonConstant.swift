@@ -28,6 +28,7 @@ let kWorkTypeArr = ["涂料", "幕墙", "内装", "土建", "车辆", "其他"]
 
 let kPageMenuH: CGFloat = 40    // 标签页菜单的高度
 
+
 enum UserRole: String {
     case AreaAdmin = "areaAdmin"
     case RentAdmin = "rentAdmin"

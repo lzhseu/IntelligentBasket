@@ -85,4 +85,27 @@ class CommonViewFactory {
         
         return TextFieldWithIcon(frame: CGRect.zero, textFieldType: textFieldType, placeholder: placeholder, sender: sender, image: image)
     }
+    
+    class func createViewForClick(title: String, icon: String? = nil, backColor: UIColor = UIColor.white) -> UIView {
+        let view = UIView()
+        view.backgroundColor = backColor
+        
+        let titleLabel = createLabel(title: title, font: UIFont.systemFont(ofSize: 18), textColor: UIColor.black)
+        
+        let imageView = createImageView(image: icon)
+        
+        view.addSubview(titleLabel)
+        view.addSubview(imageView)
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(20)
+            make.centerY.equalToSuperview()
+        }
+        imageView.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-5)
+            make.centerY.equalToSuperview()
+            make.height.width.equalTo(15)
+        }
+        return view
+    }
 }

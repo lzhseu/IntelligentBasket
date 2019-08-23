@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BasketCollectionCell" customModule="IntelligentBasket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="135"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="362" height="135"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ip6-2Y-f3I">
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="135"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kn0-VL-tSe">
+                                <rect key="frame" x="7" y="8" width="348" height="119"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="abT-Fr-7xe">
+                                        <rect key="frame" x="8" y="29" width="100" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="c0T-hf-EhM"/>
+                                            <constraint firstAttribute="height" constant="75" id="jMQ-ws-shd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吊篮编号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qH4-1d-Dwc">
+                                        <rect key="frame" x="123" y="37" width="72" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="72" id="qMY-n4-7ta"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="js_nj_99886" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLd-dJ-uto">
+                                        <rect key="frame" x="195" y="37" width="148" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用中" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFt-Pt-yLL">
+                                        <rect key="frame" x="297" y="8" width="43" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bLd-dJ-uto" firstAttribute="top" secondItem="LFt-Pt-yLL" secondAttribute="bottom" constant="12" id="0ZP-Ir-kt9"/>
+                                    <constraint firstItem="qH4-1d-Dwc" firstAttribute="top" secondItem="abT-Fr-7xe" secondAttribute="top" constant="8" id="5uK-c1-qhz"/>
+                                    <constraint firstItem="bLd-dJ-uto" firstAttribute="centerY" secondItem="qH4-1d-Dwc" secondAttribute="centerY" id="99N-d3-9d7"/>
+                                    <constraint firstAttribute="trailing" secondItem="bLd-dJ-uto" secondAttribute="trailing" constant="5" id="Dce-Yr-Teg"/>
+                                    <constraint firstItem="bLd-dJ-uto" firstAttribute="leading" secondItem="qH4-1d-Dwc" secondAttribute="trailing" id="HHU-QF-fpJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="LFt-Pt-yLL" secondAttribute="trailing" constant="8" id="KJf-rd-fMe"/>
+                                    <constraint firstItem="abT-Fr-7xe" firstAttribute="leading" secondItem="Kn0-VL-tSe" secondAttribute="leading" constant="8" id="bCN-5h-fee"/>
+                                    <constraint firstItem="qH4-1d-Dwc" firstAttribute="leading" secondItem="abT-Fr-7xe" secondAttribute="trailing" constant="15" id="cqa-qU-hpt"/>
+                                    <constraint firstAttribute="bottom" secondItem="abT-Fr-7xe" secondAttribute="bottom" constant="15" id="uNM-67-UiQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Kn0-VL-tSe" secondAttribute="bottom" constant="8" id="2o1-Vz-x42"/>
+                            <constraint firstAttribute="trailing" secondItem="Kn0-VL-tSe" secondAttribute="trailing" constant="7" id="NfD-pn-azw"/>
+                            <constraint firstItem="Kn0-VL-tSe" firstAttribute="top" secondItem="ip6-2Y-f3I" secondAttribute="top" constant="8" id="WOp-4y-IvK"/>
+                            <constraint firstItem="Kn0-VL-tSe" firstAttribute="leading" secondItem="ip6-2Y-f3I" secondAttribute="leading" constant="7" id="vEE-ia-HFx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ip6-2Y-f3I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="16Z-Sn-JVs"/>
+                <constraint firstItem="ip6-2Y-f3I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2pO-DZ-eux"/>
+                <constraint firstAttribute="trailing" secondItem="ip6-2Y-f3I" secondAttribute="trailing" id="YPh-HZ-Ugo"/>
+                <constraint firstAttribute="bottom" secondItem="ip6-2Y-f3I" secondAttribute="bottom" id="mNM-CF-uUL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="362" height="135"/>
+            <connections>
+                <outlet property="basketNumLabel" destination="bLd-dJ-uto" id="xSM-ZU-kmq"/>
+                <outlet property="bgView" destination="Kn0-VL-tSe" id="4F5-vL-oFv"/>
+                <outlet property="imageView" destination="abT-Fr-7xe" id="l1j-7T-maf"/>
+                <outlet property="isUsingLabel" destination="LFt-Pt-yLL" id="ewJ-9s-dO8"/>
+            </connections>
+            <point key="canvasLocation" x="133.33333333333334" y="88.058035714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="test" width="444" height="333"/>
+    </resources>
+</document>

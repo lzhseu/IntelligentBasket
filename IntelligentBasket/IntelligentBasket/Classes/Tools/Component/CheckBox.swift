@@ -22,7 +22,7 @@ class CheckBox: UIView {
     var title = ""
     weak var delegate: CheckBoxDelegate?
 
-    private lazy var checkBox: BEMCheckBox = {
+    private lazy var checkBox: BEMCheckBox = { [weak self] in
         let checkBox = BEMCheckBox()
         checkBox.on = true
         checkBox.boxType = BEMBoxType.square
@@ -36,7 +36,7 @@ class CheckBox: UIView {
         return checkBox
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = { [weak self] in
         let titleLabel = UILabel()
         titleLabel.text = title
         titleLabel.textColor = UIColor.darkGray
