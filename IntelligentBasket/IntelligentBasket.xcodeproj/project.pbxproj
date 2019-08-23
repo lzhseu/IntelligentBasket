@@ -52,6 +52,7 @@
 		F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3965F1E230E7B0B00E8E5B8 /* BasketCollectionCell.xib */; };
 		F3965F22230E918F00E8E5B8 /* BasketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */; };
 		F3965F28230E981000E8E5B8 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F27230E981000E8E5B8 /* CircleButton.swift */; };
+		F3965F4C230F866400E8E5B8 /* RefreshBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		F3965F1E230E7B0B00E8E5B8 /* BasketCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCollectionCell.xib; sourceTree = "<group>"; };
 		F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDetailViewController.swift; sourceTree = "<group>"; };
 		F3965F27230E981000E8E5B8 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +434,7 @@
 			children = (
 				F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */,
 				F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */,
+				F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
 				F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */,
 				F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */,
+				F3965F4C230F866400E8E5B8 /* RefreshBaseViewController.swift in Sources */,
 				F3965F28230E981000E8E5B8 /* CircleButton.swift in Sources */,
 				F366EB962306A2C900495496 /* PhoneField.swift in Sources */,
 				F366EBAF2308198400495496 /* RegisterViewController.swift in Sources */,

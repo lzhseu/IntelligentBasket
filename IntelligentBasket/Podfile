@@ -18,5 +18,6 @@ pod 'MMMaterialDesignSpinner'
 pod 'BEMCheckBox'
 pod 'LMJDropdownMenu'
 pod 'SPPageMenu', '~> 3.5.0'
+pod 'MJRefresh'
 
 end

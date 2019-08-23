@@ -12,24 +12,38 @@
 
 import UIKit
 
-class InstallAndCheckViewController: RoleBaseViewController {
+class InstallAndCheckViewController: RefreshBaseViewController {
 
     override func viewDidLoad() {
+        let itemSizeH = kScreenH - kStatusBarH - getNavigationBarH() - kPageMenuH -  (tabBarController?.tabBar.frame.height ?? 0)
+        setItemSizeH(itemSizeH: itemSizeH)
+        //registerCollectionViewCell(nibName: "BasketCollectionCell", identifier: kRefreshCellIID)
+        registerCollectoinViewCell(cellClass: testView.self)
         super.viewDidLoad()
-        
-//        let circleBtn = CircleButton(frame: .zero, text: "param", image: "ic_parameter_192")
-//        view.addSubview(circleBtn)
-//        circleBtn.snp.makeConstraints { (make) in
-//            make.top.left.equalToSuperview()
-//            make.width.height.equalTo(100)
-//        }
-        
-        //let testV = BasketDetailView.basketDetailView()
-        //testV.frame = view.frame
-        //view.addSubview(testV)
     }
     
     
     
+    
 
+}
+
+class testView: UICollectionViewCell {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        let label = UILabel()
+        label.text = "hhhhh"
+        contentView.backgroundColor = UIColor.white
+        contentView.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(contentView)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 }

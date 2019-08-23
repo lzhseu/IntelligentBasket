@@ -31,3 +31,4 @@ class AreaAdminTabBarController: UITabBarController {
         addChild(childVc);
     }
 }
+

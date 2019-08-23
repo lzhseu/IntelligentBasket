@@ -14,37 +14,17 @@ import UIKit
 
 private let kItemW = kScreenW
 private let kItemH: CGFloat = kItemW / 3
-private let kItemMargin: CGFloat = 5
-private let kCellID = "kCellID"
 
-class UsingViewController: RoleBaseViewController {
+class UsingViewController: RefreshBaseViewController {
     
-    private lazy var collectioView: UICollectionView = { [unowned self] in
-        /// 创建布局
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kItemW, height: kItemH)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        
-        /// 创建UICollectionView
-        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.backgroundColor = UIColor.white
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "BasketCollectionCell", bundle: nil), forCellWithReuseIdentifier: kCellID)
-        
-        return collectionView
-    }()
-
+    // MARK: - 系统回调函数
     override func viewDidLoad() {
+        setItemSizeH(itemSizeH: kItemH)
+        registerCollectionViewCell(nibName: "BasketCollectionCell")
         super.viewDidLoad()
-        view.addSubview(collectioView)
+        //view.addSubview(collectioView)
+        setRefreshFooter()
     }
-    
-    
-    
-
 }
 
 
@@ -58,14 +38,14 @@ extension UsingViewController {
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension UsingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension UsingViewController  {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellID, for: indexPath) as! BasketCollectionCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRefreshCellIID, for: indexPath) as! BasketCollectionCell
         return cell
     }
     

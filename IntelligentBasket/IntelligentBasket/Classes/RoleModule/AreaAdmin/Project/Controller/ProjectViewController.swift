@@ -78,7 +78,13 @@ class ProjectViewController: BaseViewController {
         scrollView.addSubview(vc.view)
         vc.view.frame = CGRect(x: kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
         
-        for index in 2..<titles.count {
+        vc = InstallAndCheckViewController()
+        addChild(vc)
+        childVcs.append(vc)
+        scrollView.addSubview(vc.view)
+        vc.view.frame = CGRect(x: kScreenW * 2, y: 0, width: kScreenW, height: scrollView.frame.height)
+        
+        for index in 3..<titles.count {
             let vc = BaseViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             
@@ -105,7 +111,6 @@ class ProjectViewController: BaseViewController {
         let moreItem = UIBarButtonItem(image: UIImage(named: "more"), style: .plain, target: self, action: #selector(moreBtnClick))
         navigationItem.rightBarButtonItem = moreItem
     }
-
 
 }
 
