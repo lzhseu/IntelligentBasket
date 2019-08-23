@@ -21,7 +21,7 @@ class RefreshBaseViewController: RoleBaseViewController {
     private var itemSizeW: CGFloat = kScreenW
     
     // MARK: - 懒加载属性
-    private lazy var collectionView: UICollectionView = { [unowned self] in
+    lazy var collectionView: UICollectionView = { [unowned self] in
         /// 创建布局
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: itemSizeW, height: itemSizeH)//self.view.bounds.size

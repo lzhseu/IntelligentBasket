@@ -16,10 +16,10 @@ class UserInfoModel: Codable {
     var userPassword = ""
     var userPhone = ""
     var userRole = ""
-    var userPerm = ""   //用户权限
+    var userPerm: String?   //用户权限
     var userImage = ""
 
-    
+
     enum CodingKeys: String, CodingKey {
         case checked
         case userId

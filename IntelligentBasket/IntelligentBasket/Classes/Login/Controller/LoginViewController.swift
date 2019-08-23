@@ -251,7 +251,7 @@ extension LoginViewController {
         
         let parameters = ["userPassword": passwdFeild.getTextField().text!, "userPhone": phoneField.getTextField().text!]
         
-        NetworkTools.requestData(URLString: loginURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
+        NetworkTools.requestDataJsonEncoding(URLString: loginURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
             //print(result)
             guard let resDict = result as? [String: Any] else { return }
             
@@ -261,12 +261,13 @@ extension LoginViewController {
             } else {
                 /// 存储Token
                 let token = resDict["token"] as! String
-                NetworkTools.storeToken(token: token)
+                UserDefaultStorage.storeToken(token: token)
                 
                 /// 解析 userInfo 数据(json -> model)
                 let userInfo = resDict["userInfo"] as! [String: Any]
+               
                 guard let userInfoModel = try? DictConvertToModel.JSONModel(UserInfoModel.self, withKeyValues: userInfo) else {
-                    print("Json to Medel Failed")
+                    print("Login: Json to Model Failed")
                     return
                 }
                 

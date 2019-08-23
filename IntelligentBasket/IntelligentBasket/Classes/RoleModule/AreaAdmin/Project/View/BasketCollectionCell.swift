@@ -16,6 +16,20 @@ class BasketCollectionCell: UICollectionViewCell {
     @IBOutlet weak var isUsingLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     
+    // MARK: - 自定义属性
+    // TODO: 还没了解数据的意义
+    var usingBasketModel: UsingBasketModel? {
+        didSet {
+            
+        }
+    }
+    
+    var basketNum: String? {
+        didSet {
+            basketNumLabel.text = basketNum
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
