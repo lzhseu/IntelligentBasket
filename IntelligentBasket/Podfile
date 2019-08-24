@@ -19,5 +19,6 @@ pod 'BEMCheckBox'
 pod 'LMJDropdownMenu'
 pod 'SPPageMenu', '~> 3.5.0'
 pod 'MJRefresh'
+pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'
 
 end

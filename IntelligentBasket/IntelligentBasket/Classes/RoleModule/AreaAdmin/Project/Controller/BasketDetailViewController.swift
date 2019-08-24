@@ -11,6 +11,7 @@
  */
 
 import UIKit
+import Alamofire
 
 private let kCircleBtnWH: CGFloat = kScreenW / 4
 
@@ -180,7 +181,25 @@ extension BasketDetailViewController {
     }
     
     @objc private func videoBtnClick() {
+        guard  let deviceId = deviceId else {
+            view.showTip(tip: "百胜吊篮：当前没有吊篮！", position: .bottomCenter)
+            return
+        }
         
+        let token = UserDefaultStorage.getToken() ?? ""
+        NetworkTools.requestDeviceVideo(deviceId: deviceId, token: token, finishedCallBack: { (result) in
+            if (result as! String) == "success" {
+                // TODO: 进入播放视频页面
+            } else {
+                self.view.showTip(tip: "百胜吊篮：获取设备视频失败！", position: .bottomCenter)
+            }
+            
+        }) { (error) in
+            print("get vedio: \(error)")
+            self.view.showTip(tip: "百胜吊篮：获取设备视频失败！", position: .bottomCenter)
+        }
+        
+
     }
     
     @objc private func settingBtnClick() {

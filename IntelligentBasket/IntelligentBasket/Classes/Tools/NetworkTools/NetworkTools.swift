@@ -20,7 +20,7 @@ class NetworkTools {
     /// 默认的请求方法(使用json发送参数)
     class func requestDataJsonEncoding(URLString: String, method: MethodType, parameters: [String: Any]? = nil, finishedCallBack: @escaping (_ result: Any) -> (), finishWithError: @escaping (_ error: Any) -> ()){
         
-        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json"]
+        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json;charset=utf-8"]
         
         var methodType = HTTPMethod.get
         
@@ -42,7 +42,7 @@ class NetworkTools {
     /// 携带Token
     class func requestDataJsonEncoding(URLString: String, method: MethodType, parameters: [String: Any]? = nil, token: String, finishedCallBack: @escaping (_ result: Any) -> (), finishWithError: @escaping (_ error: Any) -> ()){
         
-        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json", "Authorization": token]
+        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json;charset=utf-8", "Authorization": token]
         
         var methodType = HTTPMethod.get
         
@@ -63,7 +63,7 @@ class NetworkTools {
     
     class func requestDataURLEncoding(URLString: String, method: MethodType, parameters: [String: Any]? = nil, token: String, finishedCallBack: @escaping (_ result: Any) -> (), finishWithError: @escaping (_ error: Any) -> ()){
         
-        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json", "Authorization": token]
+        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json;charset=utf-8", "Authorization": token]
         
         var methodType = HTTPMethod.get
         
@@ -82,5 +82,20 @@ class NetworkTools {
         }
     }
     
-    
+    ///
+    class func requestDeviceVideo(deviceId: String, token: String, finishedCallBack: @escaping (_ result: Any) -> (), finishWithError: @escaping (_ error: Any) -> ()) {
+        
+        let headers: HTTPHeaders = ["Accept": "*/*", "Content-Type": "application/json;charset=utf-8", "Authorization": token]
+        
+        let http_str = "/server.command?command=start_rtmp_stream&pipe=0&url=rtmp://47.96.103.244:1935/rtmplive/" + deviceId
+        
+        let parameters = ["type": "getVideo", "http_str": http_str, "device_id": deviceId]
+        
+        Alamofire.request(sendToDeviceURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString()
+            .done { (result, response) in
+                finishedCallBack(result)
+            }.catch { (error) in
+                finishWithError(error)
+        }
+    }
 }
