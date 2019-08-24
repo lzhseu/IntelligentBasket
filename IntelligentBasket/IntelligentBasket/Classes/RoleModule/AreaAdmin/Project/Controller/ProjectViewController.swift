@@ -14,7 +14,6 @@ import SPPageMenu
 class ProjectViewController: BaseViewController {
     
     // MARK: - 自定义属性
-    var navTitle = "暂无项目"    // 会动态改变
     let titles = ["进度", "待安装", "安装审核", "使用中", "待报停", "报停审核"]
 
     // MARK: - 懒加载属性
@@ -48,12 +47,16 @@ class ProjectViewController: BaseViewController {
     private lazy var childVcs = [BaseViewController]()
     
     private lazy var projectVM = ProjectViewModel()
+    
+    private lazy var currentProject = ProjectModel()
+
 
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         makeConstraints()
+        loadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,47 +65,10 @@ class ProjectViewController: BaseViewController {
 
     // MARK: - 重新父类方法
     override func setUI() {
-        setNavigationBar(title: navTitle)
+        setNavigationBar(title: "暂无项目")
         view.backgroundColor = contentBgColor
         view.addSubview(pageMenu)
         view.addSubview(scrollView)
-        
-        // TODO: 把子控制器加在此处
-        var vc = RoleBaseViewController()
-        vc = UsingViewController()
-        addChild(vc)
-        childVcs.append(vc)
-        scrollView.addSubview(vc.view)
-        vc.view.frame = CGRect(x: 0, y: 0, width: kScreenW, height: scrollView.frame.height)
-        
-        vc = BasketDetailViewController()
-        addChild(vc)
-        childVcs.append(vc)
-        scrollView.addSubview(vc.view)
-        vc.view.frame = CGRect(x: kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
-        
-        vc = InstallAndCheckViewController()
-        addChild(vc)
-        childVcs.append(vc)
-        scrollView.addSubview(vc.view)
-        vc.view.frame = CGRect(x: kScreenW * 2, y: 0, width: kScreenW, height: scrollView.frame.height)
-        
-        for index in 3..<titles.count {
-            let vc = BaseViewController()
-            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-            
-            addChild(vc)
-            childVcs.append(vc)
-            
-            scrollView.addSubview(vc.view)
-            vc.view.frame = CGRect(x: CGFloat(index) * kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
-        }
-        
-        /// 显示第一个视图
-        if pageMenu.selectedItemIndex < childVcs.count {
-            scrollView.contentOffset = CGPoint(x: CGFloat(pageMenu.selectedItemIndex) * kScreenW, y: 0)
-        }
-        
     }
 
     override func setNavigationBar(title: String?) {
@@ -142,3 +108,88 @@ extension ProjectViewController: SPPageMenuDelegate {
     }
 }
 
+// MARK: - 添加子控制器
+extension ProjectViewController {
+    private func addChildVcs() {
+        // TODO: 把子控制器加在此处
+        var vc = RoleBaseViewController()
+        vc = UsingViewController(projectId: currentProject.projectId)
+        addChild(vc)
+        childVcs.append(vc)
+        scrollView.addSubview(vc.view)
+        vc.view.frame = CGRect(x: 0, y: 0, width: kScreenW, height: scrollView.frame.height)
+        
+        vc = BasketDetailViewController(deviceId: "")
+        addChild(vc)
+        childVcs.append(vc)
+        scrollView.addSubview(vc.view)
+        vc.view.frame = CGRect(x: kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
+        
+        vc = InstallAndCheckViewController()
+        addChild(vc)
+        childVcs.append(vc)
+        scrollView.addSubview(vc.view)
+        vc.view.frame = CGRect(x: kScreenW * 2, y: 0, width: kScreenW, height: scrollView.frame.height)
+        
+        for index in 3..<titles.count {
+            let vc = BaseViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            
+            addChild(vc)
+            childVcs.append(vc)
+            
+            scrollView.addSubview(vc.view)
+            vc.view.frame = CGRect(x: CGFloat(index) * kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
+        }
+        
+        /// 显示第一个视图
+        if pageMenu.selectedItemIndex < childVcs.count {
+            scrollView.contentOffset = CGPoint(x: CGFloat(pageMenu.selectedItemIndex) * kScreenW, y: 0)
+        }
+    }
+}
+
+// MARK: - 网络请求数据
+extension ProjectViewController {
+    
+    private func loadData() {
+        let userId = UserDefaultStorage.getUserId() ?? ""
+        projectVM.requestAllProject(userId: userId, viewController: self, finishedCallBack: {
+            /// 拿到数据
+            let projectGroup = self.projectVM.projectGroup
+            
+            /// 拿到当前项目名称
+            /// 若系统中存在当前项目
+            if let currentProjectId = UserDefaultStorage.getCurrentProjectId() {
+                for project in projectGroup {
+                    if project.projectId == currentProjectId {
+                        /// 若请求的数据中也有当前项目，则显示当前项目
+                        self.currentProject = project
+                        break
+                    }
+                }
+            } else {
+                /// 若不存在当前项目
+                if projectGroup.count > 0 {
+                    self.currentProject = projectGroup[0]  /// 使用请求到的数据的第一个作为当前项目
+                    UserDefaultStorage.storeCurrentProjectId(projectId: self.currentProject.projectId!)
+                }
+            }
+            
+            /// 设置导航栏标题
+            if let projectName = self.currentProject.projectName {
+                self.setNavigationBarTitle(title: projectName)
+            } else {
+                self.setNavigationBarTitle(title: "暂无项目")
+            }
+            
+            /// 添加子控制器
+            self.addChildVcs()
+            
+        }) {
+            self.view.showTip(tip: kNetWorkErrorTip, position: .bottomCenter)
+        }
+    }
+    
+    
+}

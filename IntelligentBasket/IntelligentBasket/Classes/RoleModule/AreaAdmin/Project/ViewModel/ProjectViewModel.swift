@@ -8,17 +8,22 @@
 
 import UIKit
 
-// MARK: - 暂时不需要
-
 class ProjectViewModel {
+    lazy var projectGroup = [ProjectModel]()
+}
+
+// MARK: - 请求网络数据
+extension ProjectViewModel {
     
     func requestAllProject(userId: String, viewController: UIViewController, finishedCallBack: @escaping () -> (), errorCallBack: @escaping () -> ()) {
         
         let token = UserDefaultStorage.getToken() ?? ""
         let parameters = ["userId": userId]
         
+        projectGroup = []
+        
         NetworkTools.requestDataURLEncoding(URLString: getAllProjectURL, method: .GET, parameters: parameters,token: token, finishedCallBack: { (result) in
-            print(result)
+            //print(result)
             guard let resDict = result as? [String: Any] else { return }
             
             let isAllowed = resDict["isAllowed"] as! Bool
@@ -31,17 +36,16 @@ class ProjectViewModel {
             guard let projectList = resDict["projectList"] as? [[String: Any]] else { return }
             /// 遍历数组
             for dict in projectList {
-                guard let usingBasketModel = try? DictConvertToModel.JSONModel(UsingBasketModel.self, withKeyValues: dict) else {
+                guard let projectModel = try? DictConvertToModel.JSONModel(ProjectModel.self, withKeyValues: dict) else {
                     print("ProjectModel: Json To Model Failed")
                     continue
                 }
                 /// 把吊篮编号转成数组，方便之后使用
                 let boxList = dict["boxList"] as! String
                 let strArr: [String] = boxList.split(separator: ",").compactMap{ "\($0)" }
-                usingBasketModel.basketNum = strArr
+                projectModel.basketNum = strArr
                 
-                // TODO: 之后在此把其他标签页所需的数据转成对应的模型
-              
+                self.projectGroup.append(projectModel)
             }
             finishedCallBack()
         })

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol BasketCollectionCellDelegate: class {
+    func BasketCollectionCell(cell: BasketCollectionCell)
+}
+
 class BasketCollectionCell: UICollectionViewCell {
     
     // MARK: - 控件属性
@@ -17,34 +21,34 @@ class BasketCollectionCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     
     // MARK: - 自定义属性
-    // TODO: 还没了解数据的意义
+    weak var delegate: BasketCollectionCellDelegate?
+    
     var usingBasketModel: UsingBasketModel? {
         didSet {
-            
+            if let workState = usingBasketModel?.workingState {
+                switch workState {
+                case 0:
+                    isUsingLabel.text = "未使用"
+                    isUsingLabel.textColor = UIColor.red
+                case 1:
+                    isUsingLabel.text = "使用中"
+                    isUsingLabel.textColor = primaryColor
+                default:
+                    isUsingLabel.text = "吊篮状态未知"
+                    isUsingLabel.textColor = UIColor.yellow
+                }
+            } else {
+                isUsingLabel.text = "吊篮状态未知"
+                isUsingLabel.textColor = UIColor.yellow
+            }
+            basketNumLabel.text = usingBasketModel?.deviceId
         }
     }
     
-    var basketNum: String? {
-        didSet {
-            basketNumLabel.text = basketNum
-        }
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(singleTapAction)))
-        
     }
-    
-    
-
     
 }
 
-// MARK: - 事件监听函数
-extension BasketCollectionCell {
-    @objc func singleTapAction() {
-        print("tap...")
-    }
-}

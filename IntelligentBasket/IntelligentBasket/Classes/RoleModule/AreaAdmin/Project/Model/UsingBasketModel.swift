@@ -15,22 +15,21 @@ import UIKit
 class UsingBasketModel: Codable {
     
     // MARK: - 模型属性
-    var adminAreaId: String?
-    var adminProjectId: String?
-    var boxList: String?
+    var workingState: Int?
+    var storageState: Int?
+    var alarm: Int?
+    var date: String?
+    var deviceId: String?
     var projectId: String?
-    var projectName: String?
-    var projectState: String?
- 
-    // MARK: - 自定义属性
-    var basketNum: [String]?
+    //var storeIn: String
     
     enum CodingKeys: String, CodingKey {
-        case adminAreaId
-        case adminProjectId
-        case boxList
+        case workingState
+        case storageState
+        case alarm
+        case date
+        case deviceId
         case projectId
-        case projectName
-        case projectState
+        //case storeIn
     }
 }

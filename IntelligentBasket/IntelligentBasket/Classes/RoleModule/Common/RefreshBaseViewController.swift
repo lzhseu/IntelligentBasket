@@ -50,6 +50,7 @@ class RefreshBaseViewController: RoleBaseViewController {
         setRefreshHeader()
     }
     
+    
 }
 
 
@@ -75,7 +76,7 @@ extension RefreshBaseViewController {
     }
     
     @objc func headerRefresh(){
-        print("header refresh...")
+        //print("header refresh...")
         //重现加载表格数据
         collectionView.reloadData()
         //结束刷新
@@ -83,13 +84,20 @@ extension RefreshBaseViewController {
     }
 
     @objc func footerRefresh(){
-        print("foter refresh...")
+        //print("foter refresh...")
         //重现加载表格数据
         collectionView.reloadData()
         //结束刷新
         collectionView.mj_footer.endRefreshing()
     }
     
+    func headerEndRefreshing() {
+        collectionView.mj_header.endRefreshing()
+    }
+    
+    func footerEndRefreshing() {
+        collectionView.mj_footer.endRefreshing()
+    }
 }
 
 

@@ -17,8 +17,8 @@ private let kCircleBtnWH: CGFloat = kScreenW / 4
 class BasketDetailViewController: RoleBaseViewController {
     
     // MARK: - 自定义属性
-    var basketNum = "js_nj_00003"
-    var name = "负责人姓名"
+    var deviceId: String?
+    var name: String?
     
     // MARK: - 懒加载属性
     private lazy var paramBtn: CircleButton = { [weak self] in
@@ -51,13 +51,13 @@ class BasketDetailViewController: RoleBaseViewController {
         return btn
     }()
     
-    private lazy var basketNumTitleLabel: UILabel = {
+    private lazy var deviceIdTitleLabel: UILabel = {
         return CommonViewFactory.createLabel(title: "吊篮编号", font: UIFont.systemFont(ofSize: 18), textColor: UIColor.black)
     }()
     
-    private lazy var basketNumContentLabel: UILabel = { [weak self] in
+    private lazy var deviceIdContentLabel: UILabel = { [weak self] in
         let label = UILabel()
-        label.text = self!.basketNum
+        label.text = self!.deviceId
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 18)
         return label
@@ -69,7 +69,11 @@ class BasketDetailViewController: RoleBaseViewController {
     
     private lazy var nameContentLabel: UILabel = { [weak self] in
         let label = UILabel()
-        label.text = self!.name
+        if self?.name == "" {
+            label.text = "负责人姓名"
+        } else {
+            label.text = self!.name
+        }
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 18)
         return label
@@ -83,6 +87,16 @@ class BasketDetailViewController: RoleBaseViewController {
         makeConstraints()
     }
     
+    init(deviceId: String?, name: String? = "负责人姓名"){
+        super.init(nibName: nil, bundle: nil)
+        self.deviceId = deviceId
+        self.name = name
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     // MARK: - 重写父类方法
     override func setUI() {
@@ -92,30 +106,30 @@ class BasketDetailViewController: RoleBaseViewController {
         view.addSubview(videoBtn)
         view.addSubview(settingBtn)
         view.addSubview(fixBtn)
-        view.addSubview(basketNumTitleLabel)
-        view.addSubview(basketNumContentLabel)
+        view.addSubview(deviceIdTitleLabel)
+        view.addSubview(deviceIdContentLabel)
         view.addSubview(nameTitleLabel)
         view.addSubview(nameContentLabel)
     }
     
     override func makeConstraints() {
-        basketNumTitleLabel.snp.makeConstraints { (make) in
+        deviceIdTitleLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(20)
         }
         
-        basketNumContentLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(basketNumTitleLabel.snp_right).offset(10)
-            make.centerY.equalTo(basketNumTitleLabel)
+        deviceIdContentLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(deviceIdTitleLabel.snp_right).offset(10)
+            make.centerY.equalTo(deviceIdTitleLabel)
         }
         
         nameTitleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(basketNumTitleLabel)
-            make.top.equalTo(basketNumTitleLabel.snp_bottom).offset(20)
+            make.left.equalTo(deviceIdTitleLabel)
+            make.top.equalTo(deviceIdTitleLabel.snp_bottom).offset(20)
         }
         
         nameContentLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(basketNumContentLabel)
+            make.left.equalTo(deviceIdContentLabel)
             make.centerY.equalTo(nameTitleLabel)
         }
         

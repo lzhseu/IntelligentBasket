@@ -7,7 +7,7 @@
 //
 
 /*
- * “使用中”标签页
+ * “使用中”标签页所对应的控制器
  */
 
 import UIKit
@@ -17,10 +17,14 @@ private let kItemH: CGFloat = kItemW / 3
 
 class UsingViewController: RefreshBaseViewController {
     
+    // MARK: - 自定义属性
+    var projectId: String?
+    
     // MARK: - 懒加载属性
     private lazy var usingBasketVM = UsingBasketViewModel()
     
-    private lazy var currentProject = UsingBasketModel()
+    private lazy var usingBasketGroup = [UsingBasketModel]()
+    
     
     // MARK: - 系统回调函数
     override func viewDidLoad() {
@@ -32,7 +36,16 @@ class UsingViewController: RefreshBaseViewController {
         super.viewDidLoad()
         
         /// 请求数据
-        loadData()
+        loadData(isRefresh: false)
+    }
+    
+    init(projectId: String?) {
+        super.init(nibName: nil, bundle: nil)
+        self.projectId = projectId
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -40,36 +53,30 @@ class UsingViewController: RefreshBaseViewController {
 // MARK: - 请求和加载网络数据
 extension UsingViewController {
     
-    private func loadData() {
-        let userId = UserDefaultStorage.getUserId() ?? ""
-        usingBasketVM.requestAllProject(userId: userId, viewController: self, finishedCallBack: {
-            /// 拿到数据
-            let modelGroup = self.usingBasketVM.usingBasketGroup
+    private func loadData(isRefresh: Bool) {
+        
+        guard let projectId = projectId else {
+            //self.view.showTip(tip: "百胜吊篮：获取不到项目ID", position: .bottomCenter)
+            self.LoadNoBasketPage()
+            return
+        }
+        
+        usingBasketVM.requestAllBasket(projectId: projectId, viewController: self, finishedCallBack: {
+            ///拿到数据
+            self.usingBasketGroup = self.usingBasketVM.usingBasketGroup
             
-            /// 拿到当前项目名称
-            /// 若系统中存在当前项目
-            if let currentProjectId = UserDefaultStorage.getCurrentProjectId() {
-                for project in modelGroup {
-                    if project.projectId == currentProjectId {
-                        /// 若请求的数据中也有当前项目，则显示当前项目
-                        self.currentProject = project
-                        break
-                    }
-                }
+            if self.usingBasketGroup.count == 0 {
+                self.LoadNoBasketPage()
             } else {
-                /// 若不存在当前项目
-                if modelGroup.count > 0 {
-                    self.currentProject = modelGroup[0]  /// 使用请求到的数据的第一个作为当前项目
-                    UserDefaultStorage.storeCurrentProjectId(projectId: self.currentProject.projectId!)
-                }
+                self.removeNoBasketPage()
             }
-            
-            /// 设置导航栏标题
-            let parentVC = self.parent as! ProjectViewController
-            parentVC.setNavigationBarTitle(title: self.currentProject.projectName)
             
             /// 刷新表格数据
             self.collectionView.reloadData()
+            
+            if isRefresh {
+                self.headerEndRefreshing()  //如果是刷新数据（不是第一次请求），那么刷新后要手动停止刷新
+            }
         }) {
             self.view.showTip(tip: kNetWorkErrorTip, position: .bottomCenter)
         }
@@ -81,15 +88,27 @@ extension UsingViewController {
 extension UsingViewController  {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return currentProject.basketNum?.count ?? 0
+        return usingBasketGroup.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRefreshCellIID, for: indexPath) as! BasketCollectionCell        
-        cell.basketNum = currentProject.basketNum?[indexPath.item]
+        cell.usingBasketModel = usingBasketGroup[indexPath.item]
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let deviceId = usingBasketGroup[indexPath.item].deviceId
+        navigationController?.pushViewController(BasketDetailViewController(deviceId: deviceId), animated: true)
+    }
     
+}
+
+
+// MARK: - 事件监听函数
+extension UsingViewController {
+    /// 下拉刷新
+    override func headerRefresh() {
+        loadData(isRefresh: true)
+    }
 }
