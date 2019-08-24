@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		949A70895A1D1F8D396A61FD /* Pods_IntelligentBasket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B19942388AAA48EA8568B /* Pods_IntelligentBasket.framework */; };
+		F32556E72311158900644704 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E62311158900644704 /* ProjectViewModel.swift */; };
+		F32556E9231122AE00644704 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E8231122AE00644704 /* ProjectModel.swift */; };
 		F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB6D2306A1D300495496 /* AppDelegate.swift */; };
 		F366EB752306A1D400495496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366EB742306A1D400495496 /* Assets.xcassets */; };
 		F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366EB762306A1D400495496 /* LaunchScreen.storyboard */; };
@@ -53,7 +55,6 @@
 		F3965F22230E918F00E8E5B8 /* BasketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */; };
 		F3965F28230E981000E8E5B8 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F27230E981000E8E5B8 /* CircleButton.swift */; };
 		F3965F4C230F866400E8E5B8 /* RefreshBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */; };
-		F3965F4F230FBC2F00E8E5B8 /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = F3965F4E230FBC2F00E8E5B8 /* NullSafe.m */; };
 		F3965F51230FCE1400E8E5B8 /* UsingBasketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F50230FCE1400E8E5B8 /* UsingBasketModel.swift */; };
 		F3965F53230FCF4100E8E5B8 /* UsingBasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F52230FCF4100E8E5B8 /* UsingBasketViewModel.swift */; };
 		F3965F55230FE4F300E8E5B8 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F54230FE4F300E8E5B8 /* UserDefaultStorage.swift */; };
@@ -63,6 +64,8 @@
 		0537C97EE51168F5517C367D /* Pods-IntelligentBasket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentBasket.debug.xcconfig"; path = "Target Support Files/Pods-IntelligentBasket/Pods-IntelligentBasket.debug.xcconfig"; sourceTree = "<group>"; };
 		BC77E324A3520134392C809B /* Pods-IntelligentBasket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentBasket.release.xcconfig"; path = "Target Support Files/Pods-IntelligentBasket/Pods-IntelligentBasket.release.xcconfig"; sourceTree = "<group>"; };
 		DC2B19942388AAA48EA8568B /* Pods_IntelligentBasket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelligentBasket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32556E62311158900644704 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		F32556E8231122AE00644704 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		F366EB6A2306A1D300495496 /* IntelligentBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366EB6D2306A1D300495496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F366EB742306A1D400495496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,7 +113,6 @@
 		F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDetailViewController.swift; sourceTree = "<group>"; };
 		F3965F27230E981000E8E5B8 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshBaseViewController.swift; sourceTree = "<group>"; };
-		F3965F4E230FBC2F00E8E5B8 /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
 		F3965F50230FCE1400E8E5B8 /* UsingBasketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingBasketModel.swift; sourceTree = "<group>"; };
 		F3965F52230FCF4100E8E5B8 /* UsingBasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingBasketViewModel.swift; sourceTree = "<group>"; };
 		F3965F54230FE4F300E8E5B8 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
@@ -149,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				F366EB6C2306A1D300495496 /* IntelligentBasket */,
-				F3965F4D230FBC2F00E8E5B8 /* NullSafe */,
 				F366EB6B2306A1D300495496 /* Products */,
 				46FE78AECFA0E5B373E5464A /* Pods */,
 				4255807EC2EB2BA659B54D88 /* Frameworks */,
@@ -342,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				F3965F52230FCF4100E8E5B8 /* UsingBasketViewModel.swift */,
+				F32556E62311158900644704 /* ProjectViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -362,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				F3965F50230FCE1400E8E5B8 /* UsingBasketModel.swift */,
+				F32556E8231122AE00644704 /* ProjectModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,14 +461,6 @@
 				F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		F3965F4D230FBC2F00E8E5B8 /* NullSafe */ = {
-			isa = PBXGroup;
-			children = (
-				F3965F4E230FBC2F00E8E5B8 /* NullSafe.m */,
-			);
-			path = NullSafe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,12 +583,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
 				F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
-				F3965F4F230FBC2F00E8E5B8 /* NullSafe.m in Sources */,
 				F3965F1A230E67C700E8E5B8 /* ProfileBaseViewController.swift in Sources */,
 				F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
@@ -611,6 +606,7 @@
 				F3965F51230FCE1400E8E5B8 /* UsingBasketModel.swift in Sources */,
 				F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */,
 				F3965F1C230E6F1B00E8E5B8 /* UsingViewController.swift in Sources */,
+				F32556E9231122AE00644704 /* ProjectModel.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
 				F3965F55230FE4F300E8E5B8 /* UserDefaultStorage.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import SPPageMenu
 
+
 class ProjectViewController: BaseViewController {
     
     // MARK: - 自定义属性
@@ -45,6 +46,8 @@ class ProjectViewController: BaseViewController {
     }()
     
     private lazy var childVcs = [BaseViewController]()
+    
+    private lazy var projectVM = ProjectViewModel()
 
     // MARK: - 系统回调函数
     override func viewDidLoad() {

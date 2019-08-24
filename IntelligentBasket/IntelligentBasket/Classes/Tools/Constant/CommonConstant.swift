@@ -35,3 +35,5 @@ enum UserRole: String {
     case Worker = "worker"
     case Inspector = "inspector"
 }
+
+let kNetWorkErrorTip = "百胜吊篮：网络请求失败！"

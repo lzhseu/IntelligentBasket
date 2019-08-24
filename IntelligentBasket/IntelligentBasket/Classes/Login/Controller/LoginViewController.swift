@@ -271,6 +271,10 @@ extension LoginViewController {
                     return
                 }
                 
+                /// 存储userId
+                let userId = userInfoModel.userId
+                UserDefaultStorage.storeUserId(userId: userId)
+                
                 // TODO: 根据Role进入不同页面
                 switch userInfoModel.userRole {
                 case UserRole.AreaAdmin.rawValue:

@@ -14,7 +14,7 @@ import UIKit
 
 private let kTokenKey = "MyToken"
 private let kCurrentProKey = "kCurrentProKey"
-
+private let kUserIdKey = "kUserIdKey"
 
 
 class UserDefaultStorage {
@@ -26,6 +26,15 @@ class UserDefaultStorage {
     
     class func getToken() -> String? {
         return UserDefaults.standard.object(forKey: kTokenKey) as? String
+    }
+    
+    /// 存取 userId
+    class func storeUserId(userId: String) {
+        UserDefaults.standard.set(userId, forKey: kUserIdKey)
+    }
+    
+    class func getUserId() -> String? {
+        return UserDefaults.standard.object(forKey: kUserIdKey) as? String
     }
     
     /// 存取当前项目名（区域管理员 用到）

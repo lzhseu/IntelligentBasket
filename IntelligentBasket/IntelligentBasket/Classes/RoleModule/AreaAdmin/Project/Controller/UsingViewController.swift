@@ -41,8 +41,8 @@ class UsingViewController: RefreshBaseViewController {
 extension UsingViewController {
     
     private func loadData() {
-        
-        usingBasketVM.requestAllProject(userId: "9968", viewController: self, finishedCallBack: {
+        let userId = UserDefaultStorage.getUserId() ?? ""
+        usingBasketVM.requestAllProject(userId: userId, viewController: self, finishedCallBack: {
             /// 拿到数据
             let modelGroup = self.usingBasketVM.usingBasketGroup
             
@@ -64,11 +64,14 @@ extension UsingViewController {
                 }
             }
             
+            /// 设置导航栏标题
+            let parentVC = self.parent as! ProjectViewController
+            parentVC.setNavigationBarTitle(title: self.currentProject.projectName)
             
             /// 刷新表格数据
             self.collectionView.reloadData()
         }) {
-            self.view.showTip(tip: "百胜吊篮：网络请求失败！", position: .bottomCenter)
+            self.view.showTip(tip: kNetWorkErrorTip, position: .bottomCenter)
         }
     }
     
@@ -83,8 +86,7 @@ extension UsingViewController  {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRefreshCellIID, for: indexPath) as! BasketCollectionCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRefreshCellIID, for: indexPath) as! BasketCollectionCell        
         cell.basketNum = currentProject.basketNum?[indexPath.item]
         return cell
     }
