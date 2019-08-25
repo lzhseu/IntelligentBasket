@@ -11,6 +11,8 @@
 		F32556E72311158900644704 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E62311158900644704 /* ProjectViewModel.swift */; };
 		F32556E9231122AE00644704 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E8231122AE00644704 /* ProjectModel.swift */; };
 		F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556EE23120E1A00644704 /* PLPlayerViewController.swift */; };
+		F32557662312797700644704 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32557652312797700644704 /* SideMenuViewController.swift */; };
+		F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F325576B2312A6AF00644704 /* SideMenu.storyboard */; };
 		F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB6D2306A1D300495496 /* AppDelegate.swift */; };
 		F366EB752306A1D400495496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366EB742306A1D400495496 /* Assets.xcassets */; };
 		F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366EB762306A1D400495496 /* LaunchScreen.storyboard */; };
@@ -68,6 +70,8 @@
 		F32556E62311158900644704 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		F32556E8231122AE00644704 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		F32556EE23120E1A00644704 /* PLPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLPlayerViewController.swift; sourceTree = "<group>"; };
+		F32557652312797700644704 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		F325576B2312A6AF00644704 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		F366EB6A2306A1D300495496 /* IntelligentBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366EB6D2306A1D300495496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F366EB742306A1D400495496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -376,6 +380,8 @@
 				F3965F1B230E6F1B00E8E5B8 /* UsingViewController.swift */,
 				F3965F17230E600F00E8E5B8 /* InstallAndCheckViewController.swift */,
 				F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */,
+				F32557652312797700644704 /* SideMenuViewController.swift */,
+				F325576B2312A6AF00644704 /* SideMenu.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */,
 				F366EB752306A1D400495496 /* Assets.xcassets in Resources */,
 				F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */,
+				F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */,
 				F3965ED8230CD95400E8E5B8 /* Message.storyboard in Resources */,
 				F366EB992306A2EE00495496 /* Login.storyboard in Resources */,
 				F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */,
@@ -606,6 +613,7 @@
 				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
+				F32557662312797700644704 /* SideMenuViewController.swift in Sources */,
 				F3965EE5230CDA3F00E8E5B8 /* HttpTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,

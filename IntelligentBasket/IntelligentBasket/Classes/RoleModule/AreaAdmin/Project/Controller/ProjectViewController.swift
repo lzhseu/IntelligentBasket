@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import SPPageMenu
+import SideMenu
 
 
 class ProjectViewController: BaseViewController {
@@ -49,6 +50,8 @@ class ProjectViewController: BaseViewController {
     private lazy var projectVM = ProjectViewModel()
     
     private lazy var currentProject = ProjectModel()
+    
+    private lazy var sideMenuViewController = SideMenuViewController()
 
 
     // MARK: - 系统回调函数
@@ -56,6 +59,7 @@ class ProjectViewController: BaseViewController {
         super.viewDidLoad()
         setUI()
         makeConstraints()
+        setSideMenu()
         loadData()
     }
     
@@ -83,12 +87,31 @@ class ProjectViewController: BaseViewController {
 
 }
 
+// MARK: - 侧边栏
+extension ProjectViewController {
+    func setSideMenu() {
+        sideMenuViewController = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "menuView") as! SideMenuViewController
+        let sideMenu = UISideMenuNavigationController(rootViewController: sideMenuViewController)
+        sideMenu.isNavigationBarHidden = true                            //隐藏导航栏
+        SideMenuManager.default.menuFadeStatusBar = false                //阻止状态栏背景变黑
+        SideMenuManager.default.menuShadowColor = .black                 //阴影颜色
+        SideMenuManager.default.menuShadowRadius = 25                    //阴影距离
+        SideMenuManager.default.menuRightNavigationController = sideMenu //将其作为默认的右侧菜单
+        SideMenuManager.default.menuPresentMode = .menuSlideIn
+        let screenWidth = UIScreen.main.bounds.width                     // 屏幕宽度
+        let screenHeight = UIScreen.main.bounds.height                   // 屏幕高度
+        SideMenuManager.default.menuWidth = round(min(screenWidth, screenHeight) * 0.7)
+        SideMenuManager.default.menuAnimationTransformScaleFactor = 0.9
+        SideMenuManager.default.menuAnimationBackgroundColor = primaryColor_0_5
+    }
+}
 
 // MARK: - 事件监听函数
 extension ProjectViewController {
     
     @objc func moreBtnClick() {
-        print("more")
+        self.present(SideMenuManager.default.menuRightNavigationController!, animated: true,
+                     completion: nil)
     }
 }
 
@@ -183,6 +206,9 @@ extension ProjectViewController {
                 self.setNavigationBarTitle(title: "暂无项目")
             }
             
+            /// 设置侧边栏项目
+            self.sideMenuViewController.setProjectGroup(projectGroup: projectGroup)
+            
             /// 添加子控制器
             self.addChildVcs()
             
@@ -190,6 +216,5 @@ extension ProjectViewController {
             self.view.showTip(tip: kNetWorkErrorTip, position: .bottomCenter)
         }
     }
-    
-    
 }
+
