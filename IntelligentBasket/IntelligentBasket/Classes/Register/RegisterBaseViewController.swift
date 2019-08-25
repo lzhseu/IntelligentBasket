@@ -354,7 +354,7 @@ extension RegisterBaseViewController {
         
         let parameters = ["userName": usernameFeild.getTextField().text!, "userPassword": passwdFeild.getTextField().text!, "userPhone": phoneField.getTextField().text!, "userRole": role]
         
-        NetworkTools.requestDataJsonEncoding(URLString: registerURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
+        HttpTools.requestDataJsonEncoding(URLString: registerURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
             
             guard let resDict = result as? [String: Any] else { return }
             let message = resDict["message"] as! String

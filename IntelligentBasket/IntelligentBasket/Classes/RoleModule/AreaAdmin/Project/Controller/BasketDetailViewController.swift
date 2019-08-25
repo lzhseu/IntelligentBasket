@@ -49,6 +49,7 @@ class BasketDetailViewController: RoleBaseViewController {
     private lazy var fixBtn: CircleButton = { [weak self] in
         let btn = CircleButton(frame: .zero, text: "报修", image: "ic_repair_192")
         btn.addGestureRecognizer(UITapGestureRecognizer(target: self!, action: #selector(fixBtnClick)))
+        //btn.addTarget(self, action: #selector(btnChangeColor(btn:)), for: .touchDown)
         return btn
     }()
     
@@ -177,7 +178,6 @@ extension BasketDetailViewController {
     }
     
     @objc private func pictureBtnClick() {
-        
     }
     
     @objc private func videoBtnClick() {
@@ -187,9 +187,11 @@ extension BasketDetailViewController {
         }
         
         let token = UserDefaultStorage.getToken() ?? ""
-        NetworkTools.requestDeviceVideo(deviceId: deviceId, token: token, finishedCallBack: { (result) in
+        HttpTools.requestDeviceVideo(deviceId: deviceId, token: token, finishedCallBack: { (result) in
             if (result as! String) == "success" {
-                // TODO: 进入播放视频页面
+                /// 进入播放视频页面
+                let playUrl = baseRtmpURL + "/" + deviceId
+                self.present(PLPlayerViewController(playUrl: playUrl), animated: true, completion: nil)
             } else {
                 self.view.showTip(tip: "百胜吊篮：获取设备视频失败！", position: .bottomCenter)
             }
@@ -203,12 +205,12 @@ extension BasketDetailViewController {
     }
     
     @objc private func settingBtnClick() {
-        
     }
     
     @objc private func fixBtnClick() {
-        
+        present(PLPlayerViewController(playUrl: "rtmp://202.69.69.180:443/webcast/bshdlive-pc"), animated: true, completion: nil)
     }
+    
 }
 
 

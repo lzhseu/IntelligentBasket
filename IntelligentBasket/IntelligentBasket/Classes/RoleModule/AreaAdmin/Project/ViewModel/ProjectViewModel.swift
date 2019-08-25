@@ -22,7 +22,7 @@ extension ProjectViewModel {
         
         projectGroup = []
         
-        NetworkTools.requestDataURLEncoding(URLString: getAllProjectURL, method: .GET, parameters: parameters,token: token, finishedCallBack: { (result) in
+        HttpTools.requestDataURLEncoding(URLString: getAllProjectURL, method: .GET, parameters: parameters,token: token, finishedCallBack: { (result) in
             //print(result)
             guard let resDict = result as? [String: Any] else { return }
             

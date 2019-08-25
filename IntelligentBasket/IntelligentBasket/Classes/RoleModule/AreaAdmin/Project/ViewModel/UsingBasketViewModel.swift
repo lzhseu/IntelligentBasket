@@ -26,7 +26,7 @@ extension UsingBasketViewModel {
         
         usingBasketGroup = []  //每次请求之前先把历史数据清零
      
-        NetworkTools.requestDataURLEncoding(URLString: getBasketListURL, method: .GET, parameters: parameters, token: token, finishedCallBack: { (result) in
+        HttpTools.requestDataURLEncoding(URLString: getBasketListURL, method: .GET, parameters: parameters, token: token, finishedCallBack: { (result) in
             //print(result)
             guard let resDict = result as? [String: Any] else { return }
             

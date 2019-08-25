@@ -251,7 +251,7 @@ extension LoginViewController {
         
         let parameters = ["userPassword": passwdFeild.getTextField().text!, "userPhone": phoneField.getTextField().text!]
         
-        NetworkTools.requestDataJsonEncoding(URLString: loginURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
+        HttpTools.requestDataJsonEncoding(URLString: loginURL, method: .POST, parameters: parameters, finishedCallBack: { (result) in
             //print(result)
             guard let resDict = result as? [String: Any] else { return }
             

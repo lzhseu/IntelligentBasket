@@ -10,6 +10,7 @@
 		949A70895A1D1F8D396A61FD /* Pods_IntelligentBasket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B19942388AAA48EA8568B /* Pods_IntelligentBasket.framework */; };
 		F32556E72311158900644704 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E62311158900644704 /* ProjectViewModel.swift */; };
 		F32556E9231122AE00644704 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E8231122AE00644704 /* ProjectModel.swift */; };
+		F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556EE23120E1A00644704 /* PLPlayerViewController.swift */; };
 		F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB6D2306A1D300495496 /* AppDelegate.swift */; };
 		F366EB752306A1D400495496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366EB742306A1D400495496 /* Assets.xcassets */; };
 		F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366EB762306A1D400495496 /* LaunchScreen.storyboard */; };
@@ -43,7 +44,7 @@
 		F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965ED4230CD95400E8E5B8 /* Profile.storyboard */; };
 		F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */; };
 		F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */; };
-		F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */; };
+		F3965EE5230CDA3F00E8E5B8 /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965EE4230CDA3F00E8E5B8 /* HttpTools.swift */; };
 		F3965F13230E33A500E8E5B8 /* AreaAdminTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F11230E33A400E8E5B8 /* AreaAdminTabBarController.swift */; };
 		F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */; };
 		F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */; };
@@ -66,6 +67,7 @@
 		DC2B19942388AAA48EA8568B /* Pods_IntelligentBasket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelligentBasket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32556E62311158900644704 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		F32556E8231122AE00644704 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		F32556EE23120E1A00644704 /* PLPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLPlayerViewController.swift; sourceTree = "<group>"; };
 		F366EB6A2306A1D300495496 /* IntelligentBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366EB6D2306A1D300495496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F366EB742306A1D400495496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 		F3965ED4230CD95400E8E5B8 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F3965ED5230CD95400E8E5B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3965EE1230CD9FB00E8E5B8 /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
-		F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		F3965EE4230CDA3F00E8E5B8 /* HttpTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
 		F3965F11230E33A400E8E5B8 /* AreaAdminTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaAdminTabBarController.swift; sourceTree = "<group>"; };
 		F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AreaAdmin.storyboard; sourceTree = "<group>"; };
 		F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleBaseViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,24 @@
 				BC77E324A3520134392C809B /* Pods-IntelligentBasket.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F32556EA23117B7600644704 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				F32556EE23120E1A00644704 /* PLPlayerViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		F32556EB23117B7600644704 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */,
+				F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */,
+				F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		F366EB612306A1D300495496 = {
@@ -430,7 +450,7 @@
 		F3965EE3230CDA3F00E8E5B8 /* NetworkTools */ = {
 			isa = PBXGroup;
 			children = (
-				F3965EE4230CDA3F00E8E5B8 /* NetworkTools.swift */,
+				F3965EE4230CDA3F00E8E5B8 /* HttpTools.swift */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -447,9 +467,8 @@
 		F3965F0F230E332100E8E5B8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */,
-				F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */,
-				F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */,
+				F32556EB23117B7600644704 /* Base */,
+				F32556EA23117B7600644704 /* Video */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -583,10 +602,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */,
 				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
-				F3965EE5230CDA3F00E8E5B8 /* NetworkTools.swift in Sources */,
+				F3965EE5230CDA3F00E8E5B8 /* HttpTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
 				F3965F1A230E67C700E8E5B8 /* ProfileBaseViewController.swift in Sources */,
