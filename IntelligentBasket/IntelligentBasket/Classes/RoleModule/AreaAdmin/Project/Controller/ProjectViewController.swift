@@ -45,13 +45,13 @@ class ProjectViewController: BaseViewController {
         return pageMenu
     }()
     
-    private lazy var childVcs = [BaseViewController]()
+    private lazy var childVcs = [BaseViewController]()               //子控制器
     
-    private lazy var projectVM = ProjectViewModel()
+    private lazy var projectVM = ProjectViewModel()                  //project的VM，现在用于处理网络请求
     
-    private lazy var currentProject = ProjectModel()
+    private lazy var currentProject = ProjectModel()                 //当前项目
     
-    private lazy var sideMenuViewController = SideMenuViewController()
+    private lazy var sideMenuViewController = SideMenuViewController() //侧边栏
 
 
     // MARK: - 系统回调函数
@@ -69,7 +69,7 @@ class ProjectViewController: BaseViewController {
 
     // MARK: - 重新父类方法
     override func setUI() {
-        setNavigationBar(title: "暂无项目")
+        setNavigationBar(title: "")
         view.backgroundColor = contentBgColor
         view.addSubview(pageMenu)
         view.addSubview(scrollView)
