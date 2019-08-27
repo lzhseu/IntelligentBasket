@@ -15,9 +15,10 @@ private let PhotoCollectionViewTag = 2
 class PhotoBrowserViewController: RefreshBaseViewController {
 
     let imageArr = ["image1", "image2", "image3"]
+    private lazy var  imageDatas = [YBIBImageData]()
     
     // MARK: - 懒加载属性
-    private lazy var photoBrowserCollectionView: UICollectionView = { [weak self] in
+    private lazy var photoBrowserCollectionView: UICollectionView = { [unowned self] in
         /// 创建布局
         let padding: CGFloat = 5
         let itemSizeWH: CGFloat = (UIScreen.main.bounds.width - padding * 2) / 3
@@ -33,14 +34,13 @@ class PhotoBrowserViewController: RefreshBaseViewController {
         collectionView.tag = PhotoCollectionViewTag
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.backgroundColor = UIColor.white
-        collectionView.dataSource = self!
-        collectionView.delegate = self!
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(UINib(nibName: "PhotoViewCell", bundle: nil), forCellWithReuseIdentifier: kPhotoCellID)
 
         return collectionView
     }()
     
-    private lazy var imageBrowser = YBImageBrowser()
     
     // MARK: - 系统回调函数
     override func viewDidLoad() {
@@ -52,15 +52,12 @@ class PhotoBrowserViewController: RefreshBaseViewController {
         
         collectionView.addSubview(photoBrowserCollectionView)
         
-        var imageDatas = [YBIBImageData]()
         for (idx, data) in imageArr.enumerated() {
             let imageData = YBIBImageData()
             imageData.imageName = data
             imageData.projectiveView = viewAtIndex(index: idx)
             imageDatas.append(imageData)
         }
-
-        imageBrowser.dataSourceArray = imageDatas
     }
     
     func viewAtIndex(index: Int) -> UIView? {
@@ -72,7 +69,7 @@ class PhotoBrowserViewController: RefreshBaseViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView.tag == PhotoCollectionViewTag {
-            return 3
+            return imageArr.count
         } else {
             return 1
         }
@@ -92,6 +89,8 @@ class PhotoBrowserViewController: RefreshBaseViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == PhotoCollectionViewTag {
+            let imageBrowser = YBImageBrowser()
+            imageBrowser.dataSourceArray = imageDatas
             imageBrowser.currentPage = indexPath.item
             imageBrowser.show()
         }

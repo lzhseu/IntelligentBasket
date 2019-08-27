@@ -14,6 +14,7 @@ class PhotoViewCell: UICollectionViewCell {
     
     var image: String? {
         didSet {
+            self.imageView.image = nil
             imageView.image = UIImage(named: image!)
             imageView.contentMode = .scaleAspectFill
         }
