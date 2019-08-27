@@ -178,9 +178,9 @@ extension BasketDetailViewController {
     }
     
     @objc private func pictureBtnClick() {
-        //pushViewController(viewController: PhotoBrowserViewController(), animated: true)
-        let photoVc = UIStoryboard(name: "PhotoBrowser", bundle: nil).instantiateInitialViewController()!
-        present(photoVc, animated: true, completion: nil)
+        pushViewController(viewController: PhotoBrowserViewController(), animated: true)
+//        let photoVc = UIStoryboard(name: "PhotoBrowser", bundle: nil).instantiateInitialViewController()!
+//        present(photoVc, animated: true, completion: nil)
     }
     
     @objc private func videoBtnClick() {

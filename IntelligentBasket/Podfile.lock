@@ -22,9 +22,20 @@ PODS:
     - PromiseKit/UIKit
   - PromiseKit/UIKit (6.10.0):
     - PromiseKit/CorePromise
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
   - SideMenu (5.0.1)
   - SnapKit (4.2.0)
   - SPPageMenu (3.5.0)
+  - YBImageBrowser (3.0.3):
+    - YBImageBrowser/Core (= 3.0.3)
+  - YBImageBrowser/Core (3.0.3):
+    - SDWebImage (~> 5.0.0)
+    - YYImage
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -41,6 +52,7 @@ DEPENDENCIES:
   - SideMenu
   - SnapKit
   - SPPageMenu (~> 3.5.0)
+  - YBImageBrowser
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -51,9 +63,12 @@ SPEC REPOS:
     - MJRefresh
     - MMMaterialDesignSpinner
     - PromiseKit
+    - SDWebImage
     - SideMenu
     - SnapKit
     - SPPageMenu
+    - YBImageBrowser
+    - YYImage
 
 EXTERNAL SOURCES:
   PLPlayerKit:
@@ -68,10 +83,13 @@ SPEC CHECKSUMS:
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
   PLPlayerKit: 506d81f3b0cc39a7c732a8c22dda493819248389
   PromiseKit: 1fdaeb6c0a94a5114fcb814ff3d772b86886ad4e
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SPPageMenu: da182aafcec55719d5c326103cc7716c1e48f311
+  YBImageBrowser: 536ff4fd2855b3aa8a6e1dde4f7070c714fdc3a5
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 57a05b0a04be329fe9d2bc63ce2fdef2a91deb64
+PODFILE CHECKSUM: 72915c72a9f537407f4996181897a31fe62fcedf
 
 COCOAPODS: 1.7.5

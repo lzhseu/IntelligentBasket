@@ -13,13 +13,9 @@
 		F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556EE23120E1A00644704 /* PLPlayerViewController.swift */; };
 		F32557662312797700644704 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32557652312797700644704 /* SideMenuViewController.swift */; };
 		F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F325576B2312A6AF00644704 /* SideMenu.storyboard */; };
-		F32AF9942314F32F00947D90 /* ImagePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9922314F32F00947D90 /* ImagePreviewVC.swift */; };
-		F32AF9952314F32F00947D90 /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9932314F32F00947D90 /* ImagePreviewCell.swift */; };
-		F32AF9972314F41600947D90 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9962314F41600947D90 /* PhotoBrowserViewController.swift */; };
-		F32AF99F2314F92200947D90 /* PhotoBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AF99E2314F92200947D90 /* PhotoBrowser.storyboard */; };
-		F32AF9A12314FF0100947D90 /* PhotoBrowserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9A02314FF0100947D90 /* PhotoBrowserViewCell.swift */; };
-		F32AF9A42314FF6300947D90 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9A22314FF6300947D90 /* PhotoViewCell.swift */; };
-		F32AF9A52314FF6300947D90 /* PhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32AF9A32314FF6300947D90 /* PhotoViewCell.xib */; };
+		F32AF9A72315097500947D90 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9A62315097500947D90 /* PhotoBrowserViewController.swift */; };
+		F32AF9AC23150BFE00947D90 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9AA23150BFE00947D90 /* PhotoViewCell.swift */; };
+		F32AF9AD23150BFE00947D90 /* PhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */; };
 		F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB6D2306A1D300495496 /* AppDelegate.swift */; };
 		F366EB752306A1D400495496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366EB742306A1D400495496 /* Assets.xcassets */; };
 		F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366EB762306A1D400495496 /* LaunchScreen.storyboard */; };
@@ -79,13 +75,9 @@
 		F32556EE23120E1A00644704 /* PLPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLPlayerViewController.swift; sourceTree = "<group>"; };
 		F32557652312797700644704 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F325576B2312A6AF00644704 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
-		F32AF9922314F32F00947D90 /* ImagePreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewVC.swift; sourceTree = "<group>"; };
-		F32AF9932314F32F00947D90 /* ImagePreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
-		F32AF9962314F41600947D90 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
-		F32AF99E2314F92200947D90 /* PhotoBrowser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoBrowser.storyboard; sourceTree = "<group>"; };
-		F32AF9A02314FF0100947D90 /* PhotoBrowserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewCell.swift; sourceTree = "<group>"; };
-		F32AF9A22314FF6300947D90 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
-		F32AF9A32314FF6300947D90 /* PhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCell.xib; sourceTree = "<group>"; };
+		F32AF9A62315097500947D90 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
+		F32AF9AA23150BFE00947D90 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCell.xib; sourceTree = "<group>"; };
 		F366EB6A2306A1D300495496 /* IntelligentBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366EB6D2306A1D300495496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F366EB742306A1D400495496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,13 +180,9 @@
 		F32AF9912314F32F00947D90 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
-				F32AF9922314F32F00947D90 /* ImagePreviewVC.swift */,
-				F32AF9932314F32F00947D90 /* ImagePreviewCell.swift */,
-				F32AF9962314F41600947D90 /* PhotoBrowserViewController.swift */,
-				F32AF99E2314F92200947D90 /* PhotoBrowser.storyboard */,
-				F32AF9A02314FF0100947D90 /* PhotoBrowserViewCell.swift */,
-				F32AF9A22314FF6300947D90 /* PhotoViewCell.swift */,
-				F32AF9A32314FF6300947D90 /* PhotoViewCell.xib */,
+				F32AF9A62315097500947D90 /* PhotoBrowserViewController.swift */,
+				F32AF9AA23150BFE00947D90 /* PhotoViewCell.swift */,
+				F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -579,13 +567,12 @@
 			files = (
 				F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */,
 				F366EB752306A1D400495496 /* Assets.xcassets in Resources */,
-				F32AF9A52314FF6300947D90 /* PhotoViewCell.xib in Resources */,
-				F32AF99F2314F92200947D90 /* PhotoBrowser.storyboard in Resources */,
 				F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */,
 				F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */,
 				F3965ED8230CD95400E8E5B8 /* Message.storyboard in Resources */,
 				F366EB992306A2EE00495496 /* Login.storyboard in Resources */,
 				F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */,
+				F32AF9AD23150BFE00947D90 /* PhotoViewCell.xib in Resources */,
 				F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */,
 				F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */,
 			);
@@ -641,7 +628,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */,
-				F32AF9972314F41600947D90 /* PhotoBrowserViewController.swift in Sources */,
 				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
@@ -655,8 +641,6 @@
 				F3965F22230E918F00E8E5B8 /* BasketDetailViewController.swift in Sources */,
 				F3965E6B2308E0AF00E8E5B8 /* BaseViewController.swift in Sources */,
 				F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */,
-				F32AF9A42314FF6300947D90 /* PhotoViewCell.swift in Sources */,
-				F32AF9952314F32F00947D90 /* ImagePreviewCell.swift in Sources */,
 				F366EB972306A2C900495496 /* CommonConstant.swift in Sources */,
 				F366EB952306A2C900495496 /* NsDate-Extension.swift in Sources */,
 				F3965F13230E33A500E8E5B8 /* AreaAdminTabBarController.swift in Sources */,
@@ -671,19 +655,19 @@
 				F32556E9231122AE00644704 /* ProjectModel.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
-				F32AF9A12314FF0100947D90 /* PhotoBrowserViewCell.swift in Sources */,
 				F3965F55230FE4F300E8E5B8 /* UserDefaultStorage.swift in Sources */,
 				F3965F53230FCF4100E8E5B8 /* UsingBasketViewModel.swift in Sources */,
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
+				F32AF9AC23150BFE00947D90 /* PhotoViewCell.swift in Sources */,
 				F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */,
 				F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */,
 				F3965F4C230F866400E8E5B8 /* RefreshBaseViewController.swift in Sources */,
 				F3965F28230E981000E8E5B8 /* CircleButton.swift in Sources */,
 				F366EB962306A2C900495496 /* PhoneField.swift in Sources */,
-				F32AF9942314F32F00947D90 /* ImagePreviewVC.swift in Sources */,
 				F366EBAF2308198400495496 /* RegisterViewController.swift in Sources */,
 				F366EBB12308200100495496 /* RegisterWorkerViewController.swift in Sources */,
 				F366EB942306A2C900495496 /* String-Extension.swift in Sources */,
+				F32AF9A72315097500947D90 /* PhotoBrowserViewController.swift in Sources */,
 				F366EBA62306B12700495496 /* CommonViewFactory.swift in Sources */,
 				F366EB9D2306A32B00495496 /* LoginViewController.swift in Sources */,
 				F3965E6F2308ECEE00E8E5B8 /* TextFieldWithIcon.swift in Sources */,
