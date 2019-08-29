@@ -48,6 +48,7 @@ class RefreshBaseViewController: RoleBaseViewController {
         itemSizeH = kScreenH - kStatusBarH - self.getNavigationBarH() - kPageMenuH -  (tabBarController?.tabBar.frame.height ?? 0)
         view.addSubview(collectionView)
         setRefreshHeader()
+        //setRefreshFooter()
     }
     
     

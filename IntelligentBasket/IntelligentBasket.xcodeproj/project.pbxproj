@@ -13,6 +13,9 @@
 		F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556EE23120E1A00644704 /* PLPlayerViewController.swift */; };
 		F32557662312797700644704 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32557652312797700644704 /* SideMenuViewController.swift */; };
 		F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F325576B2312A6AF00644704 /* SideMenu.storyboard */; };
+		F3294DC423166BC90080110D /* FtpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC323166BC90080110D /* FtpTools.swift */; };
+		F3294DC6231674FE0080110D /* BasketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */; };
+		F3294DCA231770720080110D /* LocalFileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC9231770720080110D /* LocalFileTools.swift */; };
 		F32AF9A72315097500947D90 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9A62315097500947D90 /* PhotoBrowserViewController.swift */; };
 		F32AF9AC23150BFE00947D90 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9AA23150BFE00947D90 /* PhotoViewCell.swift */; };
 		F32AF9AD23150BFE00947D90 /* PhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */; };
@@ -75,6 +78,9 @@
 		F32556EE23120E1A00644704 /* PLPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLPlayerViewController.swift; sourceTree = "<group>"; };
 		F32557652312797700644704 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F325576B2312A6AF00644704 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		F3294DC323166BC90080110D /* FtpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FtpTools.swift; sourceTree = "<group>"; };
+		F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDetailViewModel.swift; sourceTree = "<group>"; };
+		F3294DC9231770720080110D /* LocalFileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileTools.swift; sourceTree = "<group>"; };
 		F32AF9A62315097500947D90 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		F32AF9AA23150BFE00947D90 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
 		F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCell.xib; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 				F3965E70230A3D6C00E8E5B8 /* RegularMatchingTool.swift */,
 				F366EBA52306B12700495496 /* CommonViewFactory.swift */,
 				F366EB812306A2C900495496 /* DictConvertToModel.swift */,
+				F3294DC9231770720080110D /* LocalFileTools.swift */,
 				F3965F54230FE4F300E8E5B8 /* UserDefaultStorage.swift */,
 				F3965EE3230CDA3F00E8E5B8 /* NetworkTools */,
 				F366EB832306A2C900495496 /* Extension */,
@@ -384,6 +391,7 @@
 			children = (
 				F3965F52230FCF4100E8E5B8 /* UsingBasketViewModel.swift */,
 				F32556E62311158900644704 /* ProjectViewModel.swift */,
+				F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -473,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				F3965EE4230CDA3F00E8E5B8 /* HttpTools.swift */,
+				F3294DC323166BC90080110D /* FtpTools.swift */,
 			);
 			path = NetworkTools;
 			sourceTree = "<group>";
@@ -627,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3294DC423166BC90080110D /* FtpTools.swift in Sources */,
 				F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */,
 				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
@@ -652,11 +662,13 @@
 				F3965F51230FCE1400E8E5B8 /* UsingBasketModel.swift in Sources */,
 				F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */,
 				F3965F1C230E6F1B00E8E5B8 /* UsingViewController.swift in Sources */,
+				F3294DCA231770720080110D /* LocalFileTools.swift in Sources */,
 				F32556E9231122AE00644704 /* ProjectModel.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
 				F3965F55230FE4F300E8E5B8 /* UserDefaultStorage.swift in Sources */,
 				F3965F53230FCF4100E8E5B8 /* UsingBasketViewModel.swift in Sources */,
+				F3294DC6231674FE0080110D /* BasketDetailViewModel.swift in Sources */,
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
 				F32AF9AC23150BFE00947D90 /* PhotoViewCell.swift in Sources */,
 				F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */,

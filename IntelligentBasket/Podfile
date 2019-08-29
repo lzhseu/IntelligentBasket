@@ -22,5 +22,6 @@ pod 'MJRefresh'
 pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'
 pod 'SideMenu'
 pod 'YBImageBrowser'
+pod 'LxFTPRequest'
 
 end

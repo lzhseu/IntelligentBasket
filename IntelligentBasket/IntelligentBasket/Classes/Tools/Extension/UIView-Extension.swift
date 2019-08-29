@@ -49,6 +49,7 @@ extension UIView{
     /// 加载图片
     func showImageLoadingWithTip(tip: String, imageName: String?){
         let HUD = loadingHUD()
+        HUD.position = .center
         HUD.textLabel.text = tip
         HUD.textLabel.font = UIFont.systemFont(ofSize: 14)
         HUD.show(in: self)

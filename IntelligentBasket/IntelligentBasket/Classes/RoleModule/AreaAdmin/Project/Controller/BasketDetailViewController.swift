@@ -81,6 +81,8 @@ class BasketDetailViewController: RoleBaseViewController {
         return label
     }()
     
+    private lazy var basketDetailVM = BasketDetailViewModel()
+    
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,9 +180,23 @@ extension BasketDetailViewController {
     }
     
     @objc private func pictureBtnClick() {
-        pushViewController(viewController: PhotoBrowserViewController(), animated: true)
-//        let photoVc = UIStoryboard(name: "PhotoBrowser", bundle: nil).instantiateInitialViewController()!
-//        present(photoVc, animated: true, completion: nil)
+        // TODO: ftp下载照片
+        // TODO: 下载前先判断本地有没有
+        guard  let deviceId = self.deviceId else {
+            return
+        }
+        
+        let photoVc = PhotoBrowserViewController()
+        photoVc.deviceId = deviceId
+        pushViewController(viewController: photoVc, animated: true)
+        
+        basketDetailVM.getPhotos(deviceId: deviceId, success: { (result) in
+            guard let images = result as? [String] else { return }
+            photoVc.imageArr = images
+        }) { (error) in
+            self.view.showTip(tip: "百胜吊篮：图片数据请求失败！", position: .bottomCenter)
+        }
+        
     }
     
     @objc private func videoBtnClick() {
@@ -215,5 +231,6 @@ extension BasketDetailViewController {
     }
     
 }
+
 
 

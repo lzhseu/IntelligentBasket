@@ -3,6 +3,7 @@ PODS:
   - BEMCheckBox (1.4.1)
   - JGProgressHUD (2.0.3)
   - LMJDropdownMenu (2.0.3)
+  - LxFTPRequest (1.1.2)
   - MJRefresh (3.2.0)
   - MMMaterialDesignSpinner (0.2.5)
   - PLPlayerKit (3.4.2):
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - BEMCheckBox
   - JGProgressHUD
   - LMJDropdownMenu
+  - LxFTPRequest
   - MJRefresh
   - MMMaterialDesignSpinner
   - PLPlayerKit (from `https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec`)
@@ -60,6 +62,7 @@ SPEC REPOS:
     - BEMCheckBox
     - JGProgressHUD
     - LMJDropdownMenu
+    - LxFTPRequest
     - MJRefresh
     - MMMaterialDesignSpinner
     - PromiseKit
@@ -79,6 +82,7 @@ SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   LMJDropdownMenu: 1766ca36c8da3567e7b8af10f8b00c23a1c694c4
+  LxFTPRequest: 1cbb244b3ed3ee89a03a5823a53422da96baaa4a
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
   PLPlayerKit: 506d81f3b0cc39a7c732a8c22dda493819248389
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   YBImageBrowser: 536ff4fd2855b3aa8a6e1dde4f7070c714fdc3a5
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 72915c72a9f537407f4996181897a31fe62fcedf
+PODFILE CHECKSUM: 28d5bcaa6cbca47b1a68908eec630f6de2367a93
 
 COCOAPODS: 1.7.5

@@ -22,6 +22,7 @@ class PhotoViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        autoresizingMask = []
         contentView.backgroundColor = UIColor.white
     }
 

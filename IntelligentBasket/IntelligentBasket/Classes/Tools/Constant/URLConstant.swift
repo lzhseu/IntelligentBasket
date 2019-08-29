@@ -24,3 +24,15 @@ let getBasketListURL = baseURL + "/getBasketList"
 
 /// 移动端向吊篮发起命令：
 let sendToDeviceURL = baseURL + ":8081/sendToDevice"
+
+
+/// FTP
+let baseFtpURL = "ftp://47.100.1.211"
+let photoDirFtpURL = "/nacelleRent/workPhoto"
+let localFileBaseURL = NSHomeDirectory()
+let localFileAppendingBaseURL = "Library/Caches/nacelleRent/workPhoto"
+
+let FtpUsername = "anonymous"
+let FtpPassword = ""
+let FtpMaxClient = 12  // 最大连接数，也即一次并行下载的最大图片数
+
