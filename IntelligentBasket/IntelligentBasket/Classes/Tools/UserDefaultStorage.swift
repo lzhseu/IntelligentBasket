@@ -28,6 +28,10 @@ class UserDefaultStorage {
         return UserDefaults.standard.object(forKey: kTokenKey) as? String
     }
     
+    class func removeToken() {
+        UserDefaults.standard.removeObject(forKey: kTokenKey)
+    }
+    
     /// 存取 userId
     class func storeUserId(userId: String) {
         UserDefaults.standard.set(userId, forKey: kUserIdKey)

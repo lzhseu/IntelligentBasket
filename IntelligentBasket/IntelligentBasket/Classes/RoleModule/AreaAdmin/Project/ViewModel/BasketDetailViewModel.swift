@@ -78,7 +78,6 @@ extension BasketDetailViewModel {
                     if photoName.hasSuffix(".jpg") || photoName.hasSuffix(".jpeg") || photoName.hasSuffix(".png") {
                         self.photosName.append(photoName)
                     }
-                    
                     /// 我先预拿25张，减少开销，因为FTP没那么快，拿多了也没用
                     if self.photosName.count == kPrefetchingPhotoNum {
                         break
@@ -87,7 +86,7 @@ extension BasketDetailViewModel {
                 
                 /// 开始下载
                 for  (idx, file) in self.photosName.enumerated() {
-                    
+
                     let appendingURL = photoDirFtpURL + "/" + deviceId + "/" + file
                     let localFilePath = localFileAppendingBaseURL + "/" + deviceId + "/" + file
                     
@@ -185,7 +184,6 @@ extension BasketDetailViewModel {
                 
                 /// 开始下载
                 for  (idx, file) in self.photosName.enumerated() {
-                    
                     let appendingURL = photoDirFtpURL + "/" + deviceId + "/" + file
                     let localFilePath = localFileAppendingBaseURL + "/" + deviceId + "/" + file
                     
