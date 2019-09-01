@@ -10,11 +10,13 @@ import UIKit
 
 private let kPrefetchingPhotoNum = 25 // 预取的照片数
 private let kRefreshPhotoNum = 6      // 刷新下载的照片数
+private let kMaxPhotoNumsFromLoaclFiles = 15 // 从本地拿照片显示时，一次最多显示15张
 let NO_MORE_PHOTO: Int = 1014
 
 class BasketDetailViewModel {
 
     var photosName = [String]()
+    static var photosDisplayed = [String]()   //用于存储已经显示的图片
     
 }
 
@@ -36,13 +38,19 @@ extension BasketDetailViewModel {
         
         var imagesPath = [String]()
         
+        BasketDetailViewModel.photosDisplayed = []
+        
         /// 若文件夹中有图片，则直接展示
         if localFiles.count > 0 {
             
             print("get photos from local file.")
-            /// 先全部显示，以后再考虑策略
-            for image in localFiles {
+            /// 一次显示15张
+            for (idx, image) in localFiles.enumerated() {
+                if idx == kMaxPhotoNumsFromLoaclFiles {
+                    break
+                }
                 imagesPath.append(NSHomeDirectory() + dirPath + "/" + image)
+                BasketDetailViewModel.photosDisplayed.append(image)
             }
             
             /// 成功回调
@@ -116,7 +124,7 @@ extension BasketDetailViewModel {
         }
     }
     
-    
+    /// 刷新时获取图片
     func getRefreshPhotos(deviceId: String, success: @escaping (_ result: Any) -> (), finishWithError: @escaping (_ error: Int) -> ()) {
         
         /// 需要知道此时已经有哪些照片了
@@ -130,68 +138,88 @@ extension BasketDetailViewModel {
         
         let dGroup = DispatchGroup()
         
-        /// 先获取资源列表
-        let ftpResourceListURL = baseFtpURL + photoDirFtpURL + "/" + deviceId
-        FtpTools.FtpResourceList(baseURL: ftpResourceListURL, finishedCallBack: { (result) in
-            /// 拿到资源列表
-            guard let resArr = result as? [[String: Any]] else { return }
+        /// 先看本地有没有剩余的图片
+        if localFiles.count > BasketDetailViewModel.photosDisplayed.count {
             
-            if localFiles.count >= resArr.count {
-                finishWithError(NO_MORE_PHOTO)
-                return
-            }
-            
-            /// 拿本地没有的文件
-            for idx in localFiles.count ..< resArr.count {
-                let dict = resArr[idx]
-                let photoName = dict["kCFFTPResourceName"] as! String
-                if photoName.hasSuffix(".jpg") || photoName.hasSuffix(".jpeg") || photoName.hasSuffix(".png") {
-                    
-                    self.photosName.append(photoName)
-                }
-                
-                /// 我先预拿25张，减少开销，因为FTP没那么快，拿多了也没用
-                if idx == localFiles.count + kPrefetchingPhotoNum {
+            print("get photos from local file.")
+
+            /// 一次显示15张
+            let displayedCount = BasketDetailViewModel.photosDisplayed.count
+            for idx in displayedCount ..< localFiles.count {
+                if idx == kMaxPhotoNumsFromLoaclFiles + displayedCount {
                     break
                 }
+                imagesPath.append(NSHomeDirectory() + dirPath + "/" + localFiles[idx])
+                BasketDetailViewModel.photosDisplayed.append(localFiles[idx])
             }
+            success(imagesPath)
+        } else {
+            print("get photos from ftp server.")
             
-            /// 开始下载
-            for  (idx, file) in self.photosName.enumerated() {
+            /// 先获取资源列表
+            let ftpResourceListURL = baseFtpURL + photoDirFtpURL + "/" + deviceId
+            FtpTools.FtpResourceList(baseURL: ftpResourceListURL, finishedCallBack: { (result) in
+                /// 拿到资源列表
+                guard let resArr = result as? [[String: Any]] else { return }
                 
-                let appendingURL = photoDirFtpURL + "/" + deviceId + "/" + file
-                let localFilePath = localFileAppendingBaseURL + "/" + deviceId + "/" + file
+                /// 如果本地图片的数量已经等于服务器图片
+                if localFiles.count >= resArr.count {
+                    finishWithError(NO_MORE_PHOTO)
+                    return
+                }
                 
-                dGroup.enter()
-                FtpTools.FtpDownload(appendingURL: appendingURL, localFilePath: localFilePath, finishedCallBack: { (result) in
-                    
-                    guard let image = result as? String else {
-                        dGroup.leave()
-                        return
+                /// 拿本地没有的文件
+                for idx in localFiles.count ..< resArr.count {
+                    let dict = resArr[idx]
+                    let photoName = dict["kCFFTPResourceName"] as! String
+                    if photoName.hasSuffix(".jpg") || photoName.hasSuffix(".jpeg") || photoName.hasSuffix(".png") {
+                        
+                        self.photosName.append(photoName)
                     }
                     
-                    imagesPath.append(image)
-                    dGroup.leave()
-                    
-                }) { (error) in
-                    dGroup.leave()
-                    finishWithError(error)
+                    /// 我先预拿25张，减少开销，因为FTP没那么快，拿多了也没用
+                    if idx == localFiles.count + kPrefetchingPhotoNum {
+                        break
+                    }
                 }
                 
-                if idx == kRefreshPhotoNum - 1 {
-                    break
+                /// 开始下载
+                for  (idx, file) in self.photosName.enumerated() {
+                    
+                    let appendingURL = photoDirFtpURL + "/" + deviceId + "/" + file
+                    let localFilePath = localFileAppendingBaseURL + "/" + deviceId + "/" + file
+                    
+                    dGroup.enter()
+                    FtpTools.FtpDownload(appendingURL: appendingURL, localFilePath: localFilePath, finishedCallBack: { (result) in
+                        
+                        guard let image = result as? String else {
+                            dGroup.leave()
+                            return
+                        }
+                        
+                        imagesPath.append(image)
+                        dGroup.leave()
+                        
+                    }) { (error) in
+                        dGroup.leave()
+                        finishWithError(error)
+                    }
+                    
+                    if idx == kRefreshPhotoNum - 1 {
+                        break
+                    }
                 }
+                
+                /// 所有并行请求都结束后
+                dGroup.notify(queue: .main) {
+                    /// 将结果回调
+                    print("ftp refresh photos ooooooooook")
+                    success(imagesPath)
+                }
+                
+            }) { (error) in
+                finishWithError(error)
             }
-            
-            /// 所有并行请求都结束后
-            dGroup.notify(queue: .main) {
-                /// 将结果回调
-                print("ftp refresh photos ooooooooook")
-                success(imagesPath)
-            }
-            
-        }) { (error) in
-            finishWithError(error)
         }
         
     }

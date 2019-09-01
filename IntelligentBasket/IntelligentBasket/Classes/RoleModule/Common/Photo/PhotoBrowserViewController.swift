@@ -138,7 +138,7 @@ extension PhotoBrowserViewController {
     /// 下拉刷新
     override func headerRefresh() {
         basketDetailVM.getRefreshPhotos(deviceId: deviceId, success: { (result) in
-            print("刷新请求数据： \(result)")
+            //print("刷新请求数据： \(result)")
             guard let images = result as? [String] else { return }
             self.imageArr = (self.imageArr ?? []) + images
             self.headerEndRefreshing()
