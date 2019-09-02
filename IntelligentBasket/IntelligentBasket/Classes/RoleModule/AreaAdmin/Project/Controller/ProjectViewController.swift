@@ -45,13 +45,14 @@ class ProjectViewController: BaseViewController {
         return pageMenu
     }()
     
+    private lazy var sideMenuViewController = SideMenuViewController()
+    
     private lazy var childVcs = [BaseViewController]()               //子控制器
     
     private lazy var projectVM = ProjectViewModel()                  //project的VM，现在用于处理网络请求
     
     private lazy var currentProject = ProjectModel()                 //当前项目
     
-    private lazy var sideMenuViewController = SideMenuViewController() //侧边栏
 
 
     // MARK: - 系统回调函数
@@ -91,6 +92,7 @@ class ProjectViewController: BaseViewController {
 extension ProjectViewController {
     func setSideMenu() {
         sideMenuViewController = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "menuView") as! SideMenuViewController
+        sideMenuViewController.delegate = self
         let sideMenu = UISideMenuNavigationController(rootViewController: sideMenuViewController)
         sideMenu.isNavigationBarHidden = true                            //隐藏导航栏
         SideMenuManager.default.menuFadeStatusBar = false                //阻止状态栏背景变黑
@@ -133,10 +135,10 @@ extension ProjectViewController: SPPageMenuDelegate {
 
 // MARK: - 添加子控制器
 extension ProjectViewController {
-    private func addChildVcs() {
+    private func addChildVcs(projectId: String?) {
         // TODO: 把子控制器加在此处
         var vc = RoleBaseViewController()
-        vc = UsingViewController(projectId: currentProject.projectId)
+        vc = UsingViewController(projectId: projectId)
         addChild(vc)
         childVcs.append(vc)
         scrollView.addSubview(vc.view)
@@ -210,7 +212,7 @@ extension ProjectViewController {
             self.sideMenuViewController.setProjectGroup(projectGroup: projectGroup)
             
             /// 添加子控制器
-            self.addChildVcs()
+            self.addChildVcs(projectId: self.currentProject.projectId)
             
         }) {
             self.view.showTip(tip: kNetWorkErrorTip, position: .bottomCenter)
@@ -218,3 +220,34 @@ extension ProjectViewController {
     }
 }
 
+
+// MARK: - 切换项目
+extension ProjectViewController: SideMenuViewControllerDelegate {
+    
+    func sideMenuViewController(selected projectId: String) {
+        
+        if projectId == currentProject.projectId! {
+            let vc = UIStoryboard(name: "ProjectDetail", bundle: nil).instantiateViewController(withIdentifier: "projectDetail") as! ProjectDetailViewController
+            pushViewController(viewController: vc, animated: true)
+        } else {
+            /// 1.把之前的子控制器移除
+            for childVc in childVcs {
+                childVc.removeFromParent()
+            }
+            childVcs = []
+            
+            /// 2.加入新的控制器
+            addChildVcs(projectId: projectId)
+            
+            /// 3.重新储存当前项目ID
+            UserDefaultStorage.storeCurrentProjectId(projectId: projectId)
+            for project in projectVM.projectGroup {
+                if project.projectId == projectId {
+                    currentProject = project
+                    break
+                }
+            }
+        }
+    }
+    
+}

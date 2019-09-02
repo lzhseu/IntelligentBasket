@@ -8,12 +8,20 @@
 
 import UIKit
 
+private let kCurrentImageViewTag = 11    // 当前项目图标的tag
+
+protocol SideMenuViewControllerDelegate: class {
+    func sideMenuViewController(selected projectId: String)
+}
+
 class SideMenuViewController: UIViewController {
     
     private var projectGroup: [ProjectModel]?
+    weak var delegate: SideMenuViewControllerDelegate?
 
     
     @IBOutlet weak var settingTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +35,10 @@ class SideMenuViewController: UIViewController {
         settingTableView.delegate = self
         settingTableView.dataSource = self
         settingTableView.tableFooterView = UIView()
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -57,13 +63,28 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.backgroundColor = UIColor.clear
         cell.textLabel!.text = projectGroup![indexPath.row].projectName
-        
+        /// 显示当前项目图标
+        let currentImageView = cell.viewWithTag(kCurrentImageViewTag)
+        guard let currentProjectId = UserDefaultStorage.getCurrentProjectId() else {
+            return cell
+        }
+        if currentProjectId == projectGroup![indexPath.row].projectId {
+            currentImageView?.isHidden = false
+        } else {
+            currentImageView?.isHidden = true
+        }
         return cell
     }
     
-    // 处理点击事件
+    // 处理点击事件:切换项目
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: 切换项目
+        
+        self.dismiss(animated: true) {
+            guard let selectedProjectId = self.projectGroup![indexPath.row].projectId else {
+                return
+            }
+            self.delegate?.sideMenuViewController(selected: selectedProjectId)
+        }
         tableView.deselectRow(at: indexPath, animated: false)
     }
     

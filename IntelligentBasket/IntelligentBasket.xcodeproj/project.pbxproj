@@ -57,7 +57,6 @@
 		F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */; };
 		F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */; };
 		F3965F18230E600F00E8E5B8 /* InstallAndCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F17230E600F00E8E5B8 /* InstallAndCheckViewController.swift */; };
-		F3965F1A230E67C700E8E5B8 /* ProfileBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */; };
 		F3965F1C230E6F1B00E8E5B8 /* UsingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F1B230E6F1B00E8E5B8 /* UsingViewController.swift */; };
 		F3965F1F230E7B0B00E8E5B8 /* BasketCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F1D230E7B0B00E8E5B8 /* BasketCollectionCell.swift */; };
 		F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3965F1E230E7B0B00E8E5B8 /* BasketCollectionCell.xib */; };
@@ -67,6 +66,8 @@
 		F3965F51230FCE1400E8E5B8 /* UsingBasketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F50230FCE1400E8E5B8 /* UsingBasketModel.swift */; };
 		F3965F53230FCF4100E8E5B8 /* UsingBasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F52230FCF4100E8E5B8 /* UsingBasketViewModel.swift */; };
 		F3965F55230FE4F300E8E5B8 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3965F54230FE4F300E8E5B8 /* UserDefaultStorage.swift */; };
+		F3F96894231CEA6B0024B42A /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F96893231CEA6B0024B42A /* ProjectDetailViewController.swift */; };
+		F3F96896231CEAC10024B42A /* ProjectDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F96895231CEAC10024B42A /* ProjectDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,7 +125,6 @@
 		F3965F12230E33A400E8E5B8 /* AreaAdmin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AreaAdmin.storyboard; sourceTree = "<group>"; };
 		F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleBaseViewController.swift; sourceTree = "<group>"; };
 		F3965F17230E600F00E8E5B8 /* InstallAndCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallAndCheckViewController.swift; sourceTree = "<group>"; };
-		F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBaseViewController.swift; sourceTree = "<group>"; };
 		F3965F1B230E6F1B00E8E5B8 /* UsingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingViewController.swift; sourceTree = "<group>"; };
 		F3965F1D230E7B0B00E8E5B8 /* BasketCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCollectionCell.swift; sourceTree = "<group>"; };
 		F3965F1E230E7B0B00E8E5B8 /* BasketCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCollectionCell.xib; sourceTree = "<group>"; };
@@ -134,6 +134,8 @@
 		F3965F50230FCE1400E8E5B8 /* UsingBasketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingBasketModel.swift; sourceTree = "<group>"; };
 		F3965F52230FCF4100E8E5B8 /* UsingBasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingBasketViewModel.swift; sourceTree = "<group>"; };
 		F3965F54230FE4F300E8E5B8 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
+		F3F96893231CEA6B0024B42A /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		F3F96895231CEAC10024B42A /* ProjectDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */,
-				F3965F19230E67C700E8E5B8 /* ProfileBaseViewController.swift */,
 				F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */,
 			);
 			path = Base;
@@ -406,6 +407,8 @@
 				F3965F21230E918E00E8E5B8 /* BasketDetailViewController.swift */,
 				F32557652312797700644704 /* SideMenuViewController.swift */,
 				F325576B2312A6AF00644704 /* SideMenu.storyboard */,
+				F3F96893231CEA6B0024B42A /* ProjectDetailViewController.swift */,
+				F3F96895231CEAC10024B42A /* ProjectDetail.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				F366EB992306A2EE00495496 /* Login.storyboard in Resources */,
 				F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */,
 				F32AF9AD23150BFE00947D90 /* PhotoViewCell.xib in Resources */,
+				F3F96896231CEAC10024B42A /* ProjectDetail.storyboard in Resources */,
 				F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */,
 				F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */,
 			);
@@ -645,7 +649,6 @@
 				F3965EE5230CDA3F00E8E5B8 /* HttpTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
-				F3965F1A230E67C700E8E5B8 /* ProfileBaseViewController.swift in Sources */,
 				F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
 				F3965F22230E918F00E8E5B8 /* BasketDetailViewController.swift in Sources */,
@@ -668,6 +671,7 @@
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
 				F3965F55230FE4F300E8E5B8 /* UserDefaultStorage.swift in Sources */,
 				F3965F53230FCF4100E8E5B8 /* UsingBasketViewModel.swift in Sources */,
+				F3F96894231CEA6B0024B42A /* ProjectDetailViewController.swift in Sources */,
 				F3294DC6231674FE0080110D /* BasketDetailViewModel.swift in Sources */,
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
 				F32AF9AC23150BFE00947D90 /* PhotoViewCell.swift in Sources */,

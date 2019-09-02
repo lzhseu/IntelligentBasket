@@ -14,7 +14,7 @@ import MJRefresh
 private let kPhotoCellID = "kPhotoCellID"
 private let PhotoCollectionViewTag = 2
 
-class PhotoBrowserViewController: RefreshBaseViewController {
+class PhotoBrowserViewController: BaseViewController {
 
     var imageArr: [String]? {
         didSet {
@@ -35,6 +35,8 @@ class PhotoBrowserViewController: RefreshBaseViewController {
     var deviceId = ""
     
     private lazy var refreshFooter = MJRefreshAutoNormalFooter()
+    
+    private lazy var refreshHeader = MJRefreshNormalHeader()
 
     private lazy var  imageDatas = [YBIBImageData]()
     
@@ -66,17 +68,18 @@ class PhotoBrowserViewController: RefreshBaseViewController {
 
     // MARK: - 系统回调函数
     override func viewDidLoad() {
-        setItemSizeH(itemSizeH: kScreenH - kStatusBarH - getNavigationBarH())
+        //setItemSizeH(itemSizeH: kScreenH - kStatusBarH - getNavigationBarH())
         //setRefreshFooter()
-        setMyRefreshFooter()
+        //setMyRefreshFooter()
         
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
         
-        collectionView.addSubview(photoBrowserCollectionView)
+        view.addSubview(photoBrowserCollectionView)
         
-        //setMyRefreshFooter()
+        setRefreshHeader()
+        setRefreshFooter()
         
         /// 进来后先等待数据
         view.showLoadingHUD()
@@ -90,7 +93,31 @@ class PhotoBrowserViewController: RefreshBaseViewController {
     }
     
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func setRefreshHeader() {
+        refreshHeader.setTitle("下拉刷新数据", for: .idle)
+        refreshHeader.setTitle("请松开", for: .pulling)
+        refreshHeader.setTitle("刷新...", for: .refreshing)
+        refreshHeader.lastUpdatedTimeLabel.isHidden = true
+        refreshHeader.setRefreshingTarget(self, refreshingAction: #selector(headerRefresh))
+        photoBrowserCollectionView.mj_header = refreshHeader
+    }
+
+    func setRefreshFooter() {
+        refreshFooter.setTitle("点击或上拉刷新数据", for: .idle)
+        refreshFooter.setTitle("正在加载数据", for: .refreshing)
+        refreshFooter.setTitle("数据加载完毕", for: .noMoreData)
+        refreshFooter.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))
+        //是否自动加载（默认为true，即表格滑到底部就自动加载）
+        refreshFooter.isAutomaticallyRefresh = false
+        photoBrowserCollectionView.mj_footer = refreshFooter
+    }
+}
+
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+extension PhotoBrowserViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView.tag == PhotoCollectionViewTag {
             return imageArr?.count ?? 0
@@ -99,14 +126,14 @@ class PhotoBrowserViewController: RefreshBaseViewController {
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView.tag == PhotoCollectionViewTag {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPhotoCellID, for: indexPath) as! PhotoViewCell
             cell.image = imageArr![indexPath.item]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRefreshCellIID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPhotoCellID, for: indexPath)
             return cell
         }
     }
@@ -119,16 +146,6 @@ class PhotoBrowserViewController: RefreshBaseViewController {
             imageBrowser.show()
         }
     }
-
-    func setMyRefreshFooter() {
-        refreshFooter.setTitle("点击或上拉刷新数据", for: .idle)
-        refreshFooter.setTitle("正在加载数据", for: .refreshing)
-        refreshFooter.setTitle("数据加载完毕", for: .noMoreData)
-        refreshFooter.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))
-        //是否自动加载（默认为true，即表格滑到底部就自动加载）
-        refreshFooter.isAutomaticallyRefresh = false
-        photoBrowserCollectionView.mj_footer = refreshFooter
-    }
 }
 
 
@@ -136,14 +153,14 @@ class PhotoBrowserViewController: RefreshBaseViewController {
 extension PhotoBrowserViewController {
     
     /// 下拉刷新
-    override func headerRefresh() {
+    @objc func headerRefresh() {
         basketDetailVM.getRefreshPhotos(deviceId: deviceId, success: { (result) in
             //print("刷新请求数据： \(result)")
             guard let images = result as? [String] else { return }
             self.imageArr = (self.imageArr ?? []) + images
-            self.headerEndRefreshing()
+            self.photoBrowserCollectionView.mj_header.endRefreshing()
         }) { (error) in
-            self.headerEndRefreshing()
+            self.photoBrowserCollectionView.mj_header.endRefreshing()
             if error == NO_MORE_PHOTO {
                 self.view.showTip(tip: "百胜吊篮：尚无更多图片！", position: .bottomCenter)
             } else {
@@ -154,7 +171,7 @@ extension PhotoBrowserViewController {
     }
     
     /// 上拉刷新
-    override func footerRefresh() {
+    @objc func footerRefresh() {
         basketDetailVM.getRefreshPhotos(deviceId: deviceId, success: { (result) in
             //print("刷新请求数据： \(result)")
             guard let images = result as? [String] else { return }

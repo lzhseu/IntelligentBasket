@@ -152,6 +152,10 @@
                                                     <rect key="frame" x="16" y="0.0" width="40" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="current" translatesAutoresizingMaskIntoConstraints="NO" id="uQ6-IW-iIf">
+                                                    <rect key="frame" x="199" y="12" width="32" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
@@ -167,6 +171,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="refresh" translatesAutoresizingMaskIntoConstraints="NO" id="aqA-DX-pO4">
+                                <rect key="frame" x="225" y="70" width="32" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Qw-q8-6NS"/>
                     </view>
@@ -176,11 +184,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibu-KN-IeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="-267"/>
+            <point key="canvasLocation" x="947.82608695652186" y="-267.1875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="current" width="22" height="22"/>
         <image name="ic_default_user_head" width="42.5" height="42.5"/>
         <image name="ic_navi_project" width="42.5" height="42.5"/>
+        <image name="refresh" width="22" height="22"/>
     </resources>
 </document>
