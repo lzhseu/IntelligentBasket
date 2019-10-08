@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		949A70895A1D1F8D396A61FD /* Pods_IntelligentBasket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B19942388AAA48EA8568B /* Pods_IntelligentBasket.framework */; };
+		F31F8F07234CAD6E00772F58 /* UserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31F8F06234CAD6E00772F58 /* UserDetailModel.swift */; };
+		F31F8F09234CAE1A00772F58 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31F8F08234CAE1A00772F58 /* UserDetailViewModel.swift */; };
 		F32556E72311158900644704 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E62311158900644704 /* ProjectViewModel.swift */; };
 		F32556E9231122AE00644704 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556E8231122AE00644704 /* ProjectModel.swift */; };
 		F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556EE23120E1A00644704 /* PLPlayerViewController.swift */; };
@@ -74,6 +76,8 @@
 		0537C97EE51168F5517C367D /* Pods-IntelligentBasket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentBasket.debug.xcconfig"; path = "Target Support Files/Pods-IntelligentBasket/Pods-IntelligentBasket.debug.xcconfig"; sourceTree = "<group>"; };
 		BC77E324A3520134392C809B /* Pods-IntelligentBasket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentBasket.release.xcconfig"; path = "Target Support Files/Pods-IntelligentBasket/Pods-IntelligentBasket.release.xcconfig"; sourceTree = "<group>"; };
 		DC2B19942388AAA48EA8568B /* Pods_IntelligentBasket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelligentBasket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31F8F06234CAD6E00772F58 /* UserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailModel.swift; sourceTree = "<group>"; };
+		F31F8F08234CAE1A00772F58 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		F32556E62311158900644704 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		F32556E8231122AE00644704 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		F32556EE23120E1A00644704 /* PLPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLPlayerViewController.swift; sourceTree = "<group>"; };
@@ -445,6 +449,7 @@
 		F3965ED2230CD95400E8E5B8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F31F8F08234CAE1A00772F58 /* UserDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 		F3965ED6230CD95400E8E5B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F31F8F06234CAD6E00772F58 /* UserDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -661,6 +667,7 @@
 				F366EB932306A2C900495496 /* UIBarButtonItem-Extension.swift in Sources */,
 				F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */,
 				F366EBA42306ABA600495496 /* PrimaryNavigationController.swift in Sources */,
+				F31F8F07234CAD6E00772F58 /* UserDetailModel.swift in Sources */,
 				F3965F1F230E7B0B00E8E5B8 /* BasketCollectionCell.swift in Sources */,
 				F3965F51230FCE1400E8E5B8 /* UsingBasketModel.swift in Sources */,
 				F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */,
@@ -676,6 +683,7 @@
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
 				F32AF9AC23150BFE00947D90 /* PhotoViewCell.swift in Sources */,
 				F3965EDB230CD95400E8E5B8 /* ProjectViewController.swift in Sources */,
+				F31F8F09234CAE1A00772F58 /* UserDetailViewModel.swift in Sources */,
 				F3965EDF230CD95400E8E5B8 /* ProfileViewController.swift in Sources */,
 				F3965F4C230F866400E8E5B8 /* RefreshBaseViewController.swift in Sources */,
 				F3965F28230E981000E8E5B8 /* CircleButton.swift in Sources */,

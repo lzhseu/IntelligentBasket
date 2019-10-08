@@ -16,6 +16,9 @@ let baseRtmpURL = "rtmp://47.96.103.244:1935/rtmplive"
 let registerURL = baseURL + "/checkRegister"
 let loginURL = baseURL + "/login"
 
+/// 获取人员信息
+let userDetailURL = baseURL + "/androidGetUserInfo"
+
 /// 获取区域管理员负责的所有项目信息，以便出库
 let getAllProjectURL = baseURL + "/getAllProject"
 

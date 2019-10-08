@@ -32,7 +32,8 @@ extension UsingBasketViewModel {
             
             let isAllowed = resDict["isAllowed"] as! Bool
             if isAllowed == false {
-                AlertBox.create(title: "警告", message: "令牌无效！", viewController: viewController)
+                //AlertBox.create(title: "警告", message: "令牌无效！", viewController: viewController)
+                AlertBox.createForInvalidToken(title: "警告", message: "令牌无效！", viewController: viewController)
                 return
             }
             

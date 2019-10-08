@@ -279,6 +279,8 @@
                     <navigationItem key="navigationItem" id="2jM-fy-f06"/>
                     <connections>
                         <outlet property="logoutItem" destination="IeT-4g-Nhm" id="Zwp-dr-KDf"/>
+                        <outlet property="userNameLabel" destination="Wn0-zg-yxk" id="cbE-Vz-dqK"/>
+                        <outlet property="userRoleLabel" destination="CQP-SY-UqD" id="4Ep-70-bRl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wa-ZL-M8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
