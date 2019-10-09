@@ -12,7 +12,13 @@ class MessageViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUI()
+        
+    }
+    
+    override func setUI() {
+        setNavigationBar(title: "")
+        view.backgroundColor = contentBgColor
     }
     
 

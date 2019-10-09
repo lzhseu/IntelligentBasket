@@ -291,7 +291,7 @@
         <scene sceneID="JNn-OF-eoe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XIs-mv-8Ns" customClass="PrimaryNavigationController" customModule="IntelligentBasket" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="fSK-pi-cFL"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="ic_navi_me2" id="fSK-pi-cFL"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jn0-zK-wSg">
@@ -311,6 +311,7 @@
     <resources>
         <image name="arrow_right_my_gray" width="7.5" height="12"/>
         <image name="ic_default_user_head" width="42.5" height="42.5"/>
+        <image name="ic_navi_me2" width="24" height="24"/>
         <image name="qr_code" width="22" height="22"/>
     </resources>
 </document>

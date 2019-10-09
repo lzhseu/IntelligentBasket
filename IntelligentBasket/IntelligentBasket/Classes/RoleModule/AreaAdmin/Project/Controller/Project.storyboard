@@ -30,7 +30,7 @@
         <scene sceneID="UnQ-4K-gpO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2or-IQ-uD1" customClass="PrimaryNavigationController" customModule="IntelligentBasket" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="项目" id="FpM-Aa-FbY"/>
+                    <tabBarItem key="tabBarItem" title="项目" image="ic_navi_project2" id="FpM-Aa-FbY"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VYU-7Y-1hA">
@@ -47,4 +47,7 @@
             <point key="canvasLocation" x="202.89855072463769" y="168.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_navi_project2" width="24" height="24"/>
+    </resources>
 </document>

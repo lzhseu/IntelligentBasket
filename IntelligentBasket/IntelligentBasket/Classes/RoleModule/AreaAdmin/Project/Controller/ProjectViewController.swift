@@ -42,6 +42,7 @@ class ProjectViewController: BaseViewController {
         pageMenu.delegate = self
         pageMenu.bridgeScrollView = self!.scrollView
         pageMenu.tracker.backgroundColor = primaryColor
+        pageMenu.selectedItemIndex = 3   //配置第一个显示的选项卡
         return pageMenu
     }()
     
@@ -137,6 +138,7 @@ extension ProjectViewController: SPPageMenuDelegate {
 extension ProjectViewController {
     private func addChildVcs(projectId: String?) {
         // TODO: 把子控制器加在此处
+        /*
         var vc = RoleBaseViewController()
         vc = UsingViewController(projectId: projectId)
         addChild(vc)
@@ -165,6 +167,25 @@ extension ProjectViewController {
             
             scrollView.addSubview(vc.view)
             vc.view.frame = CGRect(x: CGFloat(index) * kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
+        }
+        */
+        for index in 0..<titles.count {
+            var vc = BaseViewController()
+            if index == 3 {
+                vc = UsingViewController(projectId: projectId)
+                addChild(vc)
+                childVcs.append(vc)
+                scrollView.addSubview(vc.view)
+                vc.view.frame = CGRect(x: CGFloat(index) * kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
+            } else {
+                vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+                
+                addChild(vc)
+                childVcs.append(vc)
+                
+                scrollView.addSubview(vc.view)
+                vc.view.frame = CGRect(x: CGFloat(index) * kScreenW, y: 0, width: kScreenW, height: scrollView.frame.height)
+            }
         }
         
         /// 显示第一个视图

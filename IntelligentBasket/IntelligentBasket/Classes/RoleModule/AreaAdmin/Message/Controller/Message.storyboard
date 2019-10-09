@@ -30,7 +30,7 @@
         <scene sceneID="sQi-0w-tT9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CGf-7q-rLU" customClass="PrimaryNavigationController" customModule="IntelligentBasket" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" id="O98-LS-AUY"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="ic_navi_message2" id="O98-LS-AUY"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XcU-Wf-fzB">
@@ -47,4 +47,7 @@
             <point key="canvasLocation" x="2.8985507246376816" y="4.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_navi_message2" width="24" height="24"/>
+    </resources>
 </document>
