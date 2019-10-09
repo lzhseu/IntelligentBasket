@@ -21,6 +21,8 @@
 		F32AF9A72315097500947D90 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9A62315097500947D90 /* PhotoBrowserViewController.swift */; };
 		F32AF9AC23150BFE00947D90 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32AF9AA23150BFE00947D90 /* PhotoViewCell.swift */; };
 		F32AF9AD23150BFE00947D90 /* PhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */; };
+		F33804DF234DC746001CEE1E /* ProjectDetailInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33804DE234DC746001CEE1E /* ProjectDetailInfoModel.swift */; };
+		F33804E1234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33804E0234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift */; };
 		F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB6D2306A1D300495496 /* AppDelegate.swift */; };
 		F366EB752306A1D400495496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366EB742306A1D400495496 /* Assets.xcassets */; };
 		F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366EB762306A1D400495496 /* LaunchScreen.storyboard */; };
@@ -89,6 +91,8 @@
 		F32AF9A62315097500947D90 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
 		F32AF9AA23150BFE00947D90 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
 		F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCell.xib; sourceTree = "<group>"; };
+		F33804DE234DC746001CEE1E /* ProjectDetailInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailInfoModel.swift; sourceTree = "<group>"; };
+		F33804E0234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailInfoViewModel.swift; sourceTree = "<group>"; };
 		F366EB6A2306A1D300495496 /* IntelligentBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366EB6D2306A1D300495496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F366EB742306A1D400495496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				F3965F52230FCF4100E8E5B8 /* UsingBasketViewModel.swift */,
 				F32556E62311158900644704 /* ProjectViewModel.swift */,
 				F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */,
+				F33804E0234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 			children = (
 				F3965F50230FCE1400E8E5B8 /* UsingBasketModel.swift */,
 				F32556E8231122AE00644704 /* ProjectModel.swift */,
+				F33804DE234DC746001CEE1E /* ProjectDetailInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -656,9 +662,11 @@
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
 				F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */,
+				F33804DF234DC746001CEE1E /* ProjectDetailInfoModel.swift in Sources */,
 				F366EB912306A2C900495496 /* UIColor-Extension.swift in Sources */,
 				F3965F22230E918F00E8E5B8 /* BasketDetailViewController.swift in Sources */,
 				F3965E6B2308E0AF00E8E5B8 /* BaseViewController.swift in Sources */,
+				F33804E1234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift in Sources */,
 				F3965E73230A40E600E8E5B8 /* RegexPatten.swift in Sources */,
 				F366EB972306A2C900495496 /* CommonConstant.swift in Sources */,
 				F366EB952306A2C900495496 /* NsDate-Extension.swift in Sources */,

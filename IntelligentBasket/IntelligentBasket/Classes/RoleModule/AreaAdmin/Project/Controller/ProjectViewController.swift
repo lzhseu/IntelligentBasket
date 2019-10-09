@@ -185,16 +185,22 @@ extension ProjectViewController {
             
             /// 拿到当前项目名称
             /// 若系统中存在当前项目
+            var isFound = false
             if let currentProjectId = UserDefaultStorage.getCurrentProjectId() {
                 for project in projectGroup {
                     if project.projectId == currentProjectId {
                         /// 若请求的数据中也有当前项目，则显示当前项目
                         self.currentProject = project
+                        isFound = true
                         break
                     }
                 }
             } else {
                 /// 若不存在当前项目
+                isFound = false
+            }
+            
+            if !isFound {
                 if projectGroup.count > 0 {
                     self.currentProject = projectGroup[0]  /// 使用请求到的数据的第一个作为当前项目
                     UserDefaultStorage.storeCurrentProjectId(projectId: self.currentProject.projectId!)
@@ -210,6 +216,7 @@ extension ProjectViewController {
             
             /// 设置侧边栏项目
             self.sideMenuViewController.setProjectGroup(projectGroup: projectGroup)
+            self.sideMenuViewController.setUserId(userId: userId)
             
             /// 添加子控制器
             self.addChildVcs(projectId: self.currentProject.projectId)
@@ -225,11 +232,12 @@ extension ProjectViewController {
 extension ProjectViewController: SideMenuViewControllerDelegate {
     
     func sideMenuViewController(selected projectId: String) {
-        
         if projectId == currentProject.projectId! {
             let vc = UIStoryboard(name: "ProjectDetail", bundle: nil).instantiateViewController(withIdentifier: "projectDetail") as! ProjectDetailViewController
+            vc.projectId = projectId
             pushViewController(viewController: vc, animated: true)
         } else {
+            
             /// 1.把之前的子控制器移除
             for childVc in childVcs {
                 childVc.removeFromParent()
@@ -246,6 +254,13 @@ extension ProjectViewController: SideMenuViewControllerDelegate {
                     currentProject = project
                     break
                 }
+            }
+            
+            /// 4. 修改导航栏标题
+            if let projectName = self.currentProject.projectName {
+                self.setNavigationBarTitle(title: projectName)
+            } else {
+                self.setNavigationBarTitle(title: "项目名")
             }
         }
     }

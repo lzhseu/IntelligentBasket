@@ -141,7 +141,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="236" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Yc-s6-NTL">
+                                                <label opaque="NO" multipleTouchEnabled="YES" tag="22" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Yc-s6-NTL">
                                                     <rect key="frame" x="71" y="0.0" width="149" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -179,6 +179,7 @@
                         <viewLayoutGuide key="safeArea" id="4Qw-q8-6NS"/>
                     </view>
                     <connections>
+                        <outlet property="refreshImageView" destination="aqA-DX-pO4" id="iFL-mR-IK4"/>
                         <outlet property="settingTableView" destination="5I4-f2-nk4" id="r4R-lw-s23"/>
                     </connections>
                 </viewController>

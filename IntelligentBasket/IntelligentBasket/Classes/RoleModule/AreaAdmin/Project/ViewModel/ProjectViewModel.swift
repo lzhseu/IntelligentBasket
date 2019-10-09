@@ -45,7 +45,6 @@ extension ProjectViewModel {
                 let boxList = dict["boxList"] as! String
                 let strArr: [String] = boxList.split(separator: ",").compactMap{ "\($0)" }
                 projectModel.basketNum = strArr
-                
                 self.projectGroup.append(projectModel)
             }
             finishedCallBack()

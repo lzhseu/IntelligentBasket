@@ -319,6 +319,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PFJ-jw-Knm"/>
                     </view>
+                    <connections>
+                        <outlet property="areaAdminLabel" destination="ms4-zl-Um9" id="BAk-za-prp"/>
+                        <outlet property="projectBuilderLabel" destination="Ffl-J1-QAE" id="rKu-s7-eJe"/>
+                        <outlet property="projectEndLabel" destination="95a-V0-RAP" id="l6y-oI-ukS"/>
+                        <outlet property="projectIdLabel" destination="snS-yw-jRq" id="Kxp-cn-e19"/>
+                        <outlet property="projectNameLabel" destination="Snt-fd-GaG" id="URV-7L-Lc8"/>
+                        <outlet property="projectResponserLabel" destination="xxP-t8-S5N" id="6H6-ka-Z3s"/>
+                        <outlet property="projectStartLabel" destination="qJk-tf-kjR" id="qX9-ab-q44"/>
+                        <outlet property="projectStateLabel" destination="i01-89-XjQ" id="xPB-ds-USZ"/>
+                        <outlet property="rentAdminLabel" destination="zkL-C5-oY9" id="z0S-Or-7HV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWJ-eG-VQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,6 +6,10 @@
 //  Copyright © 2019 zhineng. All rights reserved.
 //
 
+/*
+ * 获取区域管理员负责的所有项目信息  对应的 项目模型
+ */
+
 import UIKit
 
 class ProjectModel: Codable {

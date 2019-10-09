@@ -58,6 +58,5 @@ class FtpTools {
             finishWithError(error)
         }
         request?.start()
-        
     }
 }

@@ -194,7 +194,13 @@ extension BasketDetailViewController {
             guard let images = result as? [String] else { return }
             photoVc.imageArr = images
         }) { (error) in
-            self.view.showTip(tip: "百胜吊篮：图片数据请求失败！", position: .bottomCenter)
+            photoVc.view.hideLoading()
+            switch error {
+            case 550:
+                photoVc.view.showTip(tip: "百胜吊篮：没有更多图片！", position: .bottomCenter)
+            default:
+                photoVc.view.showTip(tip: "百胜吊篮：图片数据请求失败！", position: .bottomCenter)
+            }            
         }
         
     }
