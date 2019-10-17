@@ -81,7 +81,9 @@ class LoginViewController: BaseViewController {
         textFieldBgView.addSubview(rememberPasswdCheckBox)
 
         view.addSubview(loginBtn)
+        //////////////////////  隐藏注册按钮  ///////////////////////////////////////////////
         view.addSubview(registerBtn)
+        registerBtn.isHidden = true
         
         view.addGestureRecognizer(singleTapGes)
     }
@@ -281,7 +283,10 @@ extension LoginViewController {
                 // TODO: 根据Role进入不同页面
                 switch userInfoModel.userRole {
                 case UserRole.AreaAdmin.rawValue:
-                    self.present(AreaAdminTabBarController(), animated: false, completion: nil)
+                    //self.present(AreaAdminTabBarController(), animated: false, completion: nil)
+                    let projectListViewController = UIStoryboard(name: "ProjectList", bundle: nil)
+                        .instantiateInitialViewController()!
+                    self.present(projectListViewController, animated: false, completion: nil)
                 case UserRole.RentAdmin.rawValue:
                     break
                 case UserRole.Inspector.rawValue:

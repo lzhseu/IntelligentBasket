@@ -15,6 +15,8 @@
 		F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556EE23120E1A00644704 /* PLPlayerViewController.swift */; };
 		F32557662312797700644704 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32557652312797700644704 /* SideMenuViewController.swift */; };
 		F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F325576B2312A6AF00644704 /* SideMenu.storyboard */; };
+		F328D4CF23588286000F3F6D /* ProjectList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328D4CE23588286000F3F6D /* ProjectList.storyboard */; };
+		F328D4D1235882CC000F3F6D /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */; };
 		F3294DC423166BC90080110D /* FtpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC323166BC90080110D /* FtpTools.swift */; };
 		F3294DC6231674FE0080110D /* BasketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */; };
 		F3294DCA231770720080110D /* LocalFileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC9231770720080110D /* LocalFileTools.swift */; };
@@ -85,6 +87,8 @@
 		F32556EE23120E1A00644704 /* PLPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLPlayerViewController.swift; sourceTree = "<group>"; };
 		F32557652312797700644704 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F325576B2312A6AF00644704 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		F328D4CE23588286000F3F6D /* ProjectList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectList.storyboard; sourceTree = "<group>"; };
+		F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		F3294DC323166BC90080110D /* FtpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FtpTools.swift; sourceTree = "<group>"; };
 		F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDetailViewModel.swift; sourceTree = "<group>"; };
 		F3294DC9231770720080110D /* LocalFileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileTools.swift; sourceTree = "<group>"; };
@@ -190,6 +194,47 @@
 				F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F328D4C9235881F5000F3F6D /* ProjectList */ = {
+			isa = PBXGroup;
+			children = (
+				F328D4CB235881F5000F3F6D /* Controller */,
+				F328D4CC235881F5000F3F6D /* Model */,
+				F328D4CD235881F5000F3F6D /* View */,
+				F328D4CA235881F5000F3F6D /* ViewModel */,
+			);
+			path = ProjectList;
+			sourceTree = "<group>";
+		};
+		F328D4CA235881F5000F3F6D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F328D4CB235881F5000F3F6D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F328D4CE23588286000F3F6D /* ProjectList.storyboard */,
+				F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F328D4CC235881F5000F3F6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F328D4CD235881F5000F3F6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F32AF9912314F32F00947D90 /* Photo */ = {
@@ -336,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				F3965F10230E33A400E8E5B8 /* Main */,
+				F328D4C9235881F5000F3F6D /* ProjectList */,
 				F3965EC7230CD95400E8E5B8 /* Project */,
 				F3965EC0230CD95400E8E5B8 /* Message */,
 				F3965ED1230CD95400E8E5B8 /* Profile */,
@@ -593,6 +639,7 @@
 				F366EB752306A1D400495496 /* Assets.xcassets in Resources */,
 				F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */,
 				F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */,
+				F328D4CF23588286000F3F6D /* ProjectList.storyboard in Resources */,
 				F3965ED8230CD95400E8E5B8 /* Message.storyboard in Resources */,
 				F366EB992306A2EE00495496 /* Login.storyboard in Resources */,
 				F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */,
@@ -660,6 +707,7 @@
 				F32557662312797700644704 /* SideMenuViewController.swift in Sources */,
 				F3965EE5230CDA3F00E8E5B8 /* HttpTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
+				F328D4D1235882CC000F3F6D /* ProjectListViewController.swift in Sources */,
 				F366EB9F2306A69900495496 /* ColorConstant.swift in Sources */,
 				F3965F16230E5AB200E8E5B8 /* RoleBaseViewController.swift in Sources */,
 				F33804DF234DC746001CEE1E /* ProjectDetailInfoModel.swift in Sources */,
