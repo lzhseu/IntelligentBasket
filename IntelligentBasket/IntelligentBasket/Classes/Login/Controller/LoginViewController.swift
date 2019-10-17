@@ -210,6 +210,7 @@ extension LoginViewController {
 // MARK: - 记住密码(使用 UserDefaults)
 extension LoginViewController {
     
+    /// 这里的userName是指登录时的用户名；UserDefaultsStorage 中的用户名是指用户的名字
     func storeUsername(username: String?) {
         guard let username = username else { return }
         UserDefaults.standard.set(username, forKey: kUsernameKey)
@@ -271,9 +272,11 @@ extension LoginViewController {
                     return
                 }
                 
-                /// 存储userId
+                /// 存储userId userName
                 let userId = userInfoModel.userId
                 UserDefaultStorage.storeUserId(userId: userId)
+                let userName = userInfoModel.userName
+                UserDefaultStorage.storeUserName(userName: userName)
                 
                 // TODO: 根据Role进入不同页面
                 switch userInfoModel.userRole {

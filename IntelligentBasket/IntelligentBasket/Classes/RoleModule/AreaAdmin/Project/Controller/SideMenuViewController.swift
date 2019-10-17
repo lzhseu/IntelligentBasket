@@ -31,6 +31,7 @@ class SideMenuViewController: UIViewController {
     // MARK: - 模型属性
     @IBOutlet weak var settingTableView: UITableView!
     @IBOutlet weak var refreshImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class SideMenuViewController: UIViewController {
         settingTableView.tableFooterView = UIView()
         refreshImageView.isUserInteractionEnabled = true
         refreshImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(refreshImagViewClicked)))
+        userNameLabel.text = UserDefaultStorage.getUserName()
     }
     
     override func didReceiveMemoryWarning() {

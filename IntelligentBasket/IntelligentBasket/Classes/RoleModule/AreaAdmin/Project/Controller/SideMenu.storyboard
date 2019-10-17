@@ -181,6 +181,7 @@
                     <connections>
                         <outlet property="refreshImageView" destination="aqA-DX-pO4" id="iFL-mR-IK4"/>
                         <outlet property="settingTableView" destination="5I4-f2-nk4" id="r4R-lw-s23"/>
+                        <outlet property="userNameLabel" destination="soi-g1-8uf" id="VOM-YO-8fO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibu-KN-IeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
