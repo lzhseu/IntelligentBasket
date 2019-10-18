@@ -11,7 +11,7 @@ import SnapKit
 import SideMenu
 
 private let kItemW = kScreenW
-private let kItemH: CGFloat = kItemW / 3
+private let kItemH: CGFloat = 178  //kItemW / 3 + 40
 
 class ProjectListViewController: RefreshBaseViewController {
     
@@ -24,7 +24,6 @@ class ProjectListViewController: RefreshBaseViewController {
     
     // MARK: - 系统回调函数
     override func viewDidLoad() {
-        
         /// 注册cell
         setItemSizeH(itemSizeH: kItemH)
         registerCollectionViewCell(nibName: "ProjectListViewCell")
