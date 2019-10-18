@@ -67,7 +67,8 @@ extension RefreshBaseViewController {
     }
     
     func setRefreshFooter() {
-        refreshFooter.setTitle("点击或上拉刷新数据", for: .idle)
+        //refreshFooter.setTitle("点击或上拉刷新数据", for: .idle)
+        refreshFooter.setTitle("", for: .idle)
         refreshFooter.setTitle("正在加载数据", for: .refreshing)
         refreshFooter.setTitle("数据加载完毕", for: .noMoreData)
         refreshFooter.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))

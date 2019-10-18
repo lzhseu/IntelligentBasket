@@ -134,6 +134,7 @@ extension SideMenuViewController {
     @objc private func refreshImagViewClicked() {
         loadData()
     }
+    
 }
 
 // MARK: - 网络请求数据

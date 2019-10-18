@@ -17,6 +17,13 @@
 		F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F325576B2312A6AF00644704 /* SideMenu.storyboard */; };
 		F328D4CF23588286000F3F6D /* ProjectList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328D4CE23588286000F3F6D /* ProjectList.storyboard */; };
 		F328D4D1235882CC000F3F6D /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */; };
+		F328D4D32358916A000F3F6D /* BasketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D22358916A000F3F6D /* BasketListViewController.swift */; };
+		F328D4D623589481000F3F6D /* BasketListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D423589481000F3F6D /* BasketListViewCell.swift */; };
+		F328D4D723589481000F3F6D /* BasketListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F328D4D523589481000F3F6D /* BasketListViewCell.xib */; };
+		F328D4DD235998A3000F3F6D /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4DC235998A3000F3F6D /* MoreInfoViewController.swift */; };
+		F328D4E123599E5F000F3F6D /* MoreInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328D4E023599E5F000F3F6D /* MoreInfo.storyboard */; };
+		F328D4E42359B792000F3F6D /* ProjectListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4E22359B792000F3F6D /* ProjectListViewCell.swift */; };
+		F328D4E52359B792000F3F6D /* ProjectListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F328D4E32359B792000F3F6D /* ProjectListViewCell.xib */; };
 		F3294DC423166BC90080110D /* FtpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC323166BC90080110D /* FtpTools.swift */; };
 		F3294DC6231674FE0080110D /* BasketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */; };
 		F3294DCA231770720080110D /* LocalFileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3294DC9231770720080110D /* LocalFileTools.swift */; };
@@ -89,6 +96,13 @@
 		F325576B2312A6AF00644704 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		F328D4CE23588286000F3F6D /* ProjectList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectList.storyboard; sourceTree = "<group>"; };
 		F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
+		F328D4D22358916A000F3F6D /* BasketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketListViewController.swift; sourceTree = "<group>"; };
+		F328D4D423589481000F3F6D /* BasketListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketListViewCell.swift; sourceTree = "<group>"; };
+		F328D4D523589481000F3F6D /* BasketListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketListViewCell.xib; sourceTree = "<group>"; };
+		F328D4DC235998A3000F3F6D /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		F328D4E023599E5F000F3F6D /* MoreInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreInfo.storyboard; sourceTree = "<group>"; };
+		F328D4E22359B792000F3F6D /* ProjectListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewCell.swift; sourceTree = "<group>"; };
+		F328D4E32359B792000F3F6D /* ProjectListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectListViewCell.xib; sourceTree = "<group>"; };
 		F3294DC323166BC90080110D /* FtpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FtpTools.swift; sourceTree = "<group>"; };
 		F3294DC5231674FE0080110D /* BasketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDetailViewModel.swift; sourceTree = "<group>"; };
 		F3294DC9231770720080110D /* LocalFileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileTools.swift; sourceTree = "<group>"; };
@@ -219,6 +233,9 @@
 			children = (
 				F328D4CE23588286000F3F6D /* ProjectList.storyboard */,
 				F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */,
+				F328D4D22358916A000F3F6D /* BasketListViewController.swift */,
+				F328D4DC235998A3000F3F6D /* MoreInfoViewController.swift */,
+				F328D4E023599E5F000F3F6D /* MoreInfo.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +250,10 @@
 		F328D4CD235881F5000F3F6D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F328D4D423589481000F3F6D /* BasketListViewCell.swift */,
+				F328D4D523589481000F3F6D /* BasketListViewCell.xib */,
+				F328D4E22359B792000F3F6D /* ProjectListViewCell.swift */,
+				F328D4E32359B792000F3F6D /* ProjectListViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -636,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */,
+				F328D4E123599E5F000F3F6D /* MoreInfo.storyboard in Resources */,
 				F366EB752306A1D400495496 /* Assets.xcassets in Resources */,
 				F3965EDA230CD95400E8E5B8 /* Project.storyboard in Resources */,
 				F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */,
@@ -645,6 +667,8 @@
 				F3965F14230E33A500E8E5B8 /* AreaAdmin.storyboard in Resources */,
 				F32AF9AD23150BFE00947D90 /* PhotoViewCell.xib in Resources */,
 				F3F96896231CEAC10024B42A /* ProjectDetail.storyboard in Resources */,
+				F328D4E52359B792000F3F6D /* ProjectListViewCell.xib in Resources */,
+				F328D4D723589481000F3F6D /* BasketListViewCell.xib in Resources */,
 				F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */,
 				F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */,
 			);
@@ -701,10 +725,12 @@
 			files = (
 				F3294DC423166BC90080110D /* FtpTools.swift in Sources */,
 				F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */,
+				F328D4E42359B792000F3F6D /* ProjectListViewCell.swift in Sources */,
 				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
 				F32557662312797700644704 /* SideMenuViewController.swift in Sources */,
+				F328D4DD235998A3000F3F6D /* MoreInfoViewController.swift in Sources */,
 				F3965EE5230CDA3F00E8E5B8 /* HttpTools.swift in Sources */,
 				F3965E77230AA45D00E8E5B8 /* AlertBox.swift in Sources */,
 				F328D4D1235882CC000F3F6D /* ProjectListViewController.swift in Sources */,
@@ -732,8 +758,10 @@
 				F32556E9231122AE00644704 /* ProjectModel.swift in Sources */,
 				F366EB922306A2C900495496 /* UIView-Extension.swift in Sources */,
 				F3965E6D2308E60E00E8E5B8 /* RegisterBaseViewController.swift in Sources */,
+				F328D4D32358916A000F3F6D /* BasketListViewController.swift in Sources */,
 				F3965F55230FE4F300E8E5B8 /* UserDefaultStorage.swift in Sources */,
 				F3965F53230FCF4100E8E5B8 /* UsingBasketViewModel.swift in Sources */,
+				F328D4D623589481000F3F6D /* BasketListViewCell.swift in Sources */,
 				F3F96894231CEA6B0024B42A /* ProjectDetailViewController.swift in Sources */,
 				F3294DC6231674FE0080110D /* BasketDetailViewModel.swift in Sources */,
 				F3965E75230A843C00E8E5B8 /* URLConstant.swift in Sources */,
