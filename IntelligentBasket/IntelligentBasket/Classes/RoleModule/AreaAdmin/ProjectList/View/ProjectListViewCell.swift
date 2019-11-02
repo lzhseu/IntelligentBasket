@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectListViewCell: UICollectionViewCell {
+class ProjectListViewCell: UITableViewCell {
 
     // MARK: - 模型属性
     @IBOutlet weak var projectNameLabel: UILabel!

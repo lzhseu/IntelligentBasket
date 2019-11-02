@@ -9,9 +9,7 @@
 import UIKit
 
 fileprivate let kLzhSearchTintColor = UIColor(r: 0.12, g: 0.74, b: 0.13, alpha: 1)
-// 常规背景颜色
-let kCommonBgColor = UIColor(r: 0.92, g: 0.92, b: 0.92, alpha: 1.00)
-let kSectionColor = UIColor(r: 0.94, g: 0.94, b: 0.96, alpha: 1.00)
+let kSectionColor = contentBgColor
 
 class LZHSearchController: UISearchController {
     // MARK: - 懒加载属性
@@ -38,9 +36,6 @@ class LZHSearchController: UISearchController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // 设置状态栏颜色
-        //UIApplication.shared.statusBarStyle = .default
     }
 }
 
@@ -52,11 +47,6 @@ extension LZHSearchController {
         // 搜索框
         searchBar.barStyle = .default
         searchBar.tintColor = kLzhSearchTintColor
-        // 去除上下两条横线
-        //searchBar.setBackgroundImage(kSectionColor.trans2Image(), for: .any, barMetrics: .default)
-        // 右侧语音
-        searchBar.showsBookmarkButton = true
-        //searchBar.setImage(#imageLiteral(resourceName: "VoiceSearchStartBtn"), for: .bookmark, state: .normal)
         
         searchBar.delegate = self
     }
@@ -67,7 +57,6 @@ extension LZHSearchController {
     @objc private func findCancel() {
         let btn = searchBar.value(forKey: "_cancelButton") as AnyObject
         if btn.isKind(of: NSClassFromString("UINavigationButton")!) {
-            print("就是它")
             link.invalidate()
             link.remove(from: RunLoop.current, forMode: .common)
             hasFindCancelBtn = true
@@ -80,9 +69,6 @@ extension LZHSearchController {
 
 // MARK: - UISearchBarDelegate
 extension LZHSearchController: UISearchBarDelegate {
-    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-        print("点击了语音按钮")
-    }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         

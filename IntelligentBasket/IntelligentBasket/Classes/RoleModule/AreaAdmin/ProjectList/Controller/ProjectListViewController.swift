@@ -17,6 +17,8 @@ let kSearchByAreaType: Int = 1
 let kSearchByPageType: Int = 2
 let kEmptyKeyWord = "  "
 let kFirstPageIndex: Int = 1
+private let kTableCellID = "kTableCellID"
+
 
 class ProjectListViewController: RefreshBaseViewController {
     
@@ -33,6 +35,28 @@ class ProjectListViewController: RefreshBaseViewController {
     private lazy var projectListVM = ProjectListViewModel()
     private lazy var projectListSearchByPage = [ProjectInfoModel]()
     private lazy var projectListSearchByArea = [ProjectInfoModel]()
+    private lazy var tableView: UITableView = { [unowned self] in
+        let tableView = UITableView(frame: self.view.bounds, style: .plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        //tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 44, right: 0)
+        //tableView.scrollIndicatorInsets = UIEdgeInsets(top: 64, left: 0, bottom: 44, right: 0)
+        tableView.rowHeight = kItemH
+        tableView.register(UINib(nibName: "ProjectListViewCell", bundle: nil), forCellReuseIdentifier: kTableCellID)
+        tableView.tableFooterView = UIView(frame: .zero)
+        //以下代码关闭估算行高,从而解决底下留白的bug
+        tableView.estimatedRowHeight = 0;
+        tableView.estimatedSectionHeaderHeight = 0;
+        tableView.estimatedSectionFooterHeight = 0;
+        // 改变索引的颜色
+        //tableView.sectionIndexColor = UIColor.black
+        // 改变索引背景颜色
+        //tableView.sectionIndexBackgroundColor = UIColor.clear
+        // 改变索引被选中的背景颜色
+        // table.sectionIndexTrackingBackgroundColor = UIColor.green
+        return tableView
+        }()
+    
     
     // MARK: - 自定义属性
     static var pageIndx4Area: Int = kFirstPageIndex
@@ -85,7 +109,7 @@ class ProjectListViewController: RefreshBaseViewController {
         let searchItem = UIBarButtonItem(image: UIImage(named: "search"), style: .plain, target: self, action: #selector(searchBtnClick))
         navigationItem.rightBarButtonItems = [moreItem, searchItem]
         
-        /*
+        
         // 设置搜索框
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
@@ -103,7 +127,7 @@ class ProjectListViewController: RefreshBaseViewController {
         searchController.searchBar.delegate = self
         
         self.definesPresentationContext = true //这是能push成功的关键
-        */
+ 
     }
 }
 
@@ -141,6 +165,7 @@ extension ProjectListViewController {
         //searchBoxView.isHidden = !searchBoxView.isHidden
         //let flag = navigationController?.navigationBar.isHidden ?? false
         //navigationController?.navigationBar.isHidden = !flag
+        pushViewController(viewController: UIViewController(), animated: false)
     }
     
     /// 下拉刷新
@@ -245,6 +270,7 @@ extension ProjectListViewController: MoreInfoViewControllerDelegate {
 
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+/*
 extension ProjectListViewController  {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -287,4 +313,32 @@ extension ProjectListViewController  {
     }
     
 }
+*/
 
+extension ProjectListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch searchType {
+        case kSearchByPageType:
+            return projectListSearchByPage.count
+        case kSearchByAreaType:
+            return projectListSearchByArea.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTableCellID, for: indexPath) as! ProjectListViewCell
+        switch searchType {
+        case kSearchByPageType:
+            cell.projectInfoModel = self.projectListSearchByPage[indexPath.item]
+        case kSearchByAreaType:
+            cell.projectInfoModel = self.projectListSearchByArea[indexPath.item]
+        default:
+            break
+        }
+        return cell
+    }
+    
+    
+}

@@ -15,21 +15,7 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchBoxView" customModule="IntelligentBasket" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="584" height="167"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bij-YS-wQ3">
-                    <rect key="frame" x="0.0" y="0.0" width="584" height="167"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-            </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bij-YS-wQ3" secondAttribute="trailing" id="DuL-DB-bPu"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bij-YS-wQ3" secondAttribute="bottom" id="WF5-kM-5Ke"/>
-                <constraint firstItem="bij-YS-wQ3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cvl-wM-Hg7"/>
-                <constraint firstItem="bij-YS-wQ3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="hqT-lT-PfS"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="272" y="-102.99850074962519"/>

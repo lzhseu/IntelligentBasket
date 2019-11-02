@@ -16,6 +16,7 @@
 		F32557662312797700644704 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32557652312797700644704 /* SideMenuViewController.swift */; };
 		F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F325576B2312A6AF00644704 /* SideMenu.storyboard */; };
 		F326AA47236D5E85006101DD /* LZHSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326AA46236D5E85006101DD /* LZHSearchController.swift */; };
+		F326AA49236D6A0E006101DD /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326AA48236D6A0E006101DD /* TestViewController.swift */; };
 		F328D4CF23588286000F3F6D /* ProjectList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328D4CE23588286000F3F6D /* ProjectList.storyboard */; };
 		F328D4D1235882CC000F3F6D /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */; };
 		F328D4D32358916A000F3F6D /* BasketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D22358916A000F3F6D /* BasketListViewController.swift */; };
@@ -100,6 +101,7 @@
 		F32557652312797700644704 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F325576B2312A6AF00644704 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		F326AA46236D5E85006101DD /* LZHSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZHSearchController.swift; sourceTree = "<group>"; };
+		F326AA48236D6A0E006101DD /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		F328D4CE23588286000F3F6D /* ProjectList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectList.storyboard; sourceTree = "<group>"; };
 		F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		F328D4D22358916A000F3F6D /* BasketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketListViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				F328D4D22358916A000F3F6D /* BasketListViewController.swift */,
 				F328D4DC235998A3000F3F6D /* MoreInfoViewController.swift */,
 				F328D4E023599E5F000F3F6D /* MoreInfo.storyboard */,
+				F326AA48236D6A0E006101DD /* TestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
 				F35D0A71235ED050007D0AD8 /* ProjectListViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
+				F326AA49236D6A0E006101DD /* TestViewController.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
 				F32557662312797700644704 /* SideMenuViewController.swift in Sources */,
 				F328D4DD235998A3000F3F6D /* MoreInfoViewController.swift in Sources */,
