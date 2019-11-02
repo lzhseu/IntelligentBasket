@@ -10,8 +10,10 @@ import UIKit
 import SnapKit
 
 private let NoBasketImageName = "ic_no_avaliable_basket"
-private let kNoBaksetImageViewWH: CGFloat = 64
+private let NoProjectImageName = "ic_no_avaliable_project"
+private let kImageViewWH: CGFloat = 64
 let kNoBasketPageViewTag: Int = 11404
+let kNoProjectPageViewTag: Int = 12404
 
 class RoleBaseViewController: BaseViewController {
    
@@ -26,14 +28,30 @@ extension RoleBaseViewController{
     
     /// 加载没有吊篮数据页面
     func LoadNoBasketPage(){
-        
+        loadEmptyPage(title: "没有相关吊篮", image: NoBasketImageName, viewTag: kNoBasketPageViewTag)
+    }
+    
+    func removeNoBasketPage() {
+        removeEmptyPage(viewTag: kNoBasketPageViewTag)
+    }
+    
+    /// 加载没有项目数据页面
+    func loadNoProjectPage() {
+        loadEmptyPage(title: "找不到相关项目", image: NoProjectImageName, viewTag: kNoProjectPageViewTag)
+    }
+    
+    func removeNoProjectPage() {
+        removeEmptyPage(viewTag: kNoProjectPageViewTag)
+    }
+    
+    private func loadEmptyPage(title: String, image: String, viewTag: Int) {
         removeNoBasketPage() //load 之前最好先 remove 一下
         
-        let imageView = CommonViewFactory.createImageView(image: NoBasketImageName)
-        let tipLabel = CommonViewFactory.createLabel(title: "您还没有相关的吊篮", font: UIFont.systemFont(ofSize: 16), textColor: normalTitleColor)
+        let imageView = CommonViewFactory.createImageView(image: image)
+        let tipLabel = CommonViewFactory.createLabel(title: title, font: UIFont.systemFont(ofSize: 16), textColor: normalTitleColor)
         let bgView = UIView()
         bgView.backgroundColor = contentBgColor
-        bgView.tag = kNoBasketPageViewTag
+        bgView.tag = viewTag
         
         view.addSubview(bgView)
         bgView.addSubview(imageView)
@@ -47,16 +65,16 @@ extension RoleBaseViewController{
         imageView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.width.height.equalTo(kNoBaksetImageViewWH)
+            make.width.height.equalTo(kImageViewWH)
         }
         tipLabel.snp.makeConstraints { (make) in
             make.centerX.bottom.equalToSuperview()
         }
     }
     
-    func removeNoBasketPage() {
-        let noBasketPageView = view.viewWithTag(kNoBasketPageViewTag)
-        noBasketPageView?.removeFromSuperview()
+    private func removeEmptyPage(viewTag: Int) {
+        let pageView = view.viewWithTag(viewTag)
+        pageView?.removeFromSuperview()
     }
 }
 

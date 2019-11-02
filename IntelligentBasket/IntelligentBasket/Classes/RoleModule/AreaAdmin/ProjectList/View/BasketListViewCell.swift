@@ -61,11 +61,10 @@ class BasketListViewCell: UICollectionViewCell {
 extension BasketListViewCell {
     
     @objc private func photoImageViewTapped() {
-//        guard let deviceId = self.usingBasketModel?.deviceId else {
-//            self.superController?.view.showTip(tip: "百胜吊篮：设备号无效！")
-//            return
-//        }
-        let deviceId = "10006732"
+        guard let deviceId = self.usingBasketModel?.deviceId else {
+            self.superController?.view.showTip(tip: "百胜吊篮：设备号无效！")
+            return
+        }
         let photoVc = PhotoBrowserViewController()
         photoVc.deviceId = deviceId
         superController!.pushViewController(viewController: photoVc, animated: true)
@@ -85,7 +84,7 @@ extension BasketListViewCell {
     }
     
     @objc private func vedio1ImageViewTapped() {
-        guard  let deviceId = usingBasketModel?.deviceId else {
+        guard let deviceId = usingBasketModel?.deviceId else {
             superController?.view.showTip(tip: "百胜吊篮：设备号无效！", position: .bottomCenter)
             return
         }
@@ -108,6 +107,7 @@ extension BasketListViewCell {
     }
     
     @objc private func vedio2ImageViewTapped() {
-        superController?.present(PLPlayerViewController(playUrl: "rtmp://202.69.69.180:443/webcast/bshdlive-pc"), animated: true, completion: nil)
+        let pLPlayerViewController = PLPlayerViewController(playUrl: "rtmp://202.69.69.180:443/webcast/bshdlive-pc")
+        superController?.present(pLPlayerViewController, animated: true, completion: nil)
     }
 }

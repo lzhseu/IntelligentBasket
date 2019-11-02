@@ -12,8 +12,7 @@ import SnapKit
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        super.viewDidLoad()        
     }
     
     // MARK: - 属性重写

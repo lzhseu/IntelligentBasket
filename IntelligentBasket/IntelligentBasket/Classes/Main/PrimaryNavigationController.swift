@@ -12,7 +12,6 @@ class PrimaryNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     // MARK: - 属性重写

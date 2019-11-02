@@ -9,7 +9,7 @@
 import UIKit
 
 private let kItemW = kScreenW
-private let kItemH: CGFloat = kItemW / 3 + 10
+private let kItemH: CGFloat = 148//kItemW / 3 + 10
 
 class BasketListViewController: RefreshBaseViewController {
 
@@ -56,6 +56,33 @@ class BasketListViewController: RefreshBaseViewController {
 extension BasketListViewController {
     private func loadData(isRefresh: Bool) {
         
+        guard let projectId = projectId else {
+            self.LoadNoBasketPage()
+            disablFooter()
+            return
+        }
+        
+        usingBasketVM.requestAllBasket(projectId: projectId, viewController: self, finishedCallBack: {
+            ///拿到数据
+            self.usingBasketGroup = self.usingBasketVM.usingBasketGroup
+            
+            if self.usingBasketGroup.count == 0 {
+                self.LoadNoBasketPage()
+                self.disablFooter()
+            } else {
+                self.removeNoBasketPage()
+                self.enabelFooter()
+            }
+            
+            /// 刷新表格数据
+            self.collectionView.reloadData()
+            
+            if isRefresh {
+                self.footerEndRefreshing()  //如果是刷新数据（不是第一次请求），那么刷新后要手动停止刷新
+            }
+        }) {
+            self.view.showTip(tip: kNetWorkErrorTip, position: .bottomCenter)
+        }
     }
 }
 
@@ -64,13 +91,12 @@ extension BasketListViewController {
 extension BasketListViewController  {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return usingBasketGroup.count
-        return 10
+        return usingBasketGroup.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRefreshCellIID, for: indexPath) as! BasketListViewCell
-        //cell.usingBasketModel = usingBasketGroup[indexPath.item]
+        cell.usingBasketModel = usingBasketGroup[indexPath.item]
         cell.superController = self
         
         return cell
@@ -88,7 +114,6 @@ extension BasketListViewController  {
 extension BasketListViewController {
     /// 下拉刷新
     override func headerRefresh() {
-        loadData(isRefresh: true)
     }
     
     /// 上拉刷新

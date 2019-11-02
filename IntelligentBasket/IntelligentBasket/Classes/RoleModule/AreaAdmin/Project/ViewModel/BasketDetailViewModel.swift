@@ -32,10 +32,9 @@ extension BasketDetailViewModel {
             LocalFileTools.createDirInCache(dir: dirPath)
         }
         
-        
+        //print(dirPath)
         /// 获取文件夹中的所有图片
         let localFiles = LocalFileTools.getAllFilesInCache(dir: dirPath)
-        
         var imagesPath = [String]()
         
         BasketDetailViewModel.photosDisplayed = []

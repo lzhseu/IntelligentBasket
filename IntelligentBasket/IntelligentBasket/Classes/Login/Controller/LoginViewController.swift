@@ -280,13 +280,21 @@ extension LoginViewController {
                 let userName = userInfoModel.userName
                 UserDefaultStorage.storeUserName(userName: userName)
                 
+                // TODO:
+                // 暂时任务IOS端的角色权限是一样的
+                let projectListViewController = UIStoryboard(name: "ProjectList", bundle: nil)
+                    .instantiateInitialViewController()!
+                self.present(projectListViewController, animated: false,  completion: nil)
+                
                 // TODO: 根据Role进入不同页面
+                /*
                 switch userInfoModel.userRole {
                 case UserRole.AreaAdmin.rawValue:
                     //self.present(AreaAdminTabBarController(), animated: false, completion: nil)
                     let projectListViewController = UIStoryboard(name: "ProjectList", bundle: nil)
                         .instantiateInitialViewController()!
-                    self.present(projectListViewController, animated: false, completion: nil)
+                    //projectListViewController.modalPresentationStyle = .fullScreen
+                    self.present(projectListViewController, animated: false,  completion: nil)
                 case UserRole.RentAdmin.rawValue:
                     break
                 case UserRole.Inspector.rawValue:
@@ -296,10 +304,12 @@ extension LoginViewController {
                 default:
                     break
                 }
+                */
             }
             
         }) { (error) in
             self.view.showTip(tip: "网络请求错误！", position: .bottomCenter)
+            print(error)
             // TODO: 错误处理  比如在有限次数内尝试重新连接
         }
     }

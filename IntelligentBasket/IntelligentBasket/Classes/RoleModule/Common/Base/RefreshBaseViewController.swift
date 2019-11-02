@@ -47,7 +47,7 @@ class RefreshBaseViewController: RoleBaseViewController {
         super.viewDidLoad()
         itemSizeH = kScreenH - kStatusBarH - self.getNavigationBarH() - kPageMenuH -  (tabBarController?.tabBar.frame.height ?? 0)
         view.addSubview(collectionView)
-        setRefreshHeader()
+        //setRefreshHeader()
         //setRefreshFooter()
     }
     
@@ -99,6 +99,22 @@ extension RefreshBaseViewController {
     
     func footerEndRefreshing() {
         collectionView.mj_footer.endRefreshing()
+    }
+    
+    func disablFooter() {
+        collectionView.mj_footer.isHidden = true;
+    }
+    
+    func enabelFooter() {
+        collectionView.mj_footer.isHidden = false;
+    }
+    
+    func disableHeader() {
+        collectionView.mj_header.isHidden = true;
+    }
+    
+    func enableHeader() {
+        collectionView.mj_header.isHidden = false;
     }
 }
 

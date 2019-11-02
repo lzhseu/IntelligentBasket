@@ -8,7 +8,8 @@
 
 import Foundation
 
-let baseURL = "http://47.100.1.211"
+//let baseURL = "http://47.100.1.211:80"   //公网地址
+let baseURL = "http://10.193.107.34:8080"
 let baseRtmpURL = "rtmp://47.96.103.244:1935/rtmplive"
 
 // MARK: - 用户接口
@@ -30,6 +31,12 @@ let getBasketListURL = baseURL + "/getBasketList"
 
 /// 获取指定项目的详细信息
 let projectDetailInfoURL = baseURL + "/projectDetailInfo"
+
+/// 获取不同层级的项目列表
+let getProjectListByKeyURL = baseURL + "/getProjectListByKey"
+
+/// 按照项目名或地区模糊查找项目
+let getProjectByVagueURL = baseURL + "/getProjectByVague"
 
 
 

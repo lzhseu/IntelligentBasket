@@ -15,6 +15,7 @@
 		F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32556EE23120E1A00644704 /* PLPlayerViewController.swift */; };
 		F32557662312797700644704 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32557652312797700644704 /* SideMenuViewController.swift */; };
 		F325576C2312A6AF00644704 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F325576B2312A6AF00644704 /* SideMenu.storyboard */; };
+		F326AA47236D5E85006101DD /* LZHSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326AA46236D5E85006101DD /* LZHSearchController.swift */; };
 		F328D4CF23588286000F3F6D /* ProjectList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F328D4CE23588286000F3F6D /* ProjectList.storyboard */; };
 		F328D4D1235882CC000F3F6D /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */; };
 		F328D4D32358916A000F3F6D /* BasketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328D4D22358916A000F3F6D /* BasketListViewController.swift */; };
@@ -32,6 +33,10 @@
 		F32AF9AD23150BFE00947D90 /* PhotoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */; };
 		F33804DF234DC746001CEE1E /* ProjectDetailInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33804DE234DC746001CEE1E /* ProjectDetailInfoModel.swift */; };
 		F33804E1234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33804E0234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift */; };
+		F35D0A6B235C73CE007D0AD8 /* SearchBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35D0A6A235C73CE007D0AD8 /* SearchBoxView.swift */; };
+		F35D0A6D235C73D8007D0AD8 /* SearchBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35D0A6C235C73D8007D0AD8 /* SearchBoxView.xib */; };
+		F35D0A71235ED050007D0AD8 /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35D0A70235ED050007D0AD8 /* ProjectListViewModel.swift */; };
+		F35D0A73235ED1EF007D0AD8 /* ProjectInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35D0A72235ED1EF007D0AD8 /* ProjectInfoModel.swift */; };
 		F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F366EB6D2306A1D300495496 /* AppDelegate.swift */; };
 		F366EB752306A1D400495496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F366EB742306A1D400495496 /* Assets.xcassets */; };
 		F366EB782306A1D400495496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F366EB762306A1D400495496 /* LaunchScreen.storyboard */; };
@@ -94,6 +99,7 @@
 		F32556EE23120E1A00644704 /* PLPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLPlayerViewController.swift; sourceTree = "<group>"; };
 		F32557652312797700644704 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F325576B2312A6AF00644704 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		F326AA46236D5E85006101DD /* LZHSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZHSearchController.swift; sourceTree = "<group>"; };
 		F328D4CE23588286000F3F6D /* ProjectList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectList.storyboard; sourceTree = "<group>"; };
 		F328D4D0235882CC000F3F6D /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		F328D4D22358916A000F3F6D /* BasketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketListViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,10 @@
 		F32AF9AB23150BFE00947D90 /* PhotoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCell.xib; sourceTree = "<group>"; };
 		F33804DE234DC746001CEE1E /* ProjectDetailInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailInfoModel.swift; sourceTree = "<group>"; };
 		F33804E0234DC88A001CEE1E /* ProjectDetailInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailInfoViewModel.swift; sourceTree = "<group>"; };
+		F35D0A6A235C73CE007D0AD8 /* SearchBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBoxView.swift; sourceTree = "<group>"; };
+		F35D0A6C235C73D8007D0AD8 /* SearchBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBoxView.xib; sourceTree = "<group>"; };
+		F35D0A70235ED050007D0AD8 /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
+		F35D0A72235ED1EF007D0AD8 /* ProjectInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoModel.swift; sourceTree = "<group>"; };
 		F366EB6A2306A1D300495496 /* IntelligentBasket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentBasket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F366EB6D2306A1D300495496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F366EB742306A1D400495496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +216,7 @@
 			children = (
 				F3965F15230E5AB200E8E5B8 /* RoleBaseViewController.swift */,
 				F3965F4B230F866400E8E5B8 /* RefreshBaseViewController.swift */,
+				F326AA46236D5E85006101DD /* LZHSearchController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 		F328D4CA235881F5000F3F6D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F35D0A70235ED050007D0AD8 /* ProjectListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -243,6 +255,7 @@
 		F328D4CC235881F5000F3F6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F35D0A72235ED1EF007D0AD8 /* ProjectInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +267,8 @@
 				F328D4D523589481000F3F6D /* BasketListViewCell.xib */,
 				F328D4E22359B792000F3F6D /* ProjectListViewCell.swift */,
 				F328D4E32359B792000F3F6D /* ProjectListViewCell.xib */,
+				F35D0A6A235C73CE007D0AD8 /* SearchBoxView.swift */,
+				F35D0A6C235C73D8007D0AD8 /* SearchBoxView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -669,6 +684,7 @@
 				F3F96896231CEAC10024B42A /* ProjectDetail.storyboard in Resources */,
 				F328D4E52359B792000F3F6D /* ProjectListViewCell.xib in Resources */,
 				F328D4D723589481000F3F6D /* BasketListViewCell.xib in Resources */,
+				F35D0A6D235C73D8007D0AD8 /* SearchBoxView.xib in Resources */,
 				F3965EDE230CD95400E8E5B8 /* Profile.storyboard in Resources */,
 				F3965F20230E7B0B00E8E5B8 /* BasketCollectionCell.xib in Resources */,
 			);
@@ -723,10 +739,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F326AA47236D5E85006101DD /* LZHSearchController.swift in Sources */,
 				F3294DC423166BC90080110D /* FtpTools.swift in Sources */,
 				F32556EF23120E1A00644704 /* PLPlayerViewController.swift in Sources */,
 				F328D4E42359B792000F3F6D /* ProjectListViewCell.swift in Sources */,
 				F32556E72311158900644704 /* ProjectViewModel.swift in Sources */,
+				F35D0A71235ED050007D0AD8 /* ProjectListViewModel.swift in Sources */,
 				F366EBAD2307E2D300495496 /* CheckBox.swift in Sources */,
 				F366EB8F2306A2C900495496 /* DictConvertToModel.swift in Sources */,
 				F32557662312797700644704 /* SideMenuViewController.swift in Sources */,
@@ -747,9 +765,11 @@
 				F3965F13230E33A500E8E5B8 /* AreaAdminTabBarController.swift in Sources */,
 				F3965ED9230CD95400E8E5B8 /* MessageViewController.swift in Sources */,
 				F366EB932306A2C900495496 /* UIBarButtonItem-Extension.swift in Sources */,
+				F35D0A73235ED1EF007D0AD8 /* ProjectInfoModel.swift in Sources */,
 				F366EB6E2306A1D300495496 /* AppDelegate.swift in Sources */,
 				F366EBA42306ABA600495496 /* PrimaryNavigationController.swift in Sources */,
 				F31F8F07234CAD6E00772F58 /* UserDetailModel.swift in Sources */,
+				F35D0A6B235C73CE007D0AD8 /* SearchBoxView.swift in Sources */,
 				F3965F1F230E7B0B00E8E5B8 /* BasketCollectionCell.swift in Sources */,
 				F3965F51230FCE1400E8E5B8 /* UsingBasketModel.swift in Sources */,
 				F3965EE2230CD9FB00E8E5B8 /* UserInfoModel.swift in Sources */,
